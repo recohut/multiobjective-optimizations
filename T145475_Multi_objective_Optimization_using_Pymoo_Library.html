@@ -508,15 +508,8 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="multi-objective-optimization-using-pymoo-library">
 <h1>Multi-objective Optimization using Pymoo Library<a class="headerlink" href="#multi-objective-optimization-using-pymoo-library" title="Permalink to this headline">¶</a></h1>
 <p>Without any loss of generality an optimization problem can be defined by:</p>
-<p>\begin{align}
-\begin{split}
-\min \quad&amp; f_{m}(x) \quad \quad \quad \quad m = 1,..,M  \[4pt]
-\text{s.t.}   \quad&amp; g_{j}(x) \leq 0  \quad ; ; ,  \quad j = 1,..,J \[2pt]
-\quad&amp; h_{k}(x) = 0        \quad  ; ; \quad k = 1,..,K \[4pt]
-\quad&amp; x_{i}^{L} \leq x_{i} \leq x_{i}^{U}  \quad i = 1,..,N \[2pt]
-\quad&amp; x \in \Omega
-\end{split}
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}\min \quad&amp; f_{m}(x) \quad \quad \quad \quad m = 1,..,M  \\[4pt]\text{s.t.}   \quad&amp; g_{j}(x) \leq 0  \quad \; \; \,  \quad j = 1,..,J \\[2pt]\quad&amp; h_{k}(x) = 0        \quad  \; \; \quad k = 1,..,K \\[4pt]\quad&amp; x_{i}^{L} \leq x_{i} \leq x_{i}^{U}  \quad i = 1,..,N \\[2pt]\quad&amp; x \in \Omega\end{align*}\end{split}\]</div>
 <p>where xi represents the i-th variable to be optimized, xLi and xUi its lower and upper bound, fm the m-th objective function, gj the j−th inequality constraint and hk the k-th equality constraint.</p>
 <p>The objective function(s) f are supposed to be minimized by satisfying all equality and inequality constraints. If a specific objective function is maximized (maxfi), one can redefine the problem to minimize its negative value (min−fi).</p>
 <p>Instead of starting coding your problem immediately, it is recommendable to first think about the mathematical problem formulation. Doing so makes you being aware of the complete optimization problem. This also helps you to identify the challenging facets of your optimization problem and, thus, to select a suitable algorithm. In this guide, we will demonstrate an example of a multi-objective problem, use pymoo to obtain a solution set, and theoretically derive the optimum for verification purposes.</p>
@@ -678,17 +671,8 @@
 <p>Thus, we need to multiple an objective that is supposed to be maximized by −1 and minimize it. This results in minimizing −f2(x) instead of maximizing f2(x).</p>
 <p>Moreover, the inequality constraints need to be formulated as less than zero (≤0) constraint. For this reason, g2(x) is multiplied by −1 in order to flip inequality relation. Also, we recommend the normalization of constraints to make them operating on the same scale and giving them equal importance. For g1(x), the coefficient results in 2⋅(−0.1)⋅(−0.9)=0.18 and for g2(x) in 20⋅(−0.4)⋅(−0.6)=4.8, respectively. We achieve normalization of constraints by dividing g1(x) and g2(x) by its corresponding coefficient.</p>
 <p>After these reformulations the problem to be implemented is given by:</p>
-<p>\begin{align}
-\begin{split}
-\min ;; &amp; f_1(x) = 100 , (x_1^2 + x_2^2) \
-\min ;; &amp; f_2(x) = (x_1-1)^2 + x_2^2 \[1mm]
-\text{s.t.} ;; &amp; g_1(x) = 2 , (x_1 - 0.1) , (x_1 - 0.9)  , /  ,  0.18 \leq 0\
-&amp; g_2(x) = - 20 , (x_1 - 0.4) , (x_1 - 0.6) ,  /  ,  4.8 \leq 0\[1mm]
-&amp; -2 \leq x_1 \leq 2 \
-&amp; -2 \leq x_2 \leq 2\[1mm]
-&amp; x \in \mathbb{R}
-\end{split}
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}\min \;\; &amp; f_1(x) = 100 \, (x_1^2 + x_2^2) \\\min \;\; &amp; f_2(x) = (x_1-1)^2 + x_2^2 \\[1mm]\text{s.t.} \;\; &amp; g_1(x) = 2 \, (x_1 - 0.1) \, (x_1 - 0.9)  \, /  \,  0.18 \leq 0\\&amp; g_2(x) = - 20 \, (x_1 - 0.4) \, (x_1 - 0.6) \,  /  \,  4.8 \leq 0\\[1mm]&amp; -2 \leq x_1 \leq 2 \\&amp; -2 \leq x_2 \leq 2\\[1mm]&amp; x \in \mathbb{R}\end{align*}\end{split}\]</div>
 <div class="section" id="implement-the-problem">
 <h3>Implement the Problem<a class="headerlink" href="#implement-the-problem" title="Permalink to this headline">¶</a></h3>
 <p>After having formulated the problem the right way, we can start implementing it. In this tutorial we the element-wise problem definition, which is one out of three different ways for implementing a problem. We define a new Python objective inheriting from ElementwiseProblem and set the correct attributes, such as the number of objectives (n_obj) and constraints (n_constr) and the lower (xl) and upper bounds (xu). The function being responsible for the evaluation is _evaluate which shall be implemented next. The function’s interface is the parameters x and out. For this element-wise implementation x is a one-dimensional NumPy array of length n_var which represents a single solution to be evaluated. The output is supposed to be written to the dictionary out. The objective values should be written to out[“F”] as a list of NumPy array with length of n_obj and the constraints to out[“G”] with length of n_constr (if the problem has constraints to be satisfied at all).</p>

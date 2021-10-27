@@ -627,18 +627,19 @@ ___________________________________________________________________________
 <h3>Efficient Global Optimization<a class="headerlink" href="#efficient-global-optimization" title="Permalink to this headline">¶</a></h3>
 <p>In what follows, we describe the Efficient Global Optimization (EGO) algorithm, as published in (Jones, 1998).</p>
 <p>Let <span class="math notranslate nohighlight">\(F\)</span> be an expensive black-box function to be minimized. We sample <span class="math notranslate nohighlight">\(F\)</span> at the different locations  <span class="math notranslate nohighlight">\(X = \{x_1, x_2,\ldots,x_n\}\)</span> yielding the responses <span class="math notranslate nohighlight">\(Y = \{y_1, y_2,\ldots,y_n\}\)</span>. We build a Kriging model (also called Gaussian process) with a mean function <span class="math notranslate nohighlight">\(\mu\)</span> and a variance function <span class="math notranslate nohighlight">\(\sigma^{2}\)</span>.</p>
-<p>The next step is to compute the criterion EI. To do this, let us denote:
-$<span class="math notranslate nohighlight">\(f_{min} = \min \{y_1, y_2,\ldots,y_n\}.\)</span><span class="math notranslate nohighlight">\(
-The Expected Improvement funtion (EI) can be expressed:
-\)</span><span class="math notranslate nohighlight">\(E[I(x)] = E[\max(f_{min}-Y, 0)],\)</span><span class="math notranslate nohighlight">\(
-where \)</span>Y<span class="math notranslate nohighlight">\( is the random variable following the distribution \)</span>\mathcal{N}(\mu(x), \sigma^{2}(x))<span class="math notranslate nohighlight">\(.
-By expressing the right-hand side of EI expression as an integral, and applying some tedious integration by parts, one can express the expected improvement in closed form: 
-\)</span><span class="math notranslate nohighlight">\(
-E[I(x)] = (f_{min} - \mu(x))\Phi\left(\frac{f_{min} - \mu(x)}{\sigma(x)}\right) + \sigma(x) \phi\left(\frac{f_{min} - \mu(x)}{\sigma(x)}\right)
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\Phi(\cdot)<span class="math notranslate nohighlight">\( and \)</span>\phi(\cdot)<span class="math notranslate nohighlight">\( are respectively the cumulative and probability density functions of \)</span>\mathcal{N}(0,1)$.</p>
-<p>Next, we determine our next sampling point as :
-\begin{align}
+<p>The next step is to compute the criterion EI. To do this, let us denote:</p>
+<div class="math notranslate nohighlight">
+\[f_{min} = \min \{y_1, y_2,\ldots,y_n\}.\]</div>
+<p>The Expected Improvement funtion (EI) can be expressed:</p>
+<div class="math notranslate nohighlight">
+\[E[I(x)] = E[\max(f_{min}-Y, 0)],\]</div>
+<p>where <span class="math notranslate nohighlight">\(Y\)</span> is the random variable following the distribution <span class="math notranslate nohighlight">\(\mathcal{N}(\mu(x), \sigma^{2}(x))\)</span>.</p>
+<p>By expressing the right-hand side of EI expression as an integral, and applying some tedious integration by parts, one can express the expected improvement in closed form:</p>
+<div class="math notranslate nohighlight">
+\[ E[I(x)] = (f_{min} - \mu(x))\Phi\left(\frac{f_{min} - \mu(x)}{\sigma(x)}\right) + \sigma(x) \phi\left(\frac{f_{min} - \mu(x)}{\sigma(x)}\right) \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Phi(\cdot)\)</span> and <span class="math notranslate nohighlight">\(\phi(\cdot)\)</span> are respectively the cumulative and probability density functions of <span class="math notranslate nohighlight">\(\mathcal{N}(0,1)\)</span>.</p>
+<p>Next, we determine our next sampling point as :</p>
+<p>\begin{align}
 x_{n+1} = \arg \max_{x} \left(E[I(x)]\right)
 \end{align}</p>
 <p>We then test the response <span class="math notranslate nohighlight">\(y_{n+1}\)</span> of our black-box function <span class="math notranslate nohighlight">\(F\)</span> at <span class="math notranslate nohighlight">\(x_{n+1}\)</span>, rebuild the model taking into account the new information gained, and research the point of maximum expected improvement again.</p>
