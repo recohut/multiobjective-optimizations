@@ -1,0 +1,12 @@
+format: jb-book
+root: L069335_Multi_Objective_Optimization
+parts:
+- caption: Concepts
+  chapters:
+  - file: L492548_Efficient_Frontier
+  - file: L839342_Pareto_Optimality
+  - file: L483593_MOO_Decision_Maker
+  - file: L336869_Multi_Task_Learning
+  - file: L553498_MOO_in_Recommender_Systems
+  - file: L480379_Marketplace_Recommenders
+  - file: L556513_Multi_Objective_Hyperparameter_Optimization
