@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pareto Optimality &#8212; multiobjective-optimizations</title>
+    <title>Multi-gate Mixture-of-Experts (MMoE) &#8212; multiobjective-optimizations</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MOO Decision Maker" href="L483593_MOO_Decision_Maker.html" />
-    <link rel="prev" title="Efficient Frontier" href="L492548_Efficient_Frontier.html" />
+    <link rel="next" title="Entire Space Multi-Task Model (ESSM)" href="L519476_Entire_Space_Multi_Task_Model_%28ESSM%29.html" />
+    <link rel="prev" title="Mixture of Experts (MoE)" href="L861465_Mixture_of_Experts_%28MoE%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,14 +95,14 @@
   Concepts
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="L492548_Efficient_Frontier.html">
    Efficient Frontier
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
    Pareto Optimality
   </a>
  </li>
@@ -137,7 +137,7 @@
   Methods
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="L005003_Scalarization.html">
    Scalarization
@@ -163,8 +163,8 @@
    Mixture of Experts (MoE)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="L485744_Multi_gate_Mixture_of_Experts_%28MMoE%29.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Multi-gate Mixture-of-Experts (MMoE)
   </a>
  </li>
@@ -219,7 +219,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/L839342_Pareto_Optimality.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/L485744_Multi_gate_Mixture_of_Experts_(MMoE).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -244,7 +244,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L839342_Pareto_Optimality.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L485744_Multi_gate_Mixture_of_Experts_(MMoE).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -252,7 +252,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L839342_Pareto_Optimality.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L485744_Multi_gate_Mixture_of_Experts_(MMoE).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -275,13 +275,30 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#toy-example">
-   Toy example
+  <a class="reference internal nav-link" href="#type-of-gates">
+   Type of gates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#softmax-gate">
+     Softmax gate
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sparse-gate">
+     Sparse gate
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-partitioning-into-subsets-for-each-expert">
+   Data partitioning into subsets for each expert
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pareto-front">
-   Pareto Front
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -295,27 +312,41 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pareto-optimality">
-<h1>Pareto Optimality<a class="headerlink" href="#pareto-optimality" title="Permalink to this headline">¶</a></h1>
-<p>Pareto efficiency, or Pareto optimality, is an economic state where resources cannot be reallocated to make one individual better off without making at least one individual worse off. Pareto efficiency implies that resources are allocated in the most economically efficient manner, but does not imply equality or fairness. An economy is said to be in a Pareto optimum state when no economic changes can make one individual better off without making at least one other individual worse off.</p>
-<p><center><img src='_images/L839342_1.png'></center></p>
-<div class="section" id="toy-example">
-<h2>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this headline">¶</a></h2>
-<div class="math notranslate nohighlight">
-\[\min_x (f_1(x), f_2(x),...,f_M(x))\]</div>
-<p><span class="math notranslate nohighlight">\(min_{x \in S}(f1, f2)\)</span>, where, <em>decision variable</em> <span class="math notranslate nohighlight">\(x\)</span> is a number, <em>feasible solution set</em> <span class="math notranslate nohighlight">\(S \in [0,6]\)</span>, f<em>irst objective</em> <span class="math notranslate nohighlight">\(f_1(x) = 2(𝑥−1) + 1\)</span>, and, <em>second objective</em> <span class="math notranslate nohighlight">\(f_2(x) = 2(x-3)^2 + 1\)</span>.</p>
-<p><center><img src='_images/L839342_2.png'></center></p>
-<p>In interval of [3, 6], both 𝑓1 and 𝑓2 are increasing. Obviously, 𝑥 = 3 is the best solution in [3, 6]. However, in interval of [0, 3], 𝑓1 is creasing, but 𝑓2 is decreasing. By changing 𝑥 in [0, 3], we cannot determine which solution is better, since a decreasing one objective will make the other objective bigger. A typical multi objective dilemma!</p>
-<p>Q: What is the Pareto front of <span class="math notranslate nohighlight">\(f_2\)</span>?</p>
-<p><center><img src='_images/L839342_3.png'></center></p>
-<p><center><img src='_images/L839342_4.png'></center></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="multi-gate-mixture-of-experts-mmoe">
+<h1>Multi-gate Mixture-of-Experts (MMoE)<a class="headerlink" href="#multi-gate-mixture-of-experts-mmoe" title="Permalink to this headline">¶</a></h1>
+<p><center><figure><img src='_images/L485744_1.png'><figcaption>A multi-gate MoE for learning two tasks simultaneously.</figcaption></figure></center></p>
+<p><center><img src='_images/L485744_2.png'></center></p>
+<div class="section" id="type-of-gates">
+<h2>Type of gates<a class="headerlink" href="#type-of-gates" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="softmax-gate">
+<h3>Softmax gate<a class="headerlink" href="#softmax-gate" title="Permalink to this headline">¶</a></h3>
+<p>A classical model for <span class="math notranslate nohighlight">\(g(x)\)</span> is the softmax gate: <span class="math notranslate nohighlight">\(σ(Ax+b)\)</span>, where <span class="math notranslate nohighlight">\(σ(.)\)</span> is the softmax function, <span class="math notranslate nohighlight">\(A ∈ {\rm I\!R}^{n×p}\)</span>
+is a trainable weight matrix, and <span class="math notranslate nohighlight">\(b ∈ {\rm I\!R}^n\)</span> is a bias vector. This gate is dense, in the sense that all experts are assigned nonzero probabilities. Note that static gating (i.e., gating which does not depend on the input example) can be obtained by setting <span class="math notranslate nohighlight">\(A = 0\)</span>.</p>
 </div>
-<div class="section" id="pareto-front">
-<h2>Pareto Front<a class="headerlink" href="#pareto-front" title="Permalink to this headline">¶</a></h2>
-<p><center><img src='_images/L839342_5.png'></center></p>
-<p>Pareto fronts for four possible cases of two-objective optimization.</p>
-<p><center><img src='_images/L839342_6.png'></center></p>
-<p><center><img src='_images/L839342_7.png'></center></p></div>
+<div class="section" id="sparse-gate">
+<h3>Sparse gate<a class="headerlink" href="#sparse-gate" title="Permalink to this headline">¶</a></h3>
+<p>Assign nonzero weights to only a small subset of the experts. Sparsity in gating can have various advantages, including better computational efficiency, interpretability, and improved statistical performance in certain settings.</p>
+</div>
+</div>
+<div class="section" id="data-partitioning-into-subsets-for-each-expert">
+<h2>Data partitioning into subsets for each expert<a class="headerlink" href="#data-partitioning-into-subsets-for-each-expert" title="Permalink to this headline">¶</a></h2>
+<p>Partitioning based on input alone versus partitioning based on input-output relationship</p>
+<p>The MMoE architecture is similar to the MoE architecture, except that it has an individual gating network for each task, rather than a single one for the entire model.</p>
+<p>This allows the model to learn a per-task and per-sample weighting of each of the expert networks, instead of just a per-sample weighting. This allows the MMoE to learn to model the relationships between different tasks. Tasks which have little in common with each other will result in the gating networks of each task learning to use different expert networks.</p>
+<p>The authors of the MMoE validate this conclusion by comparing the shared-bottom, MoE, and MMoE architectures on synthetic data-sets with varying levels of task correlation.</p>
+<p><center><img src='_images/L485744_3.png'></center></p>
+<p>First, we see that the shared-bottom model underperforms in all cases relative to the MoE and MMoE models.</p>
+<p>Next, we can see that the performance gap between the MoE and MMoE models increases as correlation between the tasks decreases.</p>
+<p>This shows that the MMoE is better able to handle situations in which tasks are unrelated to each other. The larger the task diversity, the more benefit the MMoE is likely to have over the shared-bottom or MoE architectures.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://youtu.be/Dweg47Tswxw">https://youtu.be/Dweg47Tswxw</a></p></li>
+<li><p><a class="reference external" href="https://smt.readthedocs.io/en/latest/_src_docs/applications/moe.html">https://smt.readthedocs.io/en/latest/_src_docs/applications/moe.html</a></p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/multi-task-learning-with-multi-gate-mixture-of-experts-b46efac3268">https://towardsdatascience.com/multi-task-learning-with-multi-gate-mixture-of-experts-b46efac3268</a></p></li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -348,19 +379,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="L492548_Efficient_Frontier.html" title="previous page">
+        <a class="left-prev" href="L861465_Mixture_of_Experts_%28MoE%29.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Efficient Frontier</p>
+                <p class="prevnext-title">Mixture of Experts (MoE)</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="L483593_MOO_Decision_Maker.html" title="next page">
+        <a class="right-next" href="L519476_Entire_Space_Multi_Task_Model_%28ESSM%29.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">MOO Decision Maker</p>
+                <p class="prevnext-title">Entire Space Multi-Task Model (ESSM)</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

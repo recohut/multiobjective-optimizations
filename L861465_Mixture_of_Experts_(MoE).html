@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pareto Optimality &#8212; multiobjective-optimizations</title>
+    <title>Mixture of Experts (MoE) &#8212; multiobjective-optimizations</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MOO Decision Maker" href="L483593_MOO_Decision_Maker.html" />
-    <link rel="prev" title="Efficient Frontier" href="L492548_Efficient_Frontier.html" />
+    <link rel="next" title="Multi-gate Mixture-of-Experts (MMoE)" href="L485744_Multi_gate_Mixture_of_Experts_%28MMoE%29.html" />
+    <link rel="prev" title="Multi-gradient Descent (MGDRec)" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,14 +95,14 @@
   Concepts
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="L492548_Efficient_Frontier.html">
    Efficient Frontier
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
    Pareto Optimality
   </a>
  </li>
@@ -137,7 +137,7 @@
   Methods
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="L005003_Scalarization.html">
    Scalarization
@@ -158,8 +158,8 @@
    Multi-gradient Descent (MGDRec)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="L861465_Mixture_of_Experts_%28MoE%29.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Mixture of Experts (MoE)
   </a>
  </li>
@@ -219,7 +219,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/L839342_Pareto_Optimality.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/L861465_Mixture_of_Experts_(MoE).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -244,7 +244,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L839342_Pareto_Optimality.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L861465_Mixture_of_Experts_(MoE).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -252,7 +252,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L839342_Pareto_Optimality.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L861465_Mixture_of_Experts_(MoE).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -269,24 +269,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#toy-example">
-   Toy example
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pareto-front">
-   Pareto Front
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -295,27 +277,26 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pareto-optimality">
-<h1>Pareto Optimality<a class="headerlink" href="#pareto-optimality" title="Permalink to this headline">¶</a></h1>
-<p>Pareto efficiency, or Pareto optimality, is an economic state where resources cannot be reallocated to make one individual better off without making at least one individual worse off. Pareto efficiency implies that resources are allocated in the most economically efficient manner, but does not imply equality or fairness. An economy is said to be in a Pareto optimum state when no economic changes can make one individual better off without making at least one other individual worse off.</p>
-<p><center><img src='_images/L839342_1.png'></center></p>
-<div class="section" id="toy-example">
-<h2>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this headline">¶</a></h2>
-<div class="math notranslate nohighlight">
-\[\min_x (f_1(x), f_2(x),...,f_M(x))\]</div>
-<p><span class="math notranslate nohighlight">\(min_{x \in S}(f1, f2)\)</span>, where, <em>decision variable</em> <span class="math notranslate nohighlight">\(x\)</span> is a number, <em>feasible solution set</em> <span class="math notranslate nohighlight">\(S \in [0,6]\)</span>, f<em>irst objective</em> <span class="math notranslate nohighlight">\(f_1(x) = 2(𝑥−1) + 1\)</span>, and, <em>second objective</em> <span class="math notranslate nohighlight">\(f_2(x) = 2(x-3)^2 + 1\)</span>.</p>
-<p><center><img src='_images/L839342_2.png'></center></p>
-<p>In interval of [3, 6], both 𝑓1 and 𝑓2 are increasing. Obviously, 𝑥 = 3 is the best solution in [3, 6]. However, in interval of [0, 3], 𝑓1 is creasing, but 𝑓2 is decreasing. By changing 𝑥 in [0, 3], we cannot determine which solution is better, since a decreasing one objective will make the other objective bigger. A typical multi objective dilemma!</p>
-<p>Q: What is the Pareto front of <span class="math notranslate nohighlight">\(f_2\)</span>?</p>
-<p><center><img src='_images/L839342_3.png'></center></p>
-<p><center><img src='_images/L839342_4.png'></center></p>
-</div>
-<div class="section" id="pareto-front">
-<h2>Pareto Front<a class="headerlink" href="#pareto-front" title="Permalink to this headline">¶</a></h2>
-<p><center><img src='_images/L839342_5.png'></center></p>
-<p>Pareto fronts for four possible cases of two-objective optimization.</p>
-<p><center><img src='_images/L839342_6.png'></center></p>
-<p><center><img src='_images/L839342_7.png'></center></p></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="mixture-of-experts-moe">
+<h1>Mixture of Experts (MoE)<a class="headerlink" href="#mixture-of-experts-moe" title="Permalink to this headline">¶</a></h1>
+<p>Mixture of experts aims at increasing the accuracy of a function approximation by replacing a single global model by a weighted sum of local models (experts). It is based on a partition of the problem domain into several subdomains via clustering algorithms followed by a local expert training on each subdomain.</p>
+<p>The mixture-of-experts architecture improves upon the shared-bottom model by creating multiple expert networks and adding a gating network to weight each expert network’s output.</p>
+<p><center><img src='_images/L861465_1.png'></center></p>
+<p>Although the technique was initially described using neural network experts and gating models, it can be generalized to use models of any type. As such, it shows a strong similarity to stacked generalization and belongs to the class of ensemble learning methods referred to as meta-learning.</p>
+<p>Two major components are needed in any MoE model: a set of experts (neural networks) and one or more trainable gates. A gate selects a combination of the experts that is specific to each input example. This allows experts to specialize in different partitions of the input space, which has the potential to improve the predictive performance and interpretability.</p>
+<p>The MOE method strongly relies on the Expectation-Maximization (EM) algorithm for Gaussian mixture models (GMM). With an aim of regression, the different steps are the following:</p>
+<ol class="simple">
+<li><p>Clustering: the inputs are clustered together with their output values by means of parameter estimation of the joint distribution.</p></li>
+<li><p>Local expert training: A local expert is then built (linear, quadratic, cubic, radial basis functions, or different forms of kriging) on each cluster.</p></li>
+<li><p>Recombination: all the local experts are finally combined using the Gaussian mixture model parameters found by the EM algorithm to get a global model.</p></li>
+</ol>
+<p>When local models <span class="math notranslate nohighlight">\(y_i\)</span> are known, the global model would be:</p>
+<p><span class="math notranslate nohighlight">\(\hat{y}({\bf x})=\sum_{i=1}^{K} \mathbb{P}(\kappa=i|X={\bf x}) \hat{y_i}({\bf x})\)</span></p>
+<p>which is the classical probability expression of mixture of experts. In this equation, <span class="math notranslate nohighlight">\(K\)</span> is the number of Gaussian components, <span class="math notranslate nohighlight">\(P(κ=i|X=x)\)</span>, denoted by gating network, is the probability to lie in cluster <span class="math notranslate nohighlight">\(i\)</span> knowing that <span class="math notranslate nohighlight">\(X=x\)</span> and <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> is the local expert built on cluster <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p><center><figure><img src='_images/L861465_2.png'><figcaption>An example of a MoE that can be used as a standalone learner or layer in a neural network.</figcaption></figure></center></p>
+<p>Each expert network is essentially a unique shared bottom network, each using the same network architecture. The assumption is that each expert network is able to learn different patterns in the data and focus on different things.</p>
+<p>The gating network then produces a weighting scheme such that the task is able to use a weighted average of the outputs of the expert networks, conditioned on the input data. The gating network’s final layer is a softmax layer (<strong>g(x)</strong>), which is used to produce a linear combination of the expert networks’ outputs (<strong>y</strong>).</p>
+<p>The main innovation with this architecture is that the model is able to activate parts of the network differently on a per-sample basis. Since the gating network is conditioned on the input data (due to the gating network being trained as a part of training the overall model), the model is able to learn how to weight each expert network based on the properties of the input data.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -348,19 +329,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="L492548_Efficient_Frontier.html" title="previous page">
+        <a class="left-prev" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Efficient Frontier</p>
+                <p class="prevnext-title">Multi-gradient Descent (MGDRec)</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="L483593_MOO_Decision_Maker.html" title="next page">
+        <a class="right-next" href="L485744_Multi_gate_Mixture_of_Experts_%28MMoE%29.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">MOO Decision Maker</p>
+                <p class="prevnext-title">Multi-gate Mixture-of-Experts (MMoE)</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

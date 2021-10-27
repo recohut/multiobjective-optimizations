@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pareto Optimality &#8212; multiobjective-optimizations</title>
+    <title>Expected Hypervolume Improvement (EHVI) &#8212; multiobjective-optimizations</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MOO Decision Maker" href="L483593_MOO_Decision_Maker.html" />
-    <link rel="prev" title="Efficient Frontier" href="L492548_Efficient_Frontier.html" />
+    <link rel="next" title="Multi-gradient Descent (MGDRec)" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html" />
+    <link rel="prev" title="Shared Bottom" href="L762719_Shared_Bottom.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,14 +93,14 @@
   Concepts
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="L492548_Efficient_Frontier.html">
    Efficient Frontier
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
    Pareto Optimality
   </a>
  </li>
@@ -137,7 +135,7 @@
   Methods
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="L005003_Scalarization.html">
    Scalarization
@@ -148,8 +146,8 @@
    Shared Bottom
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="L915313_Expected_Hypervolume_Improvement_%28EHVI%29.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Expected Hypervolume Improvement (EHVI)
   </a>
  </li>
@@ -219,7 +217,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/L839342_Pareto_Optimality.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/L915313_Expected_Hypervolume_Improvement_(EHVI).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -244,7 +242,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L839342_Pareto_Optimality.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L915313_Expected_Hypervolume_Improvement_(EHVI).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -252,7 +250,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L839342_Pareto_Optimality.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L915313_Expected_Hypervolume_Improvement_(EHVI).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -269,24 +267,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#toy-example">
-   Toy example
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pareto-front">
-   Pareto Front
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -295,27 +275,20 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pareto-optimality">
-<h1>Pareto Optimality<a class="headerlink" href="#pareto-optimality" title="Permalink to this headline">¶</a></h1>
-<p>Pareto efficiency, or Pareto optimality, is an economic state where resources cannot be reallocated to make one individual better off without making at least one individual worse off. Pareto efficiency implies that resources are allocated in the most economically efficient manner, but does not imply equality or fairness. An economy is said to be in a Pareto optimum state when no economic changes can make one individual better off without making at least one other individual worse off.</p>
-<p><center><img src='_images/L839342_1.png'></center></p>
-<div class="section" id="toy-example">
-<h2>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this headline">¶</a></h2>
-<div class="math notranslate nohighlight">
-\[\min_x (f_1(x), f_2(x),...,f_M(x))\]</div>
-<p><span class="math notranslate nohighlight">\(min_{x \in S}(f1, f2)\)</span>, where, <em>decision variable</em> <span class="math notranslate nohighlight">\(x\)</span> is a number, <em>feasible solution set</em> <span class="math notranslate nohighlight">\(S \in [0,6]\)</span>, f<em>irst objective</em> <span class="math notranslate nohighlight">\(f_1(x) = 2(𝑥−1) + 1\)</span>, and, <em>second objective</em> <span class="math notranslate nohighlight">\(f_2(x) = 2(x-3)^2 + 1\)</span>.</p>
-<p><center><img src='_images/L839342_2.png'></center></p>
-<p>In interval of [3, 6], both 𝑓1 and 𝑓2 are increasing. Obviously, 𝑥 = 3 is the best solution in [3, 6]. However, in interval of [0, 3], 𝑓1 is creasing, but 𝑓2 is decreasing. By changing 𝑥 in [0, 3], we cannot determine which solution is better, since a decreasing one objective will make the other objective bigger. A typical multi objective dilemma!</p>
-<p>Q: What is the Pareto front of <span class="math notranslate nohighlight">\(f_2\)</span>?</p>
-<p><center><img src='_images/L839342_3.png'></center></p>
-<p><center><img src='_images/L839342_4.png'></center></p>
-</div>
-<div class="section" id="pareto-front">
-<h2>Pareto Front<a class="headerlink" href="#pareto-front" title="Permalink to this headline">¶</a></h2>
-<p><center><img src='_images/L839342_5.png'></center></p>
-<p>Pareto fronts for four possible cases of two-objective optimization.</p>
-<p><center><img src='_images/L839342_6.png'></center></p>
-<p><center><img src='_images/L839342_7.png'></center></p></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="expected-hypervolume-improvement-ehvi">
+<h1>Expected Hypervolume Improvement (EHVI)<a class="headerlink" href="#expected-hypervolume-improvement-ehvi" title="Permalink to this headline">¶</a></h1>
+<p>It turns out it is possible to attack a multi-objective problem directly, without scalarizing, with a cleverly constructed acquisition function: the <strong>Expected Hypervolume Improvement</strong>.</p>
+<p>The Pareto frontier generalizes the notion of optimizing to more than one dimension. But one can’t “maximize the frontier” – what does that even mean? To maximize (or minimize) a thing, we must have a notion of comparison between its possible values. For a single dimension, we compare magnitudes. How then, can we generalize comparison to multiple dimensions? By comparing volumes! Enter the Expected Hypervolume Improvement (EHVI) acquisition function. It’s perhaps best understood with a walkthrough.</p>
+<p>Suppose we have a Pareto frontier of points initialized by randomly sampling the hyperparameter space. Even though these hyperparameter configurations were sampled randomly, we can still draw a Pareto frontier, which is just the set of points that are not dominated by others. We additionally choose a reference point that is completely dominated by the entire Pareto frontier (by every point on it). The hypervolume of interest is the volume occupied between the reference point and the Pareto frontier. With 2 objectives, the hypervolume is just the area. We are looking for points that increase this volume, which, intuitively, are points that push the Pareto frontier out, away from the reference point.</p>
+<p><center><figure><img src='_images/L915313_1.png'><figcaption>The green shaded region is the hypervolume between the points on the Pareto frontier and the reference point, in this case, at the origin of the chart.</figcaption></figure></center></p>
+<p>When we draw a new point, we sample from the <em>hyperparameter</em> space, but we want a volume improvement in the <em>objective space</em>. Our surrogate model – usually consisting of an independent Gaussian Process model for each objective – is approximating how input hyperparameters will result in output objective values, and the goal is to choose input hyperparameters that maximize the expected hypervolume improvement in the output space.</p>
+<p>Choosing points that maximize the expected hypervolume improvement is itself an optimization problem, just like finding those that maximize expected improvement or probability of improvement in the single-objective case. We can perform this optimization using our surrogate functions, which are fast to compute. If we knew the objective function perfectly, the hypervolume improvement from adding a new point might look something like this.</p>
+<p><center><figure><img src='_images/L915313_2.png'><figcaption>The red shaded region is the hypervolume improvement that would result from adding the new candidate point.</figcaption></figure></center></p>
+<p>However, we don’t know that objective function perfectly—we’re modelling it with surrogate functions (one for each objective). The surrogate functions come with uncertainty attached, since they’re just our best approximation of the objective function. Because of that uncertainty, we can’t be sure exactly where on the accuracy-speed space a given hyperparameter combination will land us, so the picture looks a little more like this.</p>
+<p><center><figure><img src='_images/L915313_3.png'><figcaption>In reality, we don’t know the objective function perfectly—we are modeling it with a surrogate function that has uncertainty. The fuzzy point and area on the chart indicate that the exact location of the point, and thus the associated hypervolume improvement, are uncertain.</figcaption></figure></center></p>
+<p>This uncertainty is the reason we compute the <em>Expected</em> HVI, which means integrating over the uncertainty. There are fast computational methods for doing so using Monte Carlo and discretizing the space. Fortunately, evaluating the EHVI is not nearly as expensive as training an ML model and finding the true hypervolume improvement. So we can find the point that maximizes the EHVI using iterative methods (think <a class="reference external" href="https://en.wikipedia.org/wiki/Broyden-Fletcher-Goldfarb-Shanno_algorithm">BFGS</a>). This is made all the faster by having exact gradients of the MC estimate of the EHVI, thanks to modern auto-differentiation tools.<a class="reference external" href="https://blog.fastforwardlabs.com/2021/07/07/exploring-multi-objective-hyperparameter-optimization.html#fn:5">5</a></p>
+<p>We evaluate the objective function at the suggested hyperparameters, and update our surrogate models. We can repeat this process for as long as our compute budget allows. By maximizing the hypervolume between the reference point (origin) and the Pareto frontier, we effectively construct the frontier itself!</p>
+<p>There are two notable enhancements to expected hypervolume improvement. The first, qEHVI, allows for parallel suggested points. The second, MOTPE, replaces the GP models of the objectives with tree-structured Parzen estimators.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -348,19 +321,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="L492548_Efficient_Frontier.html" title="previous page">
+        <a class="left-prev" href="L762719_Shared_Bottom.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Efficient Frontier</p>
+                <p class="prevnext-title">Shared Bottom</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="L483593_MOO_Decision_Maker.html" title="next page">
+        <a class="right-next" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">MOO Decision Maker</p>
+                <p class="prevnext-title">Multi-gradient Descent (MGDRec)</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pareto Optimality &#8212; multiobjective-optimizations</title>
+    <title>Multi-gradient Descent (MGDRec) &#8212; multiobjective-optimizations</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MOO Decision Maker" href="L483593_MOO_Decision_Maker.html" />
-    <link rel="prev" title="Efficient Frontier" href="L492548_Efficient_Frontier.html" />
+    <link rel="next" title="Mixture of Experts (MoE)" href="L861465_Mixture_of_Experts_%28MoE%29.html" />
+    <link rel="prev" title="Expected Hypervolume Improvement (EHVI)" href="L915313_Expected_Hypervolume_Improvement_%28EHVI%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,14 +93,14 @@
   Concepts
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="L492548_Efficient_Frontier.html">
    Efficient Frontier
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
    Pareto Optimality
   </a>
  </li>
@@ -137,7 +135,7 @@
   Methods
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="L005003_Scalarization.html">
    Scalarization
@@ -153,8 +151,8 @@
    Expected Hypervolume Improvement (EHVI)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Multi-gradient Descent (MGDRec)
   </a>
  </li>
@@ -219,7 +217,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/L839342_Pareto_Optimality.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/L587138_Multi_gradient_Descent_(MGDRec).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -244,7 +242,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L839342_Pareto_Optimality.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L587138_Multi_gradient_Descent_(MGDRec).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -252,7 +250,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L839342_Pareto_Optimality.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L587138_Multi_gradient_Descent_(MGDRec).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -275,13 +273,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#toy-example">
-   Toy example
+  <a class="reference internal nav-link" href="#training-procedure">
+   Training procedure
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pareto-front">
-   Pareto Front
+  <a class="reference internal nav-link" href="#codebase">
+   Codebase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
   </a>
  </li>
 </ul>
@@ -295,27 +298,21 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pareto-optimality">
-<h1>Pareto Optimality<a class="headerlink" href="#pareto-optimality" title="Permalink to this headline">¶</a></h1>
-<p>Pareto efficiency, or Pareto optimality, is an economic state where resources cannot be reallocated to make one individual better off without making at least one individual worse off. Pareto efficiency implies that resources are allocated in the most economically efficient manner, but does not imply equality or fairness. An economy is said to be in a Pareto optimum state when no economic changes can make one individual better off without making at least one other individual worse off.</p>
-<p><center><img src='_images/L839342_1.png'></center></p>
-<div class="section" id="toy-example">
-<h2>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this headline">¶</a></h2>
-<div class="math notranslate nohighlight">
-\[\min_x (f_1(x), f_2(x),...,f_M(x))\]</div>
-<p><span class="math notranslate nohighlight">\(min_{x \in S}(f1, f2)\)</span>, where, <em>decision variable</em> <span class="math notranslate nohighlight">\(x\)</span> is a number, <em>feasible solution set</em> <span class="math notranslate nohighlight">\(S \in [0,6]\)</span>, f<em>irst objective</em> <span class="math notranslate nohighlight">\(f_1(x) = 2(𝑥−1) + 1\)</span>, and, <em>second objective</em> <span class="math notranslate nohighlight">\(f_2(x) = 2(x-3)^2 + 1\)</span>.</p>
-<p><center><img src='_images/L839342_2.png'></center></p>
-<p>In interval of [3, 6], both 𝑓1 and 𝑓2 are increasing. Obviously, 𝑥 = 3 is the best solution in [3, 6]. However, in interval of [0, 3], 𝑓1 is creasing, but 𝑓2 is decreasing. By changing 𝑥 in [0, 3], we cannot determine which solution is better, since a decreasing one objective will make the other objective bigger. A typical multi objective dilemma!</p>
-<p>Q: What is the Pareto front of <span class="math notranslate nohighlight">\(f_2\)</span>?</p>
-<p><center><img src='_images/L839342_3.png'></center></p>
-<p><center><img src='_images/L839342_4.png'></center></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="multi-gradient-descent-mgdrec">
+<h1>Multi-gradient Descent (MGDRec)<a class="headerlink" href="#multi-gradient-descent-mgdrec" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="training-procedure">
+<h2>Training procedure<a class="headerlink" href="#training-procedure" title="Permalink to this headline">¶</a></h2>
+<p><center><img src='_images/L587138_1.png'></center></p>
 </div>
-<div class="section" id="pareto-front">
-<h2>Pareto Front<a class="headerlink" href="#pareto-front" title="Permalink to this headline">¶</a></h2>
-<p><center><img src='_images/L839342_5.png'></center></p>
-<p>Pareto fronts for four possible cases of two-objective optimization.</p>
-<p><center><img src='_images/L839342_6.png'></center></p>
-<p><center><img src='_images/L839342_7.png'></center></p></div>
+<div class="section" id="codebase">
+<h2>Codebase<a class="headerlink" href="#codebase" title="Permalink to this headline">¶</a></h2>
+<p><center><img src='_images/L587138_2.png'></center></p>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p><center><figure><img src='_images/L587138_3.png'><figcaption>Results for two objectives: semantic relevance and revenue, on Movielens dataset combined with Amazon Movies dataset.</figcaption></figure></center></p>
+<p><center><figure><img src='_images/L587138_4.png'><figcaption>Results for two objectives: semantic relevance and revenue, on Amazon Books dataset.</figcaption></figure></center></p>
+<p><center><figure><img src='_images/L587138_5.png'><figcaption>Results for experiments with two objectives semantic: semantic relevance and content quality, on the Movielens dataset combined with Amazon Movies dataset.</figcaption></figure></center></p></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -348,19 +345,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="L492548_Efficient_Frontier.html" title="previous page">
+        <a class="left-prev" href="L915313_Expected_Hypervolume_Improvement_%28EHVI%29.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Efficient Frontier</p>
+                <p class="prevnext-title">Expected Hypervolume Improvement (EHVI)</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="L483593_MOO_Decision_Maker.html" title="next page">
+        <a class="right-next" href="L861465_Mixture_of_Experts_%28MoE%29.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">MOO Decision Maker</p>
+                <p class="prevnext-title">Mixture of Experts (MoE)</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
