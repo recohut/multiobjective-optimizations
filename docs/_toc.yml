@@ -10,3 +10,13 @@ parts:
   - file: L553498_MOO_in_Recommender_Systems
   - file: L480379_Marketplace_Recommenders
   - file: L556513_Multi_Objective_Hyperparameter_Optimization
+- caption: Methods
+  chapters:
+  - file: L005003_Scalarization
+  - file: L762719_Shared_Bottom
+  - file: L915313_Expected_Hypervolume_Improvement_(EHVI)
+  - file: L587138_Multi_gradient_Descent_(MGDRec)
+  - file: L861465_Mixture_of_Experts_(MoE)
+  - file: L485744_Multi_gate_Mixture_of_Experts_(MMoE)
+  - file: L519476_Entire_Space_Multi_Task_Model_(ESSM)
+  - file: L718205_Progressive_Layered_Extraction_(PLE)
