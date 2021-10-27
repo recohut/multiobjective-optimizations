@@ -20,3 +20,9 @@ parts:
   - file: L485744_Multi_gate_Mixture_of_Experts_(MMoE)
   - file: L519476_Entire_Space_Multi_Task_Model_(ESSM)
   - file: L718205_Progressive_Layered_Extraction_(PLE)
+- caption: Cases
+  chapters:
+  - file: L749932_MTL_for_Related_Products_Recommendations_at_Pinterest
+  - file: L792752_UberEats
+  - file: L106645_Etsy
+  - file: L149938_Airbnb_Experiences
