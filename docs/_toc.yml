@@ -26,3 +26,24 @@ parts:
   - file: L792752_UberEats
   - file: L106645_Etsy
   - file: L149938_Airbnb_Experiences
+- caption: Tutorials
+  chapters:
+  - file: T929652_Efficient_Frontier
+  - file: T854417_Linear_Optimization_with_OR_Tools
+  - file: T209908_Stein's_Paradox
+  - file: T423887_Solving_MOO_with_SMT_Toolkit
+  - file: T277640_Efficient_Continuous_Pareto_Exploration_in_MTL_on_UCI_Census
+  - file: T851476_Multi_Task_Learning
+  - file: T307666_Pareto_Efficient_algorithm_for_MOO
+  - file: T465017_Shared_Bottom_in_Tensorflow
+  - file: T175823_MoE_in_Tensorflow
+  - file: T580632_MMoE_on_Census_income_data_in_Tensorflow
+  - file: T948705_Sparsely_gated_Mixture_of_Experts
+  - file: T458949_Multi_Objective_Ranking_using_Constrained_Optimization_in_GBTs
+  - file: T145475_Multi_objective_Optimization_using_Pymoo_Library
+  - file: T892775_Exploring_Multi_Objective_Hyperparameter_Optimization
+  - file: T660394_Implicit_Hybrid_Movie_Recommender_using_Collie_Library
+  - file: T559084_Multi_task_Learning_on_ML_100k_in_TFRS
+  - file: T368830_Multi_Task_Recommender_on_Olist_dataset_using_TFRS_Library
+  - file: T671443_MAMO_Framework
+  - file: T952247_MKR
