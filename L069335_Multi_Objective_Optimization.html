@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Objective Optimization &#8212; multiobjective-optimizations</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Efficient Frontier" href="L492548_Efficient_Frontier.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">multiobjective-optimizations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Multi-Objective Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Concepts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L492548_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
+   Pareto Optimality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L483593_MOO_Decision_Maker.html">
+   MOO Decision Maker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L336869_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L553498_MOO_in_Recommender_Systems.html">
+   MOO in Recommender Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L480379_Marketplace_Recommenders.html">
+   Marketplace Recommenders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L556513_Multi_Objective_Hyperparameter_Optimization.html">
+   Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/L069335_Multi_Objective_Optimization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L069335_Multi_Objective_Optimization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L069335_Multi_Objective_Optimization.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-formulation">
+   Problem formulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenario-optimal-fruit-choice">
+   Scenario: Optimal fruit choice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenario-cement-factory">
+   Scenario: Cement factory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenario-accuracy-vs-speed-tradeoff">
+   Scenario: Accuracy vs speed tradeoff
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="multi-objective-optimization">
+<h1>Multi-Objective Optimization<a class="headerlink" href="#multi-objective-optimization" title="Permalink to this headline">¶</a></h1>
+<p>Many people may not realize that Multi Objective Problems (MOP) could be general in our life and society. Every day we are making decisions trying to compromise among different objectives. If you were a car buyer, you want to lower price and gas consumption, and higher level of comfort and performance. With limited budget, these objectives are conflict each other. You need to balance between lower price or gas consumption and comfort or performance. On the society level, the central bank’s monetary policy needs to balance among inflation rate, unemployment rate, trade deficit and other economic factors. Lower interest rate may reduce the unemployment but may increase the risk of inflation at same time. We can find similar situations in other areas such as engineering and communication designs. In each situation, the decision maker (DM) wants to optimize more than one objective, which are conflict each other in most of cases.</p>
+<div class="section" id="problem-formulation">
+<h2>Problem formulation<a class="headerlink" href="#problem-formulation" title="Permalink to this headline">¶</a></h2>
+<p>A multi-objective optimization problem is an optimization problem in which several possibly conflicting objectives are being optimized simultaneously. It can be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[\min_{w \in R^D} L(w) = \min_{w \in R^D} \bigg| L_1(w), L_2(w),\dots,L_n(w) \bigg|^{}_{n \times 1}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the number of objectives to optimize, <span class="math notranslate nohighlight">\(w\)</span> the model parameters, <span class="math notranslate nohighlight">\(D\)</span> is the total number of parameters, <span class="math notranslate nohighlight">\(L_i:R^D \rightarrow R,\ i=1,\dots,n\)</span>, <span class="math notranslate nohighlight">\(L_i\)</span> is a single objective loss function, and <span class="math notranslate nohighlight">\(L\)</span> is the multi-objective loss function. Operator <span class="math notranslate nohighlight">\(\min\)</span> represents the operation of minimization of all objectives simultaneously. This is not a limiting factor, because, without loss of generality, any maximization problem can be transformed into a minimization problem.</p>
+<p>In case that a gradient-based optimization algorithm is applied, the gradient of every constituent loss function <span class="math notranslate nohighlight">\(\nabla_wL_i(w)\)</span> has to be a Lipschitz continuous function (Murphy, 2013).</p>
+</div>
+<div class="section" id="scenario-optimal-fruit-choice">
+<h2>Scenario: Optimal fruit choice<a class="headerlink" href="#scenario-optimal-fruit-choice" title="Permalink to this headline">¶</a></h2>
+<p>Let’s understand with an example. Imagine you want to eat a fruit and you have conditions - the fruit should be healthy as well as tasty. Based on your knowledge, you draw the following diagram to decide which fruit to eat:</p>
+<p><center><figure><img src='_images/L069335_1.png'><figcaption>[source](https://www.alexirpan.com/public/fruit-opinion/xkcdfruit.png)</figcaption></figure></center></p>
+<p>So which one is the best to eat? The answer is that there is no single optimal choice here but three - Peaches, Strawberries, and Seedless grapes. These 3 fruits are at the Pareto Front (don’t worry, we are going to learn this concept) and called non-dominated and therefore optimal choices.</p>
+</div>
+<div class="section" id="scenario-cement-factory">
+<h2>Scenario: Cement factory<a class="headerlink" href="#scenario-cement-factory" title="Permalink to this headline">¶</a></h2>
+<p>Let’s say we run a cement factory and looking to optimize our profits. But as per regulations and ethics, we also need to take care of health impacts to nearby communities. So let’s understand how we can formulate this situation as MOO. Objective 1 could be to maximize production to maximize profit. Objective 2 could be to minimize hazardous wastes to protect health of nearby communities. How to solve the contradiction between objectives? - we can do that by compromising. Given these objectives, one way to formulate our goal is <em><strong>Max(Profit) s.t. Produced hazards ≤ Max allowable value.</strong></em> We can alternatively formulate our goal as <em><strong>Max(Profit/Hazards)</strong></em>.</p>
+</div>
+<div class="section" id="scenario-accuracy-vs-speed-tradeoff">
+<h2>Scenario: Accuracy vs speed tradeoff<a class="headerlink" href="#scenario-accuracy-vs-speed-tradeoff" title="Permalink to this headline">¶</a></h2>
+<p>We can frame the multi-objective optimization problem as a search for optimal tradeoffs. Let’s imagine that we really care about exactly two objectives: predictive accuracy, and the speed at which we can make a prediction.</p>
+<p>Unfortunately, these things are likely to be in tension. It may be possible to construct a very accurate classifier by using extremely large models, or stacking several ML algorithms, or by performing many complex feature transformations. All of these things increase the computation necessary to make a prediction, and thus slow us down.</p>
+<p>Imagine we randomly sampled hyperparameter configurations and measured the speed and accuracy of the resulting models. We would surely find some configurations that result in algorithms being both slower and less accurate than others. Speaking technically, if one point—call it <code class="docutils literal notranslate"><span class="pre">A</span></code>—is better than another point—<code class="docutils literal notranslate"><span class="pre">B</span></code>—in one dimension, and at least as good in all other dimensions, we say <code class="docutils literal notranslate"><span class="pre">A</span></code> <em>dominates</em> <code class="docutils literal notranslate"><span class="pre">B</span></code>. We’d never want to deploy dominated models, since there are other models that are strictly better in both the optimization objectives.</p>
+<p><center><figure><img src='_images/L069335_2.png'><figcaption>As we try different hyperparameter configurations, we’ll find that the resultant models represent different accuracy-speed trade offs. We can visualize each model as a point in the trade off space.</figcaption></figure></center></p>
+<p>It’s possible we’d find one point that maximizes both the accuracy and speed of our predictions. In practice, this is unlikely. We might improve accuracy by using deeper trees in a random forest, but deeper trees also take longer to evaluate, so we have traded off some speed for accuracy.</p>
+<p>Eventually, we’ll discern an edge in the accuracy-speed tradeoff space, where we cannot find a hyperparameter combination that leads to an improvement in one direction without a negative impact on the other. This edge is called the <em>Pareto frontier</em>, and allows us to make a quantitative tradeoff between our optimization objectives. The Pareto frontier is constructed from the set of non-dominated points, and choosing any one of them gives us our exact accuracy/speed tradeoff.</p>
+<p><center><figure><img src='_images/L069335_3.png'><figcaption>As we try different hyperparameter configurations, we’ll find that the resultant models represent different accuracy-speed trade offs. We can visualize each model as a point in the trade off space.</figcaption></figure></center></p>
+<p>Ultimately, a deployed ML system will be trained with a single hyperparameter combination, and we must choose a single <em>point</em> in the accuracy-speed plane. The Pareto frontier allows us to present a decision maker with a host of models, some maximizing accuracy, others maximizing speed, and the entire spectrum in between.</p>
+<p>How do we find this frontier? We could construct it with a dense random sampling of the hyperparameter search space. This risks being inefficient. We’d like to spend as little time as possible sampling configurations that aren’t likely to expand the Pareto frontier. Every sample on the frontier is useful, because they let us trade off accuracy and speed in a new combination. Samples inside the frontier end up being useless.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="L492548_Efficient_Frontier.html">Efficient Frontier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L839342_Pareto_Optimality.html">Pareto Optimality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L483593_MOO_Decision_Maker.html">MOO Decision Maker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L336869_Multi_Task_Learning.html">Multi-Task Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L553498_MOO_in_Recommender_Systems.html">MOO in Recommender Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L480379_Marketplace_Recommenders.html">Marketplace Recommenders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L556513_Multi_Objective_Hyperparameter_Optimization.html">Multi-Objective Hyperparameter Optimization</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Multi-Objective Recommendations: A Tutorial. Yong Zheng, David Wang. 2021. RecSys. <a class="reference external" href="https://arxiv.org/abs/2108.06367">https://arxiv.org/abs/2108.06367</a></p></li>
+<li><p>Progressive Layered Extraction. H. Tang, J. Liu, M. Zhao, X. Gong. 2020. RecSys. <a class="reference external" href="https://dl.acm.org/doi/abs/10.1145/3383313.3412236">https://dl.acm.org/doi/abs/10.1145/3383313.3412236</a></p></li>
+<li><p>A Pareto-Efficient Algorithm for Multiple Objective Optimization in E-Commerce Recommendation. Lin et. al.. 2019. RecSys. <a class="reference external" href="http://www.yongfeng.me/attach/lin-recsys2019.pdf">http://www.yongfeng.me/attach/lin-recsys2019.pdf</a></p></li>
+<li><p>Multiple Objective Optimization in Recommender Systems. Mario Rodriguez , Christian Posse , Ethan Zhang Authors Info &amp; Claims. 2012. RecSys. <a class="reference external" href="https://dl.acm.org/doi/10.1145/2365952.2365961">https://dl.acm.org/doi/10.1145/2365952.2365961</a></p></li>
+<li><p>Advances in Recommender Systems: From Multi-stakeholder Marketplaces to Automated RecSys. Rishabh Mehrotra , Ben Carterette , Yong Li , Quanming Yao , Chen Gao , James Kwok , Qiang Yang , Isabelle Guyon. 2020. KDD. <a class="reference external" href="https://dl.acm.org/doi/abs/10.1145/3394486.3406463">https://dl.acm.org/doi/abs/10.1145/3394486.3406463</a></p></li>
+<li><p>MMoE: Modeling Task Relationships in Multi-task Learning with Multi-gate Mixture-of-Experts. Jiaqi Ma , Zhe Zhao , Xinyang Yi , Jilin Chen , Lichan Hong , Ed H. Chi. 2018. KDD. <a class="reference external" href="https://dl.acm.org/doi/10.1145/3219819.3220007">https://dl.acm.org/doi/10.1145/3219819.3220007</a></p></li>
+<li><p>An Overview of Multi-Task Learning in Deep Neural Networks. Sebastian Ruder. 2017. arXiv. <a class="reference external" href="https://arxiv.org/abs/1706.05098">https://arxiv.org/abs/1706.05098</a></p></li>
+<li><p>Recommending What Video to Watch Next: A Multitask Ranking System. Zhe Zhao, Lichan Hong, Li Wei, Jilin Chen, Aniruddh Nath, Shawn Andrews, Aditee Kumthekar, Maheswaran Sathiamoorthy, Xinyang Yi, Ed Chi. 2019. RecSys. <a class="reference external" href="https://daiwk.github.io/assets/youtube-multitask.pdf">https://daiwk.github.io/assets/youtube-multitask.pdf</a></p></li>
+<li><p>Progressive Layered Extraction (PLE): A Novel Multi-Task Learning (MTL) Model for Personalized Recommendations. Hongyan Tang , Junning Liu , Ming Zhao , Xudong Gong. 2020. RecSys. <a class="reference external" href="https://dl.acm.org/doi/10.1145/3383313.3412236">https://dl.acm.org/doi/10.1145/3383313.3412236</a></p></li>
+<li><p>Multi-Task Feature Learning for Knowledge Graph Enhanced Recommendation. Hongwei Wang, Fuzheng Zhang, Miao Zhao, Wenjie Li, Xing Xie, Minyi Guo. 2019. arXiv. <a class="reference external" href="https://arxiv.org/abs/1901.08907">https://arxiv.org/abs/1901.08907</a></p></li>
+<li><p>Multi-Gradient Descent for Multi-Objective Recommender Systems. Nikola Milojkovic, Diego Antognini, Giancarlo Bergamin, Boi Faltings, Claudiu Musat. 2020. arXiv. <a class="reference external" href="https://arxiv.org/abs/2001.00846">https://arxiv.org/abs/2001.00846</a></p></li>
+<li><p>Multi Objective Pareto Efficient Approaches for Recommender Systems. Marco Tulio Ribeiro , Nivio Ziviani , Edleno Silva De Moura , Itamar Hata , Anisio Lacerda , Adriano Veloso. 2015. arXiv. <a class="reference external" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.721.3102&amp;rep=rep1&amp;type=pdf">https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.721.3102&amp;rep=rep1&amp;type=pdf</a></p></li>
+<li><p>Multi-FR: A Multi-Objective Optimization Method for Achieving Two-sided Fairness in E-commerce Recommendation. Haolun Wu Chen Ma Bhaskar Mitra Fernando Diaz Xue Liu. 2021. arXiv. <a class="reference external" href="https://arxiv.org/abs/2105.02951">https://arxiv.org/abs/2105.02951</a></p></li>
+<li><p>Pareto Optimisation: Multi-Task Learning with User Preferences.  2020.  <a class="reference external" href="https://youtu.be/mgxrjGw6WKU">https://youtu.be/mgxrjGw6WKU</a></p></li>
+<li><p>Fairness-Aware Group Recommendation with Pareto-Efficiency. Lin Xiao , Zhang Min , Zhang Yongfeng , Gu Zhaoquan , Liu Yiqun , Ma Shaoping. 2017. RecSys. <a class="reference external" href="https://dl.acm.org/doi/10.1145/3109859.3109887">https://dl.acm.org/doi/10.1145/3109859.3109887</a></p></li>
+<li><p>Multi-Task Learning as Multi-Objective Optimization. Ozan Sener, Vladlen Koltun. 2018. arXiv. <a class="reference external" href="https://arxiv.org/abs/1810.04650">https://arxiv.org/abs/1810.04650</a></p></li>
+<li><p>Efficient Continuous Pareto Exploration in Multi-Task Learning. Pingchuan Ma, Tao Du, Wojciech Matusik. 2020. arXiv. <a class="reference external" href="https://arxiv.org/abs/2006.16434">https://arxiv.org/abs/2006.16434</a></p></li>
+<li><p>ESSM: Entire Space Multi-Task Model: An Effective Approach for Estimating Post-Click Conversion Rate. Xiao Ma, Liqin Zhao, Guan Huang, Zhi Wang, Zelin Hu, Xiaoqiang Zhu, Kun Gai. 2018. SIGIR. <a class="reference external" href="https://arxiv.org/abs/1804.07931">https://arxiv.org/abs/1804.07931</a></p></li>
+<li><p>Multitask Learning. Rich Caruana. 1997.  <a class="reference external" href="http://reports-archive.adm.cs.cmu.edu/anon/1997/CMU-CS-97-203.pdf">http://reports-archive.adm.cs.cmu.edu/anon/1997/CMU-CS-97-203.pdf</a></p></li>
+<li><p>Multi-objective Ranking via Constrained Optimization. Michinari Momma, Alireza Bagheri Garakani, Nanxun Ma, Yi Sun. 2020. arXiv. <a class="reference external" href="https://arxiv.org/abs/2002.05753">https://arxiv.org/abs/2002.05753</a></p></li>
+<li><p>Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer. Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, Jeff Dean. 2017. arXiv. <a class="reference external" href="https://arxiv.org/abs/1701.06538">https://arxiv.org/abs/1701.06538</a></p></li>
+<li><p><a class="reference external" href="https://d-nb.info/1231781351/34">https://d-nb.info/1231781351/34</a></p></li>
+<li><p><a class="reference external" href="https://github.com/geangohn/recsys-tutorial">https://github.com/geangohn/recsys-tutorial</a></p></li>
+<li><p><a class="reference external" href="https://github.com/imsheridan/DeepRec/tree/master/MTL">https://github.com/imsheridan/DeepRec/tree/master/MTL</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/pdf/2106.03760v2.pdf">DSelect-k: Differentiable Selection in the Mixture of Experts with Applications to Multi-Task Learning</a> <code class="docutils literal notranslate"><span class="pre">paper</span></code></p></li>
+<li><p><a class="reference external" href="https://www.cs.toronto.edu/~hinton/csc321/notes/lec15.pdf">CSC321: Introduction to Neural Networks and Machine Learning</a> <code class="docutils literal notranslate"><span class="pre">ppt</span></code></p></li>
+<li><p><a class="reference external" href="https://dl.acm.org/doi/10.1145/3397271.3401238">Video Recommendation with Multi-gate Mixture of Experts Soft Actor Critic</a> <code class="docutils literal notranslate"><span class="pre">paper</span></code></p></li>
+<li><p><a class="reference external" href="https://www.researchgate.net/publication/332552766_Personalized_Educational_Learning_with_Multi-Stakeholder_Optimizations">Personalized Educational Learning with Multi-Stakeholder Optimizations</a> <code class="docutils literal notranslate"><span class="pre">paper</span></code></p></li>
+<li><p><a class="reference external" href="https://esa.github.io/pygmo2/index.html">https://esa.github.io/pygmo2/index.html</a> <code class="docutils literal notranslate"><span class="pre">tool</span></code></p></li>
+<li><p><a class="reference external" href="https://pymoo.org/">https://pymoo.org/</a> <code class="docutils literal notranslate"><span class="pre">tool</span></code></p></li>
+<li><p><a class="reference external" href="https://pythonhosted.org/inspyred/">https://pythonhosted.org/inspyred/</a> <code class="docutils literal notranslate"><span class="pre">tool</span></code></p></li>
+<li><p><a class="reference external" href="https://platypus.readthedocs.io/en/latest/">https://platypus.readthedocs.io/en/latest/</a> <code class="docutils literal notranslate"><span class="pre">tool</span></code></p></li>
+<li><p><a class="reference external" href="https://youtu.be/QIX9b9EAZOY">PyTorch Community Voices | Multi-task Reinforcement Learning | Shagun Sodhani</a> <code class="docutils literal notranslate"><span class="pre">video</span></code> <code class="docutils literal notranslate"><span class="pre">st</span></code> <code class="docutils literal notranslate"><span class="pre">mtrl</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/facebookresearch/mtrl">https://github.com/facebookresearch/mtrl</a> <code class="docutils literal notranslate"><span class="pre">code</span></code> <code class="docutils literal notranslate"><span class="pre">st</span></code> <code class="docutils literal notranslate"><span class="pre">mtrl</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/facebookresearch/mtenv">https://github.com/facebookresearch/mtenv</a> <code class="docutils literal notranslate"><span class="pre">code</span></code> <code class="docutils literal notranslate"><span class="pre">st</span></code> <code class="docutils literal notranslate"><span class="pre">mtrl</span></code></p></li>
+<li><p>[ESMM]Entire Space Multi-Task Model: An Effective Approach for Estimating Post-Click Conversion Rate [SIGIR2018]<a class="reference external" href="https://arxiv.org/pdf/1804.07931.pdf">[PDF]</a></p></li>
+<li><p>[ESM2]Conversion Rate Prediction via Post-Click Behaviour Modeling</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "sparsh-ai/multiobjective-optimizations",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+     <div id="next">
+        <a class="right-next" href="L492548_Efficient_Frontier.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Efficient Frontier</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Sparsh A.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
