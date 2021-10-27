@@ -1,0 +1,1969 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear Optimization with OR-Tools &#8212; multiobjective-optimizations</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Stein’s Paradox" href="T209908_Stein%27s_Paradox.html" />
+    <link rel="prev" title="Efficient Frontier" href="T929652_Efficient_Frontier.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">multiobjective-optimizations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L069335_Multi_Objective_Optimization.html">
+   Multi-Objective Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Concepts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L492548_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
+   Pareto Optimality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L483593_MOO_Decision_Maker.html">
+   MOO Decision Maker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L336869_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L553498_MOO_in_Recommender_Systems.html">
+   MOO in Recommender Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L480379_Marketplace_Recommenders.html">
+   Marketplace Recommenders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L556513_Multi_Objective_Hyperparameter_Optimization.html">
+   Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Methods
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L005003_Scalarization.html">
+   Scalarization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L762719_Shared_Bottom.html">
+   Shared Bottom
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L915313_Expected_Hypervolume_Improvement_%28EHVI%29.html">
+   Expected Hypervolume Improvement (EHVI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html">
+   Multi-gradient Descent (MGDRec)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L861465_Mixture_of_Experts_%28MoE%29.html">
+   Mixture of Experts (MoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L485744_Multi_gate_Mixture_of_Experts_%28MMoE%29.html">
+   Multi-gate Mixture-of-Experts (MMoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L519476_Entire_Space_Multi_Task_Model_%28ESSM%29.html">
+   Entire Space Multi-Task Model (ESSM)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L718205_Progressive_Layered_Extraction_%28PLE%29.html">
+   Progressive Layered Extraction (PLE)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L749932_MTL_for_Related_Products_Recommendations_at_Pinterest.html">
+   MTL for Related Products Recommendations at Pinterest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L792752_UberEats.html">
+   UberEats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L106645_Etsy.html">
+   Etsy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L149938_Airbnb_Experiences.html">
+   Airbnb Experiences
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T929652_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Linear Optimization with OR-Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T209908_Stein%27s_Paradox.html">
+   Stein’s Paradox
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T423887_Solving_MOO_with_SMT_Toolkit.html">
+   Solving MOO with SMT Toolkit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T277640_Efficient_Continuous_Pareto_Exploration_in_MTL_on_UCI_Census.html">
+   Efficient Continuous Pareto Exploration in MTL on UCI Census
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T851476_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T307666_Pareto_Efficient_algorithm_for_MOO.html">
+   Pareto-Efficient algorithm for MOO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T465017_Shared_Bottom_in_Tensorflow.html">
+   Shared Bottom in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T175823_MoE_in_Tensorflow.html">
+   MoE in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T580632_MMoE_on_Census_income_data_in_Tensorflow.html">
+   MMoE on Census income data in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T948705_Sparsely_gated_Mixture_of_Experts.html">
+   Sparsely-gated Mixture-of-Experts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T458949_Multi_Objective_Ranking_using_Constrained_Optimization_in_GBTs.html">
+   Multi-Objective Ranking using Constrained Optimization in GBTs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T145475_Multi_objective_Optimization_using_Pymoo_Library.html">
+   Multi-objective Optimization using Pymoo Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T892775_Exploring_Multi_Objective_Hyperparameter_Optimization.html">
+   Exploring Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T660394_Implicit_Hybrid_Movie_Recommender_using_Collie_Library.html">
+   Implicit Hybrid Movie Recommender using Collie Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T559084_Multi_task_Learning_on_ML_100k_in_TFRS.html">
+   Multi-task Learning on ML-100k in TFRS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T368830_Multi_Task_Recommender_on_Olist_dataset_using_TFRS_Library.html">
+   Multi-Task Recommender on Olist dataset using TFRS Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T671443_MAMO_Framework.html">
+   MAMO Framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T952247_MKR.html">
+   MKR
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/T854417_Linear_Optimization_with_OR_Tools.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/T854417_Linear_Optimization_with_OR_Tools.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/T854417_Linear_Optimization_with_OR_Tools.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solving-an-lp-problem">
+   Solving an LP Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-stigler-diet-problem">
+   The Stigler Diet Problem
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="linear-optimization-with-or-tools">
+<h1>Linear Optimization with OR-Tools<a class="headerlink" href="#linear-optimization-with-or-tools" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install ortools
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="solving-an-lp-problem">
+<h2>Solving an LP Problem<a class="headerlink" href="#solving-an-lp-problem" title="Permalink to this headline">¶</a></h2>
+<p>The following sections present an example of an LP problem and show how to solve it. Here’s the problem:</p>
+<p>Maximize 3x + 4y subject to the following constraints:</p>
+<ul class="simple">
+<li><p>x + 2y	≤	14</p></li>
+<li><p>3x – y	≥	0</p></li>
+<li><p>x – y	≤	2</p></li>
+</ul>
+<p>Both the objective function, 3x + 4y, and the constraints are given by linear expressions, which makes this a linear problem.</p>
+<p>The constraints define the feasible region, which is the triangle shown below, including its interior.</p>
+<img src='https://developers.google.com/optimization/images/lp/feasible_region.png'>
+<p>Basic steps for solving an LP problem
+To solve a LP problem, your program should include the following steps :</p>
+<ul class="simple">
+<li><p>Import the linear solver wrapper,</p></li>
+<li><p>declare the LP solver,</p></li>
+<li><p>define the variables,</p></li>
+<li><p>define the constraints,</p></li>
+<li><p>define the objective,</p></li>
+<li><p>call the LP solver; and</p></li>
+<li><p>display the solution</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ortools.linear_solver</span> <span class="kn">import</span> <span class="n">pywraplp</span>
+
+
+<span class="k">def</span> <span class="nf">LinearProgrammingExample</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Linear programming sample.&quot;&quot;&quot;</span>
+    <span class="c1"># Instantiate a Glop solver, naming it LinearExample.</span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">pywraplp</span><span class="o">.</span><span class="n">Solver</span><span class="o">.</span><span class="n">CreateSolver</span><span class="p">(</span><span class="s1">&#39;GLOP&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Create the two variables and let them take on any non-negative value.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">NumVar</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">infinity</span><span class="p">(),</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">NumVar</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">infinity</span><span class="p">(),</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of variables =&#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">NumVariables</span><span class="p">())</span>
+
+    <span class="c1"># Constraint 0: x + 2y &lt;= 14.</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mf">14.0</span><span class="p">)</span>
+
+    <span class="c1"># Constraint 1: 3x - y &gt;= 0.</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="c1"># Constraint 2: x - y &lt;= 2.</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mf">2.0</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of constraints =&#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">NumConstraints</span><span class="p">())</span>
+
+    <span class="c1"># Objective function: 3x + 4y.</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">Maximize</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="c1"># Solve the system.</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">Solve</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">pywraplp</span><span class="o">.</span><span class="n">Solver</span><span class="o">.</span><span class="n">OPTIMAL</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Solution:&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Objective value =&#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">Objective</span><span class="p">()</span><span class="o">.</span><span class="n">Value</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x =&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">solution_value</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y =&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">solution_value</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The problem does not have an optimal solution.&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Advanced usage:&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Problem solved in </span><span class="si">%f</span><span class="s1"> milliseconds&#39;</span> <span class="o">%</span> <span class="n">solver</span><span class="o">.</span><span class="n">wall_time</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Problem solved in </span><span class="si">%d</span><span class="s1"> iterations&#39;</span> <span class="o">%</span> <span class="n">solver</span><span class="o">.</span><span class="n">iterations</span><span class="p">())</span>
+
+
+<span class="n">LinearProgrammingExample</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of variables = 2
+Number of constraints = 3
+Solution:
+Objective value = 33.99999999999999
+x = 5.999999999999998
+y = 3.9999999999999996
+
+Advanced usage:
+Problem solved in 4.000000 milliseconds
+Problem solved in 2 iterations
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a graph showing the solution:</p>
+<img src='https://developers.google.com/optimization/images/lp/feasible_region_solution.png'>
+<p>The dashed green line is defined by setting the objective function equal to its optimal value of 34. Any line whose equation has the form 3x + 4y = c is parallel to the dashed line, and 34 is the largest value of c for which the line intersects the feasible region.</p>
+<p>If you think about the geometry in the above graph, in any linear optimization problem at least one vertex of the feasible region must be an optimal solution. As a result, you can find an optimal solution by traversing the vertices of the feasible region until there is no more improvement in the objective function. This is the idea behind simplex algorithm, the most widely-used method for solving linear optimization problems.</p>
+</div>
+<div class="section" id="the-stigler-diet-problem">
+<h2>The Stigler Diet Problem<a class="headerlink" href="#the-stigler-diet-problem" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we show how to solve a classic problem called the Stigler diet, named for economics Nobel laureate George Stigler, who computed an inexpensive way to fulfill basic nutritional needs given a set of foods. He posed this as a mathematical exercise, not as eating recommendations, although the notion of computing optimal nutrition has of come into vogue recently.</p>
+<p>The Stigler diet mandated that these minimums be met:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nutrient</p></th>
+<th class="head"><p>Daily Recommended Intake</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Calories</p></td>
+<td><p>3,000 Calories</p></td>
+</tr>
+<tr class="row-odd"><td><p>Protein</p></td>
+<td><p>70 grams</p></td>
+</tr>
+<tr class="row-even"><td><p>Calcium</p></td>
+<td><p>.8 grams</p></td>
+</tr>
+<tr class="row-odd"><td><p>Iron</p></td>
+<td><p>12 milligrams</p></td>
+</tr>
+<tr class="row-even"><td><p>Vitamin A</p></td>
+<td><p>5,000 IU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thiamine (Vitamin B1)</p></td>
+<td><p>1.8 milligrams</p></td>
+</tr>
+<tr class="row-even"><td><p>Riboflavin (Vitamin B2)</p></td>
+<td><p>2.7 milligrams</p></td>
+</tr>
+<tr class="row-odd"><td><p>Niacin</p></td>
+<td><p>18 milligrams</p></td>
+</tr>
+<tr class="row-even"><td><p>Ascorbic Acid (Vitamin C)</p></td>
+<td><p>75 milligrams</p></td>
+</tr>
+</tbody>
+</table>
+<p>The set of foods Stigler evaluated was a reflection of the time (1944). The nutritional data below is per dollar, not per unit, so the objective is to determine how many dollars to spend on each foodstuff.</p>
+<p><strong>Commodities list</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Commodity</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>1939 price (cents)</p></th>
+<th class="head"><p>Calories (kcal)</p></th>
+<th class="head"><p>Protein (g)</p></th>
+<th class="head"><p>Calcium (g)</p></th>
+<th class="head"><p>Iron (mg)</p></th>
+<th class="head"><p>Vitamin A (KIU)</p></th>
+<th class="head"><p>Thiamine (mg)</p></th>
+<th class="head"><p>Riboflavin (mg)</p></th>
+<th class="head"><p>Niacin (mg)</p></th>
+<th class="head"><p>Ascorbic Acid (mg)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wheat Flour (Enriched)</p></td>
+<td><p>10 lb.</p></td>
+<td><p>36</p></td>
+<td><p>44.7</p></td>
+<td><p>1411</p></td>
+<td><p>2</p></td>
+<td><p>365</p></td>
+<td><p>0</p></td>
+<td><p>55.4</p></td>
+<td><p>33.3</p></td>
+<td><p>441</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Macaroni</p></td>
+<td><p>1 lb.</p></td>
+<td><p>14.1</p></td>
+<td><p>11.6</p></td>
+<td><p>418</p></td>
+<td><p>0.7</p></td>
+<td><p>54</p></td>
+<td><p>0</p></td>
+<td><p>3.2</p></td>
+<td><p>1.9</p></td>
+<td><p>68</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Wheat Cereal (Enriched)</p></td>
+<td><p>28 oz.</p></td>
+<td><p>24.2</p></td>
+<td><p>11.8</p></td>
+<td><p>377</p></td>
+<td><p>14.4</p></td>
+<td><p>175</p></td>
+<td><p>0</p></td>
+<td><p>14.4</p></td>
+<td><p>8.8</p></td>
+<td><p>114</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Corn Flakes</p></td>
+<td><p>8 oz.</p></td>
+<td><p>7.1</p></td>
+<td><p>11.4</p></td>
+<td><p>252</p></td>
+<td><p>0.1</p></td>
+<td><p>56</p></td>
+<td><p>0</p></td>
+<td><p>13.5</p></td>
+<td><p>2.3</p></td>
+<td><p>68</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Corn Meal</p></td>
+<td><p>1 lb.</p></td>
+<td><p>4.6</p></td>
+<td><p>36.0</p></td>
+<td><p>897</p></td>
+<td><p>1.7</p></td>
+<td><p>99</p></td>
+<td><p>30.9</p></td>
+<td><p>17.4</p></td>
+<td><p>7.9</p></td>
+<td><p>106</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hominy Grits</p></td>
+<td><p>24 oz.</p></td>
+<td><p>8.5</p></td>
+<td><p>28.6</p></td>
+<td><p>680</p></td>
+<td><p>0.8</p></td>
+<td><p>80</p></td>
+<td><p>0</p></td>
+<td><p>10.6</p></td>
+<td><p>1.6</p></td>
+<td><p>110</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Rice</p></td>
+<td><p>1 lb.</p></td>
+<td><p>7.5</p></td>
+<td><p>21.2</p></td>
+<td><p>460</p></td>
+<td><p>0.6</p></td>
+<td><p>41</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>4.8</p></td>
+<td><p>60</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rolled Oats</p></td>
+<td><p>1 lb.</p></td>
+<td><p>7.1</p></td>
+<td><p>25.3</p></td>
+<td><p>907</p></td>
+<td><p>5.1</p></td>
+<td><p>341</p></td>
+<td><p>0</p></td>
+<td><p>37.1</p></td>
+<td><p>8.9</p></td>
+<td><p>64</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>White Bread (Enriched)</p></td>
+<td><p>1 lb.</p></td>
+<td><p>7.9</p></td>
+<td><p>15.0</p></td>
+<td><p>488</p></td>
+<td><p>2.5</p></td>
+<td><p>115</p></td>
+<td><p>0</p></td>
+<td><p>13.8</p></td>
+<td><p>8.5</p></td>
+<td><p>126</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Whole Wheat Bread</p></td>
+<td><p>1 lb.</p></td>
+<td><p>9.1</p></td>
+<td><p>12.2</p></td>
+<td><p>484</p></td>
+<td><p>2.7</p></td>
+<td><p>125</p></td>
+<td><p>0</p></td>
+<td><p>13.9</p></td>
+<td><p>6.4</p></td>
+<td><p>160</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Rye Bread</p></td>
+<td><p>1 lb.</p></td>
+<td><p>9.1</p></td>
+<td><p>12.4</p></td>
+<td><p>439</p></td>
+<td><p>1.1</p></td>
+<td><p>82</p></td>
+<td><p>0</p></td>
+<td><p>9.9</p></td>
+<td><p>3</p></td>
+<td><p>66</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pound Cake</p></td>
+<td><p>1 lb.</p></td>
+<td><p>24.8</p></td>
+<td><p>8.0</p></td>
+<td><p>130</p></td>
+<td><p>0.4</p></td>
+<td><p>31</p></td>
+<td><p>18.9</p></td>
+<td><p>2.8</p></td>
+<td><p>3</p></td>
+<td><p>17</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Soda Crackers</p></td>
+<td><p>1 lb.</p></td>
+<td><p>15.1</p></td>
+<td><p>12.5</p></td>
+<td><p>288</p></td>
+<td><p>0.5</p></td>
+<td><p>50</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Milk</p></td>
+<td><p>1 qt.</p></td>
+<td><p>11</p></td>
+<td><p>6.1</p></td>
+<td><p>310</p></td>
+<td><p>10.5</p></td>
+<td><p>18</p></td>
+<td><p>16.8</p></td>
+<td><p>4</p></td>
+<td><p>16</p></td>
+<td><p>7</p></td>
+<td><p>177</p></td>
+</tr>
+<tr class="row-even"><td><p>Evaporated Milk (can)</p></td>
+<td><p>14.5 oz.</p></td>
+<td><p>6.7</p></td>
+<td><p>8.4</p></td>
+<td><p>422</p></td>
+<td><p>15.1</p></td>
+<td><p>9</p></td>
+<td><p>26</p></td>
+<td><p>3</p></td>
+<td><p>23.5</p></td>
+<td><p>11</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-odd"><td><p>Butter</p></td>
+<td><p>1 lb.</p></td>
+<td><p>30.8</p></td>
+<td><p>10.8</p></td>
+<td><p>9</p></td>
+<td><p>0.2</p></td>
+<td><p>3</p></td>
+<td><p>44.2</p></td>
+<td><p>0</p></td>
+<td><p>0.2</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Oleomargarine</p></td>
+<td><p>1 lb.</p></td>
+<td><p>16.1</p></td>
+<td><p>20.6</p></td>
+<td><p>17</p></td>
+<td><p>0.6</p></td>
+<td><p>6</p></td>
+<td><p>55.8</p></td>
+<td><p>0.2</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eggs</p></td>
+<td><p>1 doz.</p></td>
+<td><p>32.6</p></td>
+<td><p>2.9</p></td>
+<td><p>238</p></td>
+<td><p>1.0</p></td>
+<td><p>52</p></td>
+<td><p>18.6</p></td>
+<td><p>2.8</p></td>
+<td><p>6.5</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Cheese (Cheddar)</p></td>
+<td><p>1 lb.</p></td>
+<td><p>24.2</p></td>
+<td><p>7.4</p></td>
+<td><p>448</p></td>
+<td><p>16.4</p></td>
+<td><p>19</p></td>
+<td><p>28.1</p></td>
+<td><p>0.8</p></td>
+<td><p>10.3</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cream</p></td>
+<td><p>1/2 pt.</p></td>
+<td><p>14.1</p></td>
+<td><p>3.5</p></td>
+<td><p>49</p></td>
+<td><p>1.7</p></td>
+<td><p>3</p></td>
+<td><p>16.9</p></td>
+<td><p>0.6</p></td>
+<td><p>2.5</p></td>
+<td><p>0</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>Peanut Butter</p></td>
+<td><p>1 lb.</p></td>
+<td><p>17.9</p></td>
+<td><p>15.7</p></td>
+<td><p>661</p></td>
+<td><p>1.0</p></td>
+<td><p>48</p></td>
+<td><p>0</p></td>
+<td><p>9.6</p></td>
+<td><p>8.1</p></td>
+<td><p>471</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mayonnaise</p></td>
+<td><p>1/2 pt.</p></td>
+<td><p>16.7</p></td>
+<td><p>8.6</p></td>
+<td><p>18</p></td>
+<td><p>0.2</p></td>
+<td><p>8</p></td>
+<td><p>2.7</p></td>
+<td><p>0.4</p></td>
+<td><p>0.5</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Crisco</p></td>
+<td><p>1 lb.</p></td>
+<td><p>20.3</p></td>
+<td><p>20.1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lard</p></td>
+<td><p>1 lb.</p></td>
+<td><p>9.8</p></td>
+<td><p>41.7</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0.2</p></td>
+<td><p>0</p></td>
+<td><p>0.5</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Sirloin Steak</p></td>
+<td><p>1 lb.</p></td>
+<td><p>39.6</p></td>
+<td><p>2.9</p></td>
+<td><p>166</p></td>
+<td><p>0.1</p></td>
+<td><p>34</p></td>
+<td><p>0.2</p></td>
+<td><p>2.1</p></td>
+<td><p>2.9</p></td>
+<td><p>69</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Round Steak</p></td>
+<td><p>1 lb.</p></td>
+<td><p>36.4</p></td>
+<td><p>2.2</p></td>
+<td><p>214</p></td>
+<td><p>0.1</p></td>
+<td><p>32</p></td>
+<td><p>0.4</p></td>
+<td><p>2.5</p></td>
+<td><p>2.4</p></td>
+<td><p>87</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Rib Roast</p></td>
+<td><p>1 lb.</p></td>
+<td><p>29.2</p></td>
+<td><p>3.4</p></td>
+<td><p>213</p></td>
+<td><p>0.1</p></td>
+<td><p>33</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Chuck Roast</p></td>
+<td><p>1 lb.</p></td>
+<td><p>22.6</p></td>
+<td><p>3.6</p></td>
+<td><p>309</p></td>
+<td><p>0.2</p></td>
+<td><p>46</p></td>
+<td><p>0.4</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+<td><p>120</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Plate</p></td>
+<td><p>1 lb.</p></td>
+<td><p>14.6</p></td>
+<td><p>8.5</p></td>
+<td><p>404</p></td>
+<td><p>0.2</p></td>
+<td><p>62</p></td>
+<td><p>0</p></td>
+<td><p>0.9</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Liver (Beef)</p></td>
+<td><p>1 lb.</p></td>
+<td><p>26.8</p></td>
+<td><p>2.2</p></td>
+<td><p>333</p></td>
+<td><p>0.2</p></td>
+<td><p>139</p></td>
+<td><p>169.2</p></td>
+<td><p>6.4</p></td>
+<td><p>50.8</p></td>
+<td><p>316</p></td>
+<td><p>525</p></td>
+</tr>
+<tr class="row-even"><td><p>Leg of Lamb</p></td>
+<td><p>1 lb.</p></td>
+<td><p>27.6</p></td>
+<td><p>3.1</p></td>
+<td><p>245</p></td>
+<td><p>0.1</p></td>
+<td><p>20</p></td>
+<td><p>0</p></td>
+<td><p>2.8</p></td>
+<td><p>3.9</p></td>
+<td><p>86</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lamb Chops (Rib)</p></td>
+<td><p>1 lb.</p></td>
+<td><p>36.6</p></td>
+<td><p>3.3</p></td>
+<td><p>140</p></td>
+<td><p>0.1</p></td>
+<td><p>15</p></td>
+<td><p>0</p></td>
+<td><p>1.7</p></td>
+<td><p>2.7</p></td>
+<td><p>54</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Pork Chops</p></td>
+<td><p>1 lb.</p></td>
+<td><p>30.7</p></td>
+<td><p>3.5</p></td>
+<td><p>196</p></td>
+<td><p>0.2</p></td>
+<td><p>30</p></td>
+<td><p>0</p></td>
+<td><p>17.4</p></td>
+<td><p>2.7</p></td>
+<td><p>60</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pork Loin Roast</p></td>
+<td><p>1 lb.</p></td>
+<td><p>24.2</p></td>
+<td><p>4.4</p></td>
+<td><p>249</p></td>
+<td><p>0.3</p></td>
+<td><p>37</p></td>
+<td><p>0</p></td>
+<td><p>18.2</p></td>
+<td><p>3.6</p></td>
+<td><p>79</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Bacon</p></td>
+<td><p>1 lb.</p></td>
+<td><p>25.6</p></td>
+<td><p>10.4</p></td>
+<td><p>152</p></td>
+<td><p>0.2</p></td>
+<td><p>23</p></td>
+<td><p>0</p></td>
+<td><p>1.8</p></td>
+<td><p>1.8</p></td>
+<td><p>71</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ham, smoked</p></td>
+<td><p>1 lb.</p></td>
+<td><p>27.4</p></td>
+<td><p>6.7</p></td>
+<td><p>212</p></td>
+<td><p>0.2</p></td>
+<td><p>31</p></td>
+<td><p>0</p></td>
+<td><p>9.9</p></td>
+<td><p>3.3</p></td>
+<td><p>50</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Salt Pork</p></td>
+<td><p>1 lb.</p></td>
+<td><p>16</p></td>
+<td><p>18.8</p></td>
+<td><p>164</p></td>
+<td><p>0.1</p></td>
+<td><p>26</p></td>
+<td><p>0</p></td>
+<td><p>1.4</p></td>
+<td><p>1.8</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Roasting Chicken</p></td>
+<td><p>1 lb.</p></td>
+<td><p>30.3</p></td>
+<td><p>1.8</p></td>
+<td><p>184</p></td>
+<td><p>0.1</p></td>
+<td><p>30</p></td>
+<td><p>0.1</p></td>
+<td><p>0.9</p></td>
+<td><p>1.8</p></td>
+<td><p>68</p></td>
+<td><p>46</p></td>
+</tr>
+<tr class="row-even"><td><p>Veal Cutlets</p></td>
+<td><p>1 lb.</p></td>
+<td><p>42.3</p></td>
+<td><p>1.7</p></td>
+<td><p>156</p></td>
+<td><p>0.1</p></td>
+<td><p>24</p></td>
+<td><p>0</p></td>
+<td><p>1.4</p></td>
+<td><p>2.4</p></td>
+<td><p>57</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Salmon, Pink (can)</p></td>
+<td><p>16 oz.</p></td>
+<td><p>13</p></td>
+<td><p>5.8</p></td>
+<td><p>705</p></td>
+<td><p>6.8</p></td>
+<td><p>45</p></td>
+<td><p>3.5</p></td>
+<td><p>1</p></td>
+<td><p>4.9</p></td>
+<td><p>209</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Apples</p></td>
+<td><p>1 lb.</p></td>
+<td><p>4.4</p></td>
+<td><p>5.8</p></td>
+<td><p>27</p></td>
+<td><p>0.5</p></td>
+<td><p>36</p></td>
+<td><p>7.3</p></td>
+<td><p>3.6</p></td>
+<td><p>2.7</p></td>
+<td><p>5</p></td>
+<td><p>544</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bananas</p></td>
+<td><p>1 lb.</p></td>
+<td><p>6.1</p></td>
+<td><p>4.9</p></td>
+<td><p>60</p></td>
+<td><p>0.4</p></td>
+<td><p>30</p></td>
+<td><p>17.4</p></td>
+<td><p>2.5</p></td>
+<td><p>3.5</p></td>
+<td><p>28</p></td>
+<td><p>498</p></td>
+</tr>
+<tr class="row-even"><td><p>Lemons</p></td>
+<td><p>1 doz.</p></td>
+<td><p>26</p></td>
+<td><p>1.0</p></td>
+<td><p>21</p></td>
+<td><p>0.5</p></td>
+<td><p>14</p></td>
+<td><p>0</p></td>
+<td><p>0.5</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>952</p></td>
+</tr>
+<tr class="row-odd"><td><p>Oranges</p></td>
+<td><p>1 doz.</p></td>
+<td><p>30.9</p></td>
+<td><p>2.2</p></td>
+<td><p>40</p></td>
+<td><p>1.1</p></td>
+<td><p>18</p></td>
+<td><p>11.1</p></td>
+<td><p>3.6</p></td>
+<td><p>1.3</p></td>
+<td><p>10</p></td>
+<td><p>1998</p></td>
+</tr>
+<tr class="row-even"><td><p>Green Beans</p></td>
+<td><p>1 lb.</p></td>
+<td><p>7.1</p></td>
+<td><p>2.4</p></td>
+<td><p>138</p></td>
+<td><p>3.7</p></td>
+<td><p>80</p></td>
+<td><p>69</p></td>
+<td><p>4.3</p></td>
+<td><p>5.8</p></td>
+<td><p>37</p></td>
+<td><p>862</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cabbage</p></td>
+<td><p>1 lb.</p></td>
+<td><p>3.7</p></td>
+<td><p>2.6</p></td>
+<td><p>125</p></td>
+<td><p>4.0</p></td>
+<td><p>36</p></td>
+<td><p>7.2</p></td>
+<td><p>9</p></td>
+<td><p>4.5</p></td>
+<td><p>26</p></td>
+<td><p>5369</p></td>
+</tr>
+<tr class="row-even"><td><p>Carrots</p></td>
+<td><p>1 bunch</p></td>
+<td><p>4.7</p></td>
+<td><p>2.7</p></td>
+<td><p>73</p></td>
+<td><p>2.8</p></td>
+<td><p>43</p></td>
+<td><p>188.5</p></td>
+<td><p>6.1</p></td>
+<td><p>4.3</p></td>
+<td><p>89</p></td>
+<td><p>608</p></td>
+</tr>
+<tr class="row-odd"><td><p>Celery</p></td>
+<td><p>1 stalk</p></td>
+<td><p>7.3</p></td>
+<td><p>0.9</p></td>
+<td><p>51</p></td>
+<td><p>3.0</p></td>
+<td><p>23</p></td>
+<td><p>0.9</p></td>
+<td><p>1.4</p></td>
+<td><p>1.4</p></td>
+<td><p>9</p></td>
+<td><p>313</p></td>
+</tr>
+<tr class="row-even"><td><p>Lettuce</p></td>
+<td><p>1 head</p></td>
+<td><p>8.2</p></td>
+<td><p>0.4</p></td>
+<td><p>27</p></td>
+<td><p>1.1</p></td>
+<td><p>22</p></td>
+<td><p>112.4</p></td>
+<td><p>1.8</p></td>
+<td><p>3.4</p></td>
+<td><p>11</p></td>
+<td><p>449</p></td>
+</tr>
+<tr class="row-odd"><td><p>Onions</p></td>
+<td><p>1 lb.</p></td>
+<td><p>3.6</p></td>
+<td><p>5.8</p></td>
+<td><p>166</p></td>
+<td><p>3.8</p></td>
+<td><p>59</p></td>
+<td><p>16.6</p></td>
+<td><p>4.7</p></td>
+<td><p>5.9</p></td>
+<td><p>21</p></td>
+<td><p>1184</p></td>
+</tr>
+<tr class="row-even"><td><p>Potatoes</p></td>
+<td><p>15 lb.</p></td>
+<td><p>34</p></td>
+<td><p>14.3</p></td>
+<td><p>336</p></td>
+<td><p>1.8</p></td>
+<td><p>118</p></td>
+<td><p>6.7</p></td>
+<td><p>29.4</p></td>
+<td><p>7.1</p></td>
+<td><p>198</p></td>
+<td><p>2522</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spinach</p></td>
+<td><p>1 lb.</p></td>
+<td><p>8.1</p></td>
+<td><p>1.1</p></td>
+<td><p>106</p></td>
+<td><p>0</p></td>
+<td><p>138</p></td>
+<td><p>918.4</p></td>
+<td><p>5.7</p></td>
+<td><p>13.8</p></td>
+<td><p>33</p></td>
+<td><p>2755</p></td>
+</tr>
+<tr class="row-even"><td><p>Sweet Potatoes</p></td>
+<td><p>1 lb.</p></td>
+<td><p>5.1</p></td>
+<td><p>9.6</p></td>
+<td><p>138</p></td>
+<td><p>2.7</p></td>
+<td><p>54</p></td>
+<td><p>290.7</p></td>
+<td><p>8.4</p></td>
+<td><p>5.4</p></td>
+<td><p>83</p></td>
+<td><p>1912</p></td>
+</tr>
+<tr class="row-odd"><td><p>Peaches (can)</p></td>
+<td><p>No. 2 1/2</p></td>
+<td><p>16.8</p></td>
+<td><p>3.7</p></td>
+<td><p>20</p></td>
+<td><p>0.4</p></td>
+<td><p>10</p></td>
+<td><p>21.5</p></td>
+<td><p>0.5</p></td>
+<td><p>1</p></td>
+<td><p>31</p></td>
+<td><p>196</p></td>
+</tr>
+<tr class="row-even"><td><p>Pears (can)</p></td>
+<td><p>No. 2 1/2</p></td>
+<td><p>20.4</p></td>
+<td><p>3.0</p></td>
+<td><p>8</p></td>
+<td><p>0.3</p></td>
+<td><p>8</p></td>
+<td><p>0.8</p></td>
+<td><p>0.8</p></td>
+<td><p>0.8</p></td>
+<td><p>5</p></td>
+<td><p>81</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pineapple (can)</p></td>
+<td><p>No. 2 1/2</p></td>
+<td><p>21.3</p></td>
+<td><p>2.4</p></td>
+<td><p>16</p></td>
+<td><p>0.4</p></td>
+<td><p>8</p></td>
+<td><p>2</p></td>
+<td><p>2.8</p></td>
+<td><p>0.8</p></td>
+<td><p>7</p></td>
+<td><p>399</p></td>
+</tr>
+<tr class="row-even"><td><p>Asparagus (can)</p></td>
+<td><p>No. 2</p></td>
+<td><p>27.7</p></td>
+<td><p>0.4</p></td>
+<td><p>33</p></td>
+<td><p>0.3</p></td>
+<td><p>12</p></td>
+<td><p>16.3</p></td>
+<td><p>1.4</p></td>
+<td><p>2.1</p></td>
+<td><p>17</p></td>
+<td><p>272</p></td>
+</tr>
+<tr class="row-odd"><td><p>Green Beans (can)</p></td>
+<td><p>No. 2</p></td>
+<td><p>10</p></td>
+<td><p>1.0</p></td>
+<td><p>54</p></td>
+<td><p>2</p></td>
+<td><p>65</p></td>
+<td><p>53.9</p></td>
+<td><p>1.6</p></td>
+<td><p>4.3</p></td>
+<td><p>32</p></td>
+<td><p>431</p></td>
+</tr>
+<tr class="row-even"><td><p>Pork and Beans (can)</p></td>
+<td><p>16 oz.</p></td>
+<td><p>7.1</p></td>
+<td><p>7.5</p></td>
+<td><p>364</p></td>
+<td><p>4</p></td>
+<td><p>134</p></td>
+<td><p>3.5</p></td>
+<td><p>8.3</p></td>
+<td><p>7.7</p></td>
+<td><p>56</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Corn (can)</p></td>
+<td><p>No. 2</p></td>
+<td><p>10.4</p></td>
+<td><p>5.2</p></td>
+<td><p>136</p></td>
+<td><p>0.2</p></td>
+<td><p>16</p></td>
+<td><p>12</p></td>
+<td><p>1.6</p></td>
+<td><p>2.7</p></td>
+<td><p>42</p></td>
+<td><p>218</p></td>
+</tr>
+<tr class="row-even"><td><p>Peas (can)</p></td>
+<td><p>No. 2</p></td>
+<td><p>13.8</p></td>
+<td><p>2.3</p></td>
+<td><p>136</p></td>
+<td><p>0.6</p></td>
+<td><p>45</p></td>
+<td><p>34.9</p></td>
+<td><p>4.9</p></td>
+<td><p>2.5</p></td>
+<td><p>37</p></td>
+<td><p>370</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tomatoes (can)</p></td>
+<td><p>No. 2</p></td>
+<td><p>8.6</p></td>
+<td><p>1.3</p></td>
+<td><p>63</p></td>
+<td><p>0.7</p></td>
+<td><p>38</p></td>
+<td><p>53.2</p></td>
+<td><p>3.4</p></td>
+<td><p>2.5</p></td>
+<td><p>36</p></td>
+<td><p>1253</p></td>
+</tr>
+<tr class="row-even"><td><p>Tomato Soup (can)</p></td>
+<td><p>10 1/2 oz.</p></td>
+<td><p>7.6</p></td>
+<td><p>1.6</p></td>
+<td><p>71</p></td>
+<td><p>0.6</p></td>
+<td><p>43</p></td>
+<td><p>57.9</p></td>
+<td><p>3.5</p></td>
+<td><p>2.4</p></td>
+<td><p>67</p></td>
+<td><p>862</p></td>
+</tr>
+<tr class="row-odd"><td><p>Peaches, Dried</p></td>
+<td><p>1 lb.</p></td>
+<td><p>15.7</p></td>
+<td><p>8.5</p></td>
+<td><p>87</p></td>
+<td><p>1.7</p></td>
+<td><p>173</p></td>
+<td><p>86.8</p></td>
+<td><p>1.2</p></td>
+<td><p>4.3</p></td>
+<td><p>55</p></td>
+<td><p>57</p></td>
+</tr>
+<tr class="row-even"><td><p>Prunes, Dried</p></td>
+<td><p>1 lb.</p></td>
+<td><p>9</p></td>
+<td><p>12.8</p></td>
+<td><p>99</p></td>
+<td><p>2.5</p></td>
+<td><p>154</p></td>
+<td><p>85.7</p></td>
+<td><p>3.9</p></td>
+<td><p>4.3</p></td>
+<td><p>65</p></td>
+<td><p>257</p></td>
+</tr>
+<tr class="row-odd"><td><p>Raisins, Dried</p></td>
+<td><p>15 oz.</p></td>
+<td><p>9.4</p></td>
+<td><p>13.5</p></td>
+<td><p>104</p></td>
+<td><p>2.5</p></td>
+<td><p>136</p></td>
+<td><p>4.5</p></td>
+<td><p>6.3</p></td>
+<td><p>1.4</p></td>
+<td><p>24</p></td>
+<td><p>136</p></td>
+</tr>
+<tr class="row-even"><td><p>Peas, Dried</p></td>
+<td><p>1 lb.</p></td>
+<td><p>7.9</p></td>
+<td><p>20.0</p></td>
+<td><p>1367</p></td>
+<td><p>4.2</p></td>
+<td><p>345</p></td>
+<td><p>2.9</p></td>
+<td><p>28.7</p></td>
+<td><p>18.4</p></td>
+<td><p>162</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lima Beans, Dried</p></td>
+<td><p>1 lb.</p></td>
+<td><p>8.9</p></td>
+<td><p>17.4</p></td>
+<td><p>1055</p></td>
+<td><p>3.7</p></td>
+<td><p>459</p></td>
+<td><p>5.1</p></td>
+<td><p>26.9</p></td>
+<td><p>38.2</p></td>
+<td><p>93</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Navy Beans, Dried</p></td>
+<td><p>1 lb.</p></td>
+<td><p>5.9</p></td>
+<td><p>26.9</p></td>
+<td><p>1691</p></td>
+<td><p>11.4</p></td>
+<td><p>792</p></td>
+<td><p>0</p></td>
+<td><p>38.4</p></td>
+<td><p>24.6</p></td>
+<td><p>217</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Coffee</p></td>
+<td><p>1 lb.</p></td>
+<td><p>22.4</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>5.1</p></td>
+<td><p>50</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Tea</p></td>
+<td><p>1/4 lb.</p></td>
+<td><p>17.4</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>2.3</p></td>
+<td><p>42</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cocoa</p></td>
+<td><p>8 oz.</p></td>
+<td><p>8.6</p></td>
+<td><p>8.7</p></td>
+<td><p>237</p></td>
+<td><p>3</p></td>
+<td><p>72</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>11.9</p></td>
+<td><p>40</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Chocolate</p></td>
+<td><p>8 oz.</p></td>
+<td><p>16.2</p></td>
+<td><p>8.0</p></td>
+<td><p>77</p></td>
+<td><p>1.3</p></td>
+<td><p>39</p></td>
+<td><p>0</p></td>
+<td><p>0.9</p></td>
+<td><p>3.4</p></td>
+<td><p>14</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sugar</p></td>
+<td><p>10 lb.</p></td>
+<td><p>51.7</p></td>
+<td><p>34.9</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Corn Syrup</p></td>
+<td><p>24 oz.</p></td>
+<td><p>13.7</p></td>
+<td><p>14.7</p></td>
+<td><p>0</p></td>
+<td><p>0.5</p></td>
+<td><p>74</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Molasses</p></td>
+<td><p>18 oz.</p></td>
+<td><p>13.6</p></td>
+<td><p>9.0</p></td>
+<td><p>0</p></td>
+<td><p>10.3</p></td>
+<td><p>244</p></td>
+<td><p>0</p></td>
+<td><p>1.9</p></td>
+<td><p>7.5</p></td>
+<td><p>146</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Strawberry Preserves</p></td>
+<td><p>1 lb.</p></td>
+<td><p>20.5</p></td>
+<td><p>6.4</p></td>
+<td><p>11</p></td>
+<td><p>0.4</p></td>
+<td><p>7</p></td>
+<td><p>0.2</p></td>
+<td><p>0.2</p></td>
+<td><p>0.4</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>Since the nutrients have all been normalized by price, our objective is simply minimizing the sum of foods.</p>
+<p>In 1944, Stigler calculated the best answer he could, noting with sadness:</p>
+<p>“…there does not appear to be any direct method of finding the minimum of a linear function subject to linear conditions.”</p>
+<p>He found a diet that cost $39.93 per year, in 1939 dollars. In 1947, Jack Laderman used the simplex method (then, a recent invention!) to determine the optimal solution. It took 120 man days of nine clerks on desk calculators to arrive at the answer.</p>
+<p><strong>Solution using the linear solver</strong></p>
+<p>The following sections present a program that solves the Stigler diet problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;The Stigler diet problem.</span>
+
+<span class="sd">A description of the problem can be found here:</span>
+<span class="sd">https://en.wikipedia.org/wiki/Stigler_diet.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">ortools.linear_solver</span> <span class="kn">import</span> <span class="n">pywraplp</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Entry point of the program.&quot;&quot;&quot;</span>
+    <span class="c1"># Instantiate the data problem.</span>
+    <span class="c1"># Nutrient minimums.</span>
+    <span class="n">nutrients</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="s1">&#39;Calories (kcal)&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Protein (g)&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Calcium (g)&#39;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Iron (mg)&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Vitamin A (KIU)&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Vitamin B1 (mg)&#39;</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Vitamin B2 (mg)&#39;</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Niacin (mg)&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Vitamin C (mg)&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">],</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Commodity, Unit, 1939 price (cents), Calories (kcal), Protein (g),</span>
+    <span class="c1"># Calcium (g), Iron (mg), Vitamin A (KIU), Vitamin B1 (mg), Vitamin B2 (mg),</span>
+    <span class="c1"># Niacin (mg), Vitamin C (mg)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Wheat Flour (Enriched)&#39;</span><span class="p">,</span> <span class="s1">&#39;10 lb.&#39;</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mf">44.7</span><span class="p">,</span> <span class="mi">1411</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">365</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">55.4</span><span class="p">,</span>
+            <span class="mf">33.3</span><span class="p">,</span> <span class="mi">441</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Macaroni&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">14.1</span><span class="p">,</span> <span class="mf">11.6</span><span class="p">,</span> <span class="mi">418</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Wheat Cereal (Enriched)&#39;</span><span class="p">,</span> <span class="s1">&#39;28 oz.&#39;</span><span class="p">,</span> <span class="mf">24.2</span><span class="p">,</span> <span class="mf">11.8</span><span class="p">,</span> <span class="mi">377</span><span class="p">,</span> <span class="mf">14.4</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="mf">14.4</span><span class="p">,</span> <span class="mf">8.8</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Corn Flakes&#39;</span><span class="p">,</span> <span class="s1">&#39;8 oz.&#39;</span><span class="p">,</span> <span class="mf">7.1</span><span class="p">,</span> <span class="mf">11.4</span><span class="p">,</span> <span class="mi">252</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">13.5</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Corn Meal&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">,</span> <span class="mf">36.0</span><span class="p">,</span> <span class="mi">897</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mf">30.9</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">,</span> <span class="mf">7.9</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span>
+            <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Hominy Grits&#39;</span><span class="p">,</span> <span class="s1">&#39;24 oz.&#39;</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mf">28.6</span><span class="p">,</span> <span class="mi">680</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">10.6</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span>
+            <span class="mi">110</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Rice&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mf">21.2</span><span class="p">,</span> <span class="mi">460</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Rolled Oats&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">7.1</span><span class="p">,</span> <span class="mf">25.3</span><span class="p">,</span> <span class="mi">907</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mi">341</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">37.1</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;White Bread (Enriched)&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">7.9</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mi">488</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="mf">13.8</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Whole Wheat Bread&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">9.1</span><span class="p">,</span> <span class="mf">12.2</span><span class="p">,</span> <span class="mi">484</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">13.9</span><span class="p">,</span>
+            <span class="mf">6.4</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Rye Bread&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">9.1</span><span class="p">,</span> <span class="mf">12.4</span><span class="p">,</span> <span class="mi">439</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Pound Cake&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">24.8</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mf">18.9</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Soda Crackers&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">15.1</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mi">288</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Milk&#39;</span><span class="p">,</span> <span class="s1">&#39;1 qt.&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mf">16.8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">177</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Evaporated Milk (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;14.5 oz.&#39;</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mi">422</span><span class="p">,</span> <span class="mf">15.1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="mf">23.5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">60</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Butter&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">30.8</span><span class="p">,</span> <span class="mf">10.8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">44.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Oleomargarine&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">16.1</span><span class="p">,</span> <span class="mf">20.6</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">55.8</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;1 doz.&#39;</span><span class="p">,</span> <span class="mf">32.6</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mf">18.6</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Cheese (Cheddar)&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">24.2</span><span class="p">,</span> <span class="mf">7.4</span><span class="p">,</span> <span class="mi">448</span><span class="p">,</span> <span class="mf">16.4</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mf">28.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span>
+            <span class="mf">10.3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Cream&#39;</span><span class="p">,</span> <span class="s1">&#39;1/2 pt.&#39;</span><span class="p">,</span> <span class="mf">14.1</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">16.9</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Peanut Butter&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">17.9</span><span class="p">,</span> <span class="mf">15.7</span><span class="p">,</span> <span class="mi">661</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">9.6</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span>
+            <span class="mi">471</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Mayonnaise&#39;</span><span class="p">,</span> <span class="s1">&#39;1/2 pt.&#39;</span><span class="p">,</span> <span class="mf">16.7</span><span class="p">,</span> <span class="mf">8.6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Crisco&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">20.3</span><span class="p">,</span> <span class="mf">20.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Lard&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">41.7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Sirloin Steak&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">39.6</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mi">166</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span>
+            <span class="mi">69</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Round Steak&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">36.4</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mi">214</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Rib Roast&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">29.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mi">213</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Chuck Roast&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">22.6</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mi">309</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Plate&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">14.6</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mi">404</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Liver (Beef)&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">26.8</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">139</span><span class="p">,</span> <span class="mf">169.2</span><span class="p">,</span> <span class="mf">6.4</span><span class="p">,</span> <span class="mf">50.8</span><span class="p">,</span>
+            <span class="mi">316</span><span class="p">,</span> <span class="mi">525</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Leg of Lamb&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">27.6</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Lamb Chops (Rib)&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">36.6</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="mi">54</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Pork Chops&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">30.7</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Pork Loin Roast&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">24.2</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mi">249</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">18.2</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span>
+            <span class="mi">79</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Bacon&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">25.6</span><span class="p">,</span> <span class="mf">10.4</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Ham, smoked&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">27.4</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Salt Pork&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mf">18.8</span><span class="p">,</span> <span class="mi">164</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Roasting Chicken&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">30.3</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">184</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span>
+            <span class="mi">68</span><span class="p">,</span> <span class="mi">46</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Veal Cutlets&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">42.3</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Salmon, Pink (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;16 oz.&#39;</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mi">705</span><span class="p">,</span> <span class="mf">6.8</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">4.9</span><span class="p">,</span>
+            <span class="mi">209</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Apples&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mf">7.3</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">544</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Bananas&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="mf">4.9</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">498</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Lemons&#39;</span><span class="p">,</span> <span class="s1">&#39;1 doz.&#39;</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">952</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Oranges&#39;</span><span class="p">,</span> <span class="s1">&#39;1 doz.&#39;</span><span class="p">,</span> <span class="mf">30.9</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mf">11.1</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1998</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Green Beans&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">7.1</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mi">138</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">862</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Cabbage&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">5369</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Carrots&#39;</span><span class="p">,</span> <span class="s1">&#39;1 bunch&#39;</span><span class="p">,</span> <span class="mf">4.7</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mf">188.5</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">608</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Celery&#39;</span><span class="p">,</span> <span class="s1">&#39;1 stalk&#39;</span><span class="p">,</span> <span class="mf">7.3</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">313</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Lettuce&#39;</span><span class="p">,</span> <span class="s1">&#39;1 head&#39;</span><span class="p">,</span> <span class="mf">8.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mf">112.4</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">449</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Onions&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mi">166</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mf">16.6</span><span class="p">,</span> <span class="mf">4.7</span><span class="p">,</span> <span class="mf">5.9</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">1184</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Potatoes&#39;</span><span class="p">,</span> <span class="s1">&#39;15 lb.&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mf">14.3</span><span class="p">,</span> <span class="mi">336</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mf">29.4</span><span class="p">,</span> <span class="mf">7.1</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span>
+            <span class="mi">2522</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Spinach&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">138</span><span class="p">,</span> <span class="mf">918.4</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">,</span> <span class="mf">13.8</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">2755</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Sweet Potatoes&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">9.6</span><span class="p">,</span> <span class="mi">138</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mf">290.7</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">,</span>
+            <span class="mi">83</span><span class="p">,</span> <span class="mi">1912</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Peaches (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;No. 2 1/2&#39;</span><span class="p">,</span> <span class="mf">16.8</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">21.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">31</span><span class="p">,</span> <span class="mi">196</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Pears (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;No. 2 1/2&#39;</span><span class="p">,</span> <span class="mf">20.4</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="mi">81</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Pineapple (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;No. 2 1/2&#39;</span><span class="p">,</span> <span class="mf">21.3</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span>
+            <span class="mi">7</span><span class="p">,</span> <span class="mi">399</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Asparagus (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;No. 2&#39;</span><span class="p">,</span> <span class="mf">27.7</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mf">16.3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span>
+            <span class="mi">17</span><span class="p">,</span> <span class="mi">272</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Green Beans (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;No. 2&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mf">53.9</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span>
+            <span class="mi">32</span><span class="p">,</span> <span class="mi">431</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Pork and Beans (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;16 oz.&#39;</span><span class="p">,</span> <span class="mf">7.1</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mi">364</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">134</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">,</span>
+            <span class="mf">7.7</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Corn (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;No. 2&#39;</span><span class="p">,</span> <span class="mf">10.4</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mi">136</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">218</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Peas (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;No. 2&#39;</span><span class="p">,</span> <span class="mf">13.8</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mi">136</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mf">34.9</span><span class="p">,</span> <span class="mf">4.9</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span>
+            <span class="mi">370</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Tomatoes (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;No. 2&#39;</span><span class="p">,</span> <span class="mf">8.6</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mf">53.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span>
+            <span class="mi">36</span><span class="p">,</span> <span class="mi">1253</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Tomato Soup (can)&#39;</span><span class="p">,</span> <span class="s1">&#39;10 1/2 oz.&#39;</span><span class="p">,</span> <span class="mf">7.6</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mf">57.9</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span>
+            <span class="mf">2.4</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">862</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Peaches, Dried&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">15.7</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mf">86.8</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span>
+            <span class="mi">55</span><span class="p">,</span> <span class="mi">57</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Prunes, Dried&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">12.8</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">154</span><span class="p">,</span> <span class="mf">85.7</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span>
+            <span class="mi">257</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Raisins, Dried&#39;</span><span class="p">,</span> <span class="s1">&#39;15 oz.&#39;</span><span class="p">,</span> <span class="mf">9.4</span><span class="p">,</span> <span class="mf">13.5</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">136</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">6.3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span>
+            <span class="mi">24</span><span class="p">,</span> <span class="mi">136</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Peas, Dried&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">7.9</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mi">1367</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mi">345</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">28.7</span><span class="p">,</span> <span class="mf">18.4</span><span class="p">,</span>
+            <span class="mi">162</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Lima Beans, Dried&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">,</span> <span class="mi">1055</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mi">459</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">26.9</span><span class="p">,</span>
+            <span class="mf">38.2</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Navy Beans, Dried&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">5.9</span><span class="p">,</span> <span class="mf">26.9</span><span class="p">,</span> <span class="mi">1691</span><span class="p">,</span> <span class="mf">11.4</span><span class="p">,</span> <span class="mi">792</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">38.4</span><span class="p">,</span>
+            <span class="mf">24.6</span><span class="p">,</span> <span class="mi">217</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Coffee&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">22.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Tea&#39;</span><span class="p">,</span> <span class="s1">&#39;1/4 lb.&#39;</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Cocoa&#39;</span><span class="p">,</span> <span class="s1">&#39;8 oz.&#39;</span><span class="p">,</span> <span class="mf">8.6</span><span class="p">,</span> <span class="mf">8.7</span><span class="p">,</span> <span class="mi">237</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">11.9</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Chocolate&#39;</span><span class="p">,</span> <span class="s1">&#39;8 oz.&#39;</span><span class="p">,</span> <span class="mf">16.2</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Sugar&#39;</span><span class="p">,</span> <span class="s1">&#39;10 lb.&#39;</span><span class="p">,</span> <span class="mf">51.7</span><span class="p">,</span> <span class="mf">34.9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Corn Syrup&#39;</span><span class="p">,</span> <span class="s1">&#39;24 oz.&#39;</span><span class="p">,</span> <span class="mf">13.7</span><span class="p">,</span> <span class="mf">14.7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Molasses&#39;</span><span class="p">,</span> <span class="s1">&#39;18 oz.&#39;</span><span class="p">,</span> <span class="mf">13.6</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">10.3</span><span class="p">,</span> <span class="mi">244</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mi">146</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Strawberry Preserves&#39;</span><span class="p">,</span> <span class="s1">&#39;1 lb.&#39;</span><span class="p">,</span> <span class="mf">20.5</span><span class="p">,</span> <span class="mf">6.4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span>
+            <span class="mf">0.4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">],</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Instantiate a Glop solver and naming it.</span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">pywraplp</span><span class="o">.</span><span class="n">Solver</span><span class="p">(</span><span class="s1">&#39;StiglerDietExample&#39;</span><span class="p">,</span>
+                             <span class="n">pywraplp</span><span class="o">.</span><span class="n">Solver</span><span class="o">.</span><span class="n">GLOP_LINEAR_PROGRAMMING</span><span class="p">)</span>
+
+    <span class="c1"># Declare an array to hold our variables.</span>
+    <span class="n">foods</span> <span class="o">=</span> <span class="p">[</span><span class="n">solver</span><span class="o">.</span><span class="n">NumVar</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">infinity</span><span class="p">(),</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of variables =&#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">NumVariables</span><span class="p">())</span>
+
+    <span class="c1"># Create the constraints, one per nutrient.</span>
+    <span class="n">constraints</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">nutrient</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nutrients</span><span class="p">):</span>
+        <span class="n">constraints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">Constraint</span><span class="p">(</span><span class="n">nutrient</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">solver</span><span class="o">.</span><span class="n">infinity</span><span class="p">()))</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">constraints</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">SetCoefficient</span><span class="p">(</span><span class="n">foods</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of constraints =&#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">NumConstraints</span><span class="p">())</span>
+
+    <span class="c1"># Objective function: Minimize the sum of (price-normalized) foods.</span>
+    <span class="n">objective</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">Objective</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">food</span> <span class="ow">in</span> <span class="n">foods</span><span class="p">:</span>
+        <span class="n">objective</span><span class="o">.</span><span class="n">SetCoefficient</span><span class="p">(</span><span class="n">food</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">objective</span><span class="o">.</span><span class="n">SetMinimization</span><span class="p">()</span>
+
+    <span class="n">status</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">Solve</span><span class="p">()</span>
+
+    <span class="c1"># Check that the problem has an optimal solution.</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">solver</span><span class="o">.</span><span class="n">OPTIMAL</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The problem does not have an optimal solution!&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">solver</span><span class="o">.</span><span class="n">FEASIBLE</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A potentially suboptimal solution was found.&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The solver could not solve the problem.&#39;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Display the amounts (in dollars) to purchase of each food.</span>
+    <span class="n">nutrients_result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nutrients</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Annual Foods:&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">food</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">foods</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">food</span><span class="o">.</span><span class="n">solution_value</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: $</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mf">365.</span> <span class="o">*</span> <span class="n">food</span><span class="o">.</span><span class="n">solution_value</span><span class="p">()))</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nutrients</span><span class="p">):</span>
+                <span class="n">nutrients_result</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">food</span><span class="o">.</span><span class="n">solution_value</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Optimal annual price: $</span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">365.</span> <span class="o">*</span> <span class="n">objective</span><span class="o">.</span><span class="n">Value</span><span class="p">()))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Nutrients per day:&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">nutrient</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nutrients</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{:.2f}</span><span class="s1"> (min </span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nutrient</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nutrients_result</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                           <span class="n">nutrient</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Advanced usage:&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Problem solved in &#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">wall_time</span><span class="p">(),</span> <span class="s1">&#39; milliseconds&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Problem solved in &#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">iterations</span><span class="p">(),</span> <span class="s1">&#39; iterations&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of variables = 77
+Number of constraints = 9
+
+Annual Foods:
+Wheat Flour (Enriched): $10.774457511918223
+Liver (Beef): $0.6907834111074193
+Cabbage: $4.093268864842877
+Spinach: $1.8277960703546996
+Navy Beans, Dried: $22.275425687243036
+
+Optimal annual price: $39.6617
+
+Nutrients per day:
+Calories (kcal): 3.00 (min 3)
+Protein (g): 147.41 (min 70)
+Calcium (g): 0.80 (min 0.8)
+Iron (mg): 60.47 (min 12)
+Vitamin A (KIU): 5.00 (min 5)
+Vitamin B1 (mg): 4.12 (min 1.8)
+Vitamin B2 (mg): 2.70 (min 2.7)
+Niacin (mg): 27.32 (min 18)
+Vitamin C (mg): 75.00 (min 75)
+
+Advanced usage:
+Problem solved in  7  milliseconds
+Problem solved in  14  iterations
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "sparsh-ai/multiobjective-optimizations",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="T929652_Efficient_Frontier.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Efficient Frontier</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="T209908_Stein%27s_Paradox.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Stein’s Paradox</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Sparsh A.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

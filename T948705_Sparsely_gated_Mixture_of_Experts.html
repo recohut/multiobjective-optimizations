@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sparsely-gated Mixture-of-Experts &#8212; multiobjective-optimizations</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Multi-Objective Ranking using Constrained Optimization in GBTs" href="T458949_Multi_Objective_Ranking_using_Constrained_Optimization_in_GBTs.html" />
+    <link rel="prev" title="MMoE on Census income data in Tensorflow" href="T580632_MMoE_on_Census_income_data_in_Tensorflow.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">multiobjective-optimizations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L069335_Multi_Objective_Optimization.html">
+   Multi-Objective Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Concepts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L492548_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
+   Pareto Optimality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L483593_MOO_Decision_Maker.html">
+   MOO Decision Maker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L336869_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L553498_MOO_in_Recommender_Systems.html">
+   MOO in Recommender Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L480379_Marketplace_Recommenders.html">
+   Marketplace Recommenders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L556513_Multi_Objective_Hyperparameter_Optimization.html">
+   Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Methods
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L005003_Scalarization.html">
+   Scalarization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L762719_Shared_Bottom.html">
+   Shared Bottom
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L915313_Expected_Hypervolume_Improvement_%28EHVI%29.html">
+   Expected Hypervolume Improvement (EHVI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html">
+   Multi-gradient Descent (MGDRec)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L861465_Mixture_of_Experts_%28MoE%29.html">
+   Mixture of Experts (MoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L485744_Multi_gate_Mixture_of_Experts_%28MMoE%29.html">
+   Multi-gate Mixture-of-Experts (MMoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L519476_Entire_Space_Multi_Task_Model_%28ESSM%29.html">
+   Entire Space Multi-Task Model (ESSM)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L718205_Progressive_Layered_Extraction_%28PLE%29.html">
+   Progressive Layered Extraction (PLE)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L749932_MTL_for_Related_Products_Recommendations_at_Pinterest.html">
+   MTL for Related Products Recommendations at Pinterest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L792752_UberEats.html">
+   UberEats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L106645_Etsy.html">
+   Etsy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L149938_Airbnb_Experiences.html">
+   Airbnb Experiences
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T929652_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T854417_Linear_Optimization_with_OR_Tools.html">
+   Linear Optimization with OR-Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T209908_Stein%27s_Paradox.html">
+   Stein’s Paradox
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T423887_Solving_MOO_with_SMT_Toolkit.html">
+   Solving MOO with SMT Toolkit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T277640_Efficient_Continuous_Pareto_Exploration_in_MTL_on_UCI_Census.html">
+   Efficient Continuous Pareto Exploration in MTL on UCI Census
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T851476_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T307666_Pareto_Efficient_algorithm_for_MOO.html">
+   Pareto-Efficient algorithm for MOO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T465017_Shared_Bottom_in_Tensorflow.html">
+   Shared Bottom in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T175823_MoE_in_Tensorflow.html">
+   MoE in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T580632_MMoE_on_Census_income_data_in_Tensorflow.html">
+   MMoE on Census income data in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Sparsely-gated Mixture-of-Experts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T458949_Multi_Objective_Ranking_using_Constrained_Optimization_in_GBTs.html">
+   Multi-Objective Ranking using Constrained Optimization in GBTs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T145475_Multi_objective_Optimization_using_Pymoo_Library.html">
+   Multi-objective Optimization using Pymoo Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T892775_Exploring_Multi_Objective_Hyperparameter_Optimization.html">
+   Exploring Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T660394_Implicit_Hybrid_Movie_Recommender_using_Collie_Library.html">
+   Implicit Hybrid Movie Recommender using Collie Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T559084_Multi_task_Learning_on_ML_100k_in_TFRS.html">
+   Multi-task Learning on ML-100k in TFRS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T368830_Multi_Task_Recommender_on_Olist_dataset_using_TFRS_Library.html">
+   Multi-Task Recommender on Olist dataset using TFRS Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T671443_MAMO_Framework.html">
+   MAMO Framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T952247_MKR.html">
+   MKR
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/T948705_Sparsely_gated_Mixture_of_Experts.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/T948705_Sparsely_gated_Mixture_of_Experts.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/T948705_Sparsely_gated_Mixture_of_Experts.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#models">
+   Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dummy-example">
+   Dummy example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cifar-10-example">
+   CIFAR-10 example
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="sparsely-gated-mixture-of-experts">
+<h1>Sparsely-gated Mixture-of-Experts<a class="headerlink" href="#sparsely-gated-mixture-of-experts" title="Permalink to this headline">¶</a></h1>
+<p><center><img src='https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bc27926b-46a1-4699-b456-d439f3484256/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211027T062821Z&X-Amz-Expires=86400&X-Amz-Signature=01ec9e3caff091d3c6f2289e1c1963dbec4f638a7753a142d15461954dc9e237&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22'></center></p><div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+<span class="kn">from</span> <span class="nn">torch.optim</span> <span class="kn">import</span> <span class="n">Adam</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+<span class="kn">from</span> <span class="nn">torch.distributions.normal</span> <span class="kn">import</span> <span class="n">Normal</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="models">
+<h2>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MLP</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MLP</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_soft</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LogSoftmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_soft</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SparseDispatcher</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Helper for implementing a mixture of experts.</span>
+<span class="sd">    The purpose of this class is to create input minibatches for the</span>
+<span class="sd">    experts and to combine the results of the experts to form a unified</span>
+<span class="sd">    output tensor.</span>
+<span class="sd">    There are two functions:</span>
+<span class="sd">    dispatch - take an input Tensor and create input Tensors for each expert.</span>
+<span class="sd">    combine - take output Tensors from each expert and form a combined output</span>
+<span class="sd">      Tensor.  Outputs from different experts for the same batch element are</span>
+<span class="sd">      summed together, weighted by the provided &quot;gates&quot;.</span>
+<span class="sd">    The class is initialized with a &quot;gates&quot; Tensor, which specifies which</span>
+<span class="sd">    batch elements go to which experts, and the weights to use when combining</span>
+<span class="sd">    the outputs.  Batch element b is sent to expert e iff gates[b, e] != 0.</span>
+<span class="sd">    The inputs and outputs are all two-dimensional [batch, depth].</span>
+<span class="sd">    Caller is responsible for collapsing additional dimensions prior to</span>
+<span class="sd">    calling this class and reshaping the output to the original shape.</span>
+<span class="sd">    See common_layers.reshape_like().</span>
+<span class="sd">    Example use:</span>
+<span class="sd">    gates: a float32 `Tensor` with shape `[batch_size, num_experts]`</span>
+<span class="sd">    inputs: a float32 `Tensor` with shape `[batch_size, input_size]`</span>
+<span class="sd">    experts: a list of length `num_experts` containing sub-networks.</span>
+<span class="sd">    dispatcher = SparseDispatcher(num_experts, gates)</span>
+<span class="sd">    expert_inputs = dispatcher.dispatch(inputs)</span>
+<span class="sd">    expert_outputs = [experts[i](expert_inputs[i]) for i in range(num_experts)]</span>
+<span class="sd">    outputs = dispatcher.combine(expert_outputs)</span>
+<span class="sd">    The preceding code sets the output for a particular example b to:</span>
+<span class="sd">    output[b] = Sum_i(gates[b, i] * experts[i](inputs[b]))</span>
+<span class="sd">    This class takes advantage of sparsity in the gate matrix by including in the</span>
+<span class="sd">    `Tensor`s for expert i only the batch elements for which `gates[b, i] &gt; 0`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_experts</span><span class="p">,</span> <span class="n">gates</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create a SparseDispatcher.&quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gates</span> <span class="o">=</span> <span class="n">gates</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_experts</span> <span class="o">=</span> <span class="n">num_experts</span>
+        <span class="c1"># sort experts</span>
+        <span class="n">sorted_experts</span><span class="p">,</span> <span class="n">index_sorted_experts</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">gates</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># drop indices</span>
+        <span class="n">_</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expert_index</span> <span class="o">=</span> <span class="n">sorted_experts</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># get according batch index for each expert</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_batch_index</span> <span class="o">=</span> <span class="n">sorted_experts</span><span class="p">[</span><span class="n">index_sorted_experts</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># calculate num samples that each expert gets</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_part_sizes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="n">gates</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+        <span class="c1"># expand gates to match with self._batch_index</span>
+        <span class="n">gates_exp</span> <span class="o">=</span> <span class="n">gates</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_index</span><span class="o">.</span><span class="n">flatten</span><span class="p">()]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_gates</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">gates_exp</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expert_index</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create one input Tensor for each expert.</span>
+<span class="sd">        The `Tensor` for a expert `i` contains the slices of `inp` corresponding</span>
+<span class="sd">        to the batch elements `b` where `gates[b, i] &gt; 0`.</span>
+<span class="sd">        Args:</span>
+<span class="sd">          inp: a `Tensor` of shape &quot;[batch_size, &lt;extra_input_dims&gt;]`</span>
+<span class="sd">        Returns:</span>
+<span class="sd">          a list of `num_experts` `Tensor`s with shapes</span>
+<span class="sd">            `[expert_batch_size_i, &lt;extra_input_dims&gt;]`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># assigns samples to experts whose gate is nonzero</span>
+
+        <span class="c1"># expand according to batch index so we can just split by _part_sizes</span>
+        <span class="n">inp_exp</span> <span class="o">=</span> <span class="n">inp</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_index</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">inp_exp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_part_sizes</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">combine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expert_out</span><span class="p">,</span> <span class="n">multiply_by_gates</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sum together the expert output, weighted by the gates.</span>
+<span class="sd">        The slice corresponding to a particular batch element `b` is computed</span>
+<span class="sd">        as the sum over all experts `i` of the expert output, weighted by the</span>
+<span class="sd">        corresponding gate values.  If `multiply_by_gates` is set to False, the</span>
+<span class="sd">        gate values are ignored.</span>
+<span class="sd">        Args:</span>
+<span class="sd">          expert_out: a list of `num_experts` `Tensor`s, each with shape</span>
+<span class="sd">            `[expert_batch_size_i, &lt;extra_output_dims&gt;]`.</span>
+<span class="sd">          multiply_by_gates: a boolean</span>
+<span class="sd">        Returns:</span>
+<span class="sd">          a `Tensor` with shape `[batch_size, &lt;extra_output_dims&gt;]`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># apply exp to expert outputs, so we are not longer in log space</span>
+        <span class="n">stitched</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">expert_out</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">multiply_by_gates</span><span class="p">:</span>
+            <span class="n">stitched</span> <span class="o">=</span> <span class="n">stitched</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_gates</span><span class="p">)</span>
+        <span class="n">zeros</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gates</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">expert_out</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># combine samples that have been processed by the same k experts</span>
+        <span class="n">combined</span> <span class="o">=</span> <span class="n">zeros</span><span class="o">.</span><span class="n">index_add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_batch_index</span><span class="p">,</span> <span class="n">stitched</span><span class="o">.</span><span class="n">float</span><span class="p">())</span>
+        <span class="c1"># add eps to all zero values in order to avoid nans when going back to log space</span>
+        <span class="n">combined</span><span class="p">[</span><span class="n">combined</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span>
+        <span class="c1"># back to log space</span>
+        <span class="k">return</span> <span class="n">combined</span><span class="o">.</span><span class="n">log</span><span class="p">()</span>
+
+
+    <span class="k">def</span> <span class="nf">expert_to_gates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gate values corresponding to the examples in the per-expert `Tensor`s.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">          a list of `num_experts` one-dimensional `Tensor`s with type `tf.float32`</span>
+<span class="sd">              and shapes `[expert_batch_size_i]`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># split nonzero gates for each expert</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_gates</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_part_sizes</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+
+
+<span class="k">class</span> <span class="nc">MoE</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Call a Sparsely gated mixture of experts layer with 1-layer Feed-Forward networks as experts.</span>
+<span class="sd">    Args:</span>
+<span class="sd">    input_size: integer - size of the input</span>
+<span class="sd">    output_size: integer - size of the input</span>
+<span class="sd">    num_experts: an integer - number of experts</span>
+<span class="sd">    hidden_size: an integer - hidden size of the experts</span>
+<span class="sd">    noisy_gating: a boolean</span>
+<span class="sd">    k: an integer - how many experts to use for each batch element</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">num_experts</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">noisy_gating</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MoE</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noisy_gating</span> <span class="o">=</span> <span class="n">noisy_gating</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span> <span class="o">=</span> <span class="n">num_experts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_size</span> <span class="o">=</span> <span class="n">output_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_size</span> <span class="o">=</span> <span class="n">input_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span> <span class="o">=</span> <span class="n">hidden_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span>
+        <span class="c1"># instantiate experts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">experts</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span><span class="n">MLP</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">)])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w_gate</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">num_experts</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w_noise</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">num_experts</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">softplus</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Softplus</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">softmax</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Softmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">normal</span> <span class="o">=</span> <span class="n">Normal</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">1.0</span><span class="p">]))</span>
+
+        <span class="k">assert</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">cv_squared</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The squared coefficient of variation of a sample.</span>
+<span class="sd">        Useful as a loss to encourage a positive distribution to be more uniform.</span>
+<span class="sd">        Epsilons added for numerical stability.</span>
+<span class="sd">        Returns 0 for an empty Tensor.</span>
+<span class="sd">        Args:</span>
+<span class="sd">        x: a `Tensor`.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">        a `Scalar`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-10</span>
+        <span class="c1"># if only num_experts = 1</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">var</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">_gates_to_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gates</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute the true load per expert, given the gates.</span>
+<span class="sd">        The load is the number of examples for which the corresponding gate is &gt;0.</span>
+<span class="sd">        Args:</span>
+<span class="sd">        gates: a `Tensor` of shape [batch_size, n]</span>
+<span class="sd">        Returns:</span>
+<span class="sd">        a float32 `Tensor` of shape [n]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">gates</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+
+
+    <span class="k">def</span> <span class="nf">_prob_in_top_k</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clean_values</span><span class="p">,</span> <span class="n">noisy_values</span><span class="p">,</span> <span class="n">noise_stddev</span><span class="p">,</span> <span class="n">noisy_top_values</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Helper function to NoisyTopKGating.</span>
+<span class="sd">        Computes the probability that value is in top k, given different random noise.</span>
+<span class="sd">        This gives us a way of backpropagating from a loss that balances the number</span>
+<span class="sd">        of times each expert is in the top k experts per example.</span>
+<span class="sd">        In the case of no noise, pass in None for noise_stddev, and the result will</span>
+<span class="sd">        not be differentiable.</span>
+<span class="sd">        Args:</span>
+<span class="sd">        clean_values: a `Tensor` of shape [batch, n].</span>
+<span class="sd">        noisy_values: a `Tensor` of shape [batch, n].  Equal to clean values plus</span>
+<span class="sd">          normally distributed noise with standard deviation noise_stddev.</span>
+<span class="sd">        noise_stddev: a `Tensor` of shape [batch, n], or None</span>
+<span class="sd">        noisy_top_values: a `Tensor` of shape [batch, m].</span>
+<span class="sd">           &quot;values&quot; Output of tf.top_k(noisy_top_values, m).  m &gt;= k+1</span>
+<span class="sd">        Returns:</span>
+<span class="sd">        a `Tensor` of shape [batch, n].</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">batch</span> <span class="o">=</span> <span class="n">clean_values</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">noisy_top_values</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">top_values_flat</span> <span class="o">=</span> <span class="n">noisy_top_values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">threshold_positions_if_in</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span> <span class="o">*</span> <span class="n">m</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span>
+        <span class="n">threshold_if_in</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">top_values_flat</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">threshold_positions_if_in</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">is_in</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">gt</span><span class="p">(</span><span class="n">noisy_values</span><span class="p">,</span> <span class="n">threshold_if_in</span><span class="p">)</span>
+        <span class="n">threshold_positions_if_out</span> <span class="o">=</span> <span class="n">threshold_positions_if_in</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">threshold_if_out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">top_values_flat</span><span class="p">,</span><span class="mi">0</span> <span class="p">,</span> <span class="n">threshold_positions_if_out</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># is each value currently in the top k.</span>
+        <span class="n">prob_if_in</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">normal</span><span class="o">.</span><span class="n">cdf</span><span class="p">((</span><span class="n">clean_values</span> <span class="o">-</span> <span class="n">threshold_if_in</span><span class="p">)</span><span class="o">/</span><span class="n">noise_stddev</span><span class="p">)</span>
+        <span class="n">prob_if_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">normal</span><span class="o">.</span><span class="n">cdf</span><span class="p">((</span><span class="n">clean_values</span> <span class="o">-</span> <span class="n">threshold_if_out</span><span class="p">)</span><span class="o">/</span><span class="n">noise_stddev</span><span class="p">)</span>
+        <span class="n">prob</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">is_in</span><span class="p">,</span> <span class="n">prob_if_in</span><span class="p">,</span> <span class="n">prob_if_out</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">prob</span>
+
+
+    <span class="k">def</span> <span class="nf">noisy_top_k_gating</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">noise_epsilon</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Noisy top-k gating.</span>
+<span class="sd">          See paper: https://arxiv.org/abs/1701.06538.</span>
+<span class="sd">          Args:</span>
+<span class="sd">            x: input Tensor with shape [batch_size, input_size]</span>
+<span class="sd">            train: a boolean - we only add noise at training time.</span>
+<span class="sd">            noise_epsilon: a float</span>
+<span class="sd">          Returns:</span>
+<span class="sd">            gates: a Tensor with shape [batch_size, num_experts]</span>
+<span class="sd">            load: a Tensor with shape [num_experts]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">clean_logits</span> <span class="o">=</span> <span class="n">x</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_gate</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">noisy_gating</span><span class="p">:</span>
+            <span class="n">raw_noise_stddev</span> <span class="o">=</span> <span class="n">x</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_noise</span>
+            <span class="n">noise_stddev</span> <span class="o">=</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">softplus</span><span class="p">(</span><span class="n">raw_noise_stddev</span><span class="p">)</span> <span class="o">+</span> <span class="n">noise_epsilon</span><span class="p">)</span> <span class="o">*</span> <span class="n">train</span><span class="p">)</span>
+            <span class="n">noisy_logits</span> <span class="o">=</span> <span class="n">clean_logits</span> <span class="o">+</span> <span class="p">(</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">clean_logits</span><span class="p">)</span> <span class="o">*</span> <span class="n">noise_stddev</span><span class="p">)</span>
+            <span class="n">logits</span> <span class="o">=</span> <span class="n">noisy_logits</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logits</span> <span class="o">=</span> <span class="n">clean_logits</span>
+
+        <span class="c1"># calculate topk + 1 that will be needed for the noisy gates</span>
+        <span class="n">top_logits</span><span class="p">,</span> <span class="n">top_indices</span> <span class="o">=</span> <span class="n">logits</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">top_k_logits</span> <span class="o">=</span> <span class="n">top_logits</span><span class="p">[:,</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">top_k_indices</span> <span class="o">=</span> <span class="n">top_indices</span><span class="p">[:,</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">top_k_gates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">top_k_logits</span><span class="p">)</span>
+
+        <span class="n">zeros</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">gates</span> <span class="o">=</span> <span class="n">zeros</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">top_k_indices</span><span class="p">,</span> <span class="n">top_k_gates</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">noisy_gating</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">:</span>
+            <span class="n">load</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prob_in_top_k</span><span class="p">(</span><span class="n">clean_logits</span><span class="p">,</span> <span class="n">noisy_logits</span><span class="p">,</span> <span class="n">noise_stddev</span><span class="p">,</span> <span class="n">top_logits</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">load</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gates_to_load</span><span class="p">(</span><span class="n">gates</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">gates</span><span class="p">,</span> <span class="n">load</span>
+
+
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">loss_coef</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Args:</span>
+<span class="sd">        x: tensor shape [batch_size, input_size]</span>
+<span class="sd">        train: a boolean scalar.</span>
+<span class="sd">        loss_coef: a scalar - multiplier on load-balancing losses</span>
+<span class="sd">        Returns:</span>
+<span class="sd">        y: a tensor with shape [batch_size, output_size].</span>
+<span class="sd">        extra_training_loss: a scalar.  This should be added into the overall</span>
+<span class="sd">        training loss of the model.  The backpropagation of this loss</span>
+<span class="sd">        encourages all experts to be approximately equally used across a batch.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gates</span><span class="p">,</span> <span class="n">load</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">noisy_top_k_gating</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">train</span><span class="p">)</span>
+        <span class="c1"># calculate importance loss</span>
+        <span class="n">importance</span> <span class="o">=</span> <span class="n">gates</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1">#</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cv_squared</span><span class="p">(</span><span class="n">importance</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cv_squared</span><span class="p">(</span><span class="n">load</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">*=</span> <span class="n">loss_coef</span>
+
+        <span class="n">dispatcher</span> <span class="o">=</span> <span class="n">SparseDispatcher</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">,</span> <span class="n">gates</span><span class="p">)</span>
+        <span class="n">expert_inputs</span> <span class="o">=</span> <span class="n">dispatcher</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">gates</span> <span class="o">=</span> <span class="n">dispatcher</span><span class="o">.</span><span class="n">expert_to_gates</span><span class="p">()</span>
+        <span class="n">expert_outputs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">experts</span><span class="p">[</span><span class="n">i</span><span class="p">](</span><span class="n">expert_inputs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">)]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">dispatcher</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">expert_outputs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">y</span><span class="p">,</span> <span class="n">loss</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dummy-example">
+<h2>Dummy example<a class="headerlink" href="#dummy-example" title="Permalink to this headline">¶</a></h2>
+<p>a minimal working example illustrating how to train and evaluate the MoE layer with dummy inputs and targets.</p>
+<blockquote>
+<div><p>Note: If dummy example doesn’t work, try in <code class="docutils literal notranslate"><span class="pre">torch==1.0.0</span></code></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optim</span><span class="p">):</span>
+    <span class="c1"># model returns the prediction and the loss that encourages all experts to have equal importance and load</span>
+    <span class="n">y_hat</span><span class="p">,</span> <span class="n">aux_loss</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">float</span><span class="p">())</span>
+    <span class="c1"># calculate prediction loss</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="c1"># combine losses</span>
+    <span class="n">total_loss</span> <span class="o">=</span> <span class="n">loss</span> <span class="o">+</span> <span class="n">aux_loss</span>
+    <span class="n">optim</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">total_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optim</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training Results - loss: </span><span class="si">{:.2f}</span><span class="s2">, aux_loss: </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">aux_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
+    <span class="k">return</span> <span class="n">model</span>
+
+<span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="c1"># model returns the prediction and the loss that encourages all experts to have equal importance and load</span>
+    <span class="n">y_hat</span><span class="p">,</span> <span class="n">aux_loss</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">total_loss</span> <span class="o">=</span> <span class="n">loss</span> <span class="o">+</span> <span class="n">aux_loss</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Evaluation Results - loss: </span><span class="si">{:.2f}</span><span class="s2">, aux_loss: </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">aux_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
+
+
+
+<span class="k">def</span> <span class="nf">dummy_data</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">):</span>
+    <span class="c1"># dummy input</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>
+
+    <span class="c1"># dummy target</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span>
+
+
+<span class="c1"># arguments</span>
+<span class="n">input_size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">num_classes</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">num_experts</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">hidden_size</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1"># instantiate the MoE layer</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">MoE</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">num_experts</span><span class="p">,</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">noisy_gating</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">NLLLoss</span><span class="p">()</span>
+<span class="n">optim</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">dummy_data</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+
+<span class="c1"># train</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optim</span><span class="p">)</span>
+<span class="c1"># evaluate</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">dummy_data</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+<span class="nb">eval</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training Results - loss: 3.01, aux_loss: 0.002
+Evaluation Results - loss: 3.00, aux_loss: 0.033
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cifar-10-example">
+<h2>CIFAR-10 example<a class="headerlink" href="#cifar-10-example" title="Permalink to this headline">¶</a></h2>
+<p>a minimal working example of the CIFAR 10 dataset. It achieves an accuracy of 39% with arbitrary hyper-parameters and not fully converged.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+     <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))])</span>
+
+<span class="n">trainset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                        <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+<span class="n">trainloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">trainset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+                                          <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">testset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                       <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+<span class="n">testloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">testset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+                                         <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">classes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;plane&#39;</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;bird&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;deer&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;frog&#39;</span><span class="p">,</span> <span class="s1">&#39;horse&#39;</span><span class="p">,</span> <span class="s1">&#39;ship&#39;</span><span class="p">,</span> <span class="s1">&#39;truck&#39;</span><span class="p">)</span>
+
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">MoE</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">3072</span><span class="p">,</span><span class="n">output_size</span><span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num_experts</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">noisy_gating</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>  <span class="c1"># loop over the dataset multiple times</span>
+
+    <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">trainloader</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="c1"># get the inputs; data is a list of [inputs, labels]</span>
+        <span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">labels</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="c1"># zero the parameter gradients</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+
+        <span class="c1"># forward + backward + optimize</span>
+        <span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">outputs</span><span class="p">,</span> <span class="n">aux_loss</span> <span class="o">=</span> <span class="n">net</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+        <span class="n">total_loss</span> <span class="o">=</span> <span class="n">loss</span> <span class="o">+</span> <span class="n">aux_loss</span>
+        <span class="n">total_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="c1"># print statistics</span>
+        <span class="n">running_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">99</span><span class="p">:</span>    <span class="c1"># print every 2000 mini-batches</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%d</span><span class="s1">, </span><span class="si">%5d</span><span class="s1">] loss: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span>
+                  <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">running_loss</span> <span class="o">/</span> <span class="mi">100</span><span class="p">))</span>
+            <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finished Training&#39;</span><span class="p">)</span>
+
+
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">testloader</span><span class="p">:</span>
+        <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="n">outputs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">net</span><span class="p">(</span><span class="n">images</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">predicted</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">outputs</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">labels</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">predicted</span> <span class="o">==</span> <span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of the network on the 10000 test images: </span><span class="si">%d</span><span class="s1"> </span><span class="si">%%</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+    <span class="mi">100</span> <span class="o">*</span> <span class="n">correct</span> <span class="o">/</span> <span class="n">total</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ./data/cifar-10-python.tar.gz
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "1a14a77a376b4892ad2ccbba543aeac1", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting ./data/cifar-10-python.tar.gz to ./data
+Files already downloaded and verified
+[1,   100] loss: 2.284
+[1,   200] loss: 2.229
+[1,   300] loss: 2.154
+[1,   400] loss: 2.089
+[1,   500] loss: 2.056
+[1,   600] loss: 1.999
+[1,   700] loss: 1.958
+[2,   100] loss: 1.898
+[2,   200] loss: 1.865
+[2,   300] loss: 1.859
+[2,   400] loss: 1.829
+[2,   500] loss: 1.798
+[2,   600] loss: 1.789
+[2,   700] loss: 1.761
+Finished Training
+Accuracy of the network on the 10000 test images: 39 %
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "sparsh-ai/multiobjective-optimizations",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="T580632_MMoE_on_Census_income_data_in_Tensorflow.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">MMoE on Census income data in Tensorflow</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="T458949_Multi_Objective_Ranking_using_Constrained_Optimization_in_GBTs.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Multi-Objective Ranking using Constrained Optimization in GBTs</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Sparsh A.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

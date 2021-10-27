@@ -1,0 +1,1593 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMoE on Census income data in Tensorflow &#8212; multiobjective-optimizations</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sparsely-gated Mixture-of-Experts" href="T948705_Sparsely_gated_Mixture_of_Experts.html" />
+    <link rel="prev" title="MoE in Tensorflow" href="T175823_MoE_in_Tensorflow.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">multiobjective-optimizations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L069335_Multi_Objective_Optimization.html">
+   Multi-Objective Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Concepts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L492548_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
+   Pareto Optimality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L483593_MOO_Decision_Maker.html">
+   MOO Decision Maker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L336869_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L553498_MOO_in_Recommender_Systems.html">
+   MOO in Recommender Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L480379_Marketplace_Recommenders.html">
+   Marketplace Recommenders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L556513_Multi_Objective_Hyperparameter_Optimization.html">
+   Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Methods
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L005003_Scalarization.html">
+   Scalarization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L762719_Shared_Bottom.html">
+   Shared Bottom
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L915313_Expected_Hypervolume_Improvement_%28EHVI%29.html">
+   Expected Hypervolume Improvement (EHVI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html">
+   Multi-gradient Descent (MGDRec)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L861465_Mixture_of_Experts_%28MoE%29.html">
+   Mixture of Experts (MoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L485744_Multi_gate_Mixture_of_Experts_%28MMoE%29.html">
+   Multi-gate Mixture-of-Experts (MMoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L519476_Entire_Space_Multi_Task_Model_%28ESSM%29.html">
+   Entire Space Multi-Task Model (ESSM)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L718205_Progressive_Layered_Extraction_%28PLE%29.html">
+   Progressive Layered Extraction (PLE)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L749932_MTL_for_Related_Products_Recommendations_at_Pinterest.html">
+   MTL for Related Products Recommendations at Pinterest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L792752_UberEats.html">
+   UberEats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L106645_Etsy.html">
+   Etsy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L149938_Airbnb_Experiences.html">
+   Airbnb Experiences
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T929652_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T854417_Linear_Optimization_with_OR_Tools.html">
+   Linear Optimization with OR-Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T209908_Stein%27s_Paradox.html">
+   Stein’s Paradox
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T423887_Solving_MOO_with_SMT_Toolkit.html">
+   Solving MOO with SMT Toolkit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T277640_Efficient_Continuous_Pareto_Exploration_in_MTL_on_UCI_Census.html">
+   Efficient Continuous Pareto Exploration in MTL on UCI Census
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T851476_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T307666_Pareto_Efficient_algorithm_for_MOO.html">
+   Pareto-Efficient algorithm for MOO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T465017_Shared_Bottom_in_Tensorflow.html">
+   Shared Bottom in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T175823_MoE_in_Tensorflow.html">
+   MoE in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   MMoE on Census income data in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T948705_Sparsely_gated_Mixture_of_Experts.html">
+   Sparsely-gated Mixture-of-Experts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T458949_Multi_Objective_Ranking_using_Constrained_Optimization_in_GBTs.html">
+   Multi-Objective Ranking using Constrained Optimization in GBTs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T145475_Multi_objective_Optimization_using_Pymoo_Library.html">
+   Multi-objective Optimization using Pymoo Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T892775_Exploring_Multi_Objective_Hyperparameter_Optimization.html">
+   Exploring Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T660394_Implicit_Hybrid_Movie_Recommender_using_Collie_Library.html">
+   Implicit Hybrid Movie Recommender using Collie Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T559084_Multi_task_Learning_on_ML_100k_in_TFRS.html">
+   Multi-task Learning on ML-100k in TFRS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T368830_Multi_Task_Recommender_on_Olist_dataset_using_TFRS_Library.html">
+   Multi-Task Recommender on Olist dataset using TFRS Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T671443_MAMO_Framework.html">
+   MAMO Framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T952247_MKR.html">
+   MKR
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/T580632_MMoE_on_Census_income_data_in_Tensorflow.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/T580632_MMoE_on_Census_income_data_in_Tensorflow.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/T580632_MMoE_on_Census_income_data_in_Tensorflow.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installations">
+   Installations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#params">
+   Params
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model">
+   Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthetic-data">
+   Synthetic data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#census-data">
+   Census data
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="mmoe-on-census-income-data-in-tensorflow">
+<h1>MMoE on Census income data in Tensorflow<a class="headerlink" href="#mmoe-on-census-income-data-in-tensorflow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installations">
+<h2>Installations<a class="headerlink" href="#installations" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install numpy==1.19.2
+!pip install pandas==1.3.1
+!pip install scikit-learn==0.24.2
+!pip install tensorflow==2.5.1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">backend</span> <span class="k">as</span> <span class="n">K</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.initializers</span> <span class="kn">import</span> <span class="n">VarianceScaling</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">activations</span><span class="p">,</span> <span class="n">initializers</span><span class="p">,</span> <span class="n">regularizers</span><span class="p">,</span> <span class="n">constraints</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Layer</span><span class="p">,</span> <span class="n">InputSpec</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">to_categorical</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">Callback</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="params">
+<h2>Params<a class="headerlink" href="#params" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Fix numpy seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="c1"># Fix random seed for reproducibility</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="c1"># Fix TensorFlow graph-level seed for reproducibility</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="model">
+<h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MMoE</span><span class="p">(</span><span class="n">Layer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Multi-gate Mixture-of-Experts model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">units</span><span class="p">,</span>
+                 <span class="n">num_experts</span><span class="p">,</span>
+                 <span class="n">num_tasks</span><span class="p">,</span>
+                 <span class="n">use_expert_bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">use_gate_bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">expert_activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+                 <span class="n">gate_activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">,</span>
+                 <span class="n">expert_bias_initializer</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span>
+                 <span class="n">gate_bias_initializer</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span>
+                 <span class="n">expert_bias_regularizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">gate_bias_regularizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">expert_bias_constraint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">gate_bias_constraint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">expert_kernel_initializer</span><span class="o">=</span><span class="s1">&#39;VarianceScaling&#39;</span><span class="p">,</span>
+                 <span class="n">gate_kernel_initializer</span><span class="o">=</span><span class="s1">&#39;VarianceScaling&#39;</span><span class="p">,</span>
+                 <span class="n">expert_kernel_regularizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">gate_kernel_regularizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">expert_kernel_constraint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">gate_kernel_constraint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">activity_regularizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">         Method for instantiating MMoE layer.</span>
+<span class="sd">        :param units: Number of hidden units</span>
+<span class="sd">        :param num_experts: Number of experts</span>
+<span class="sd">        :param num_tasks: Number of tasks</span>
+<span class="sd">        :param use_expert_bias: Boolean to indicate the usage of bias in the expert weights</span>
+<span class="sd">        :param use_gate_bias: Boolean to indicate the usage of bias in the gate weights</span>
+<span class="sd">        :param expert_activation: Activation function of the expert weights</span>
+<span class="sd">        :param gate_activation: Activation function of the gate weights</span>
+<span class="sd">        :param expert_bias_initializer: Initializer for the expert bias</span>
+<span class="sd">        :param gate_bias_initializer: Initializer for the gate bias</span>
+<span class="sd">        :param expert_bias_regularizer: Regularizer for the expert bias</span>
+<span class="sd">        :param gate_bias_regularizer: Regularizer for the gate bias</span>
+<span class="sd">        :param expert_bias_constraint: Constraint for the expert bias</span>
+<span class="sd">        :param gate_bias_constraint: Constraint for the gate bias</span>
+<span class="sd">        :param expert_kernel_initializer: Initializer for the expert weights</span>
+<span class="sd">        :param gate_kernel_initializer: Initializer for the gate weights</span>
+<span class="sd">        :param expert_kernel_regularizer: Regularizer for the expert weights</span>
+<span class="sd">        :param gate_kernel_regularizer: Regularizer for the gate weights</span>
+<span class="sd">        :param expert_kernel_constraint: Constraint for the expert weights</span>
+<span class="sd">        :param gate_kernel_constraint: Constraint for the gate weights</span>
+<span class="sd">        :param activity_regularizer: Regularizer for the activity</span>
+<span class="sd">        :param kwargs: Additional keyword arguments for the Layer class</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Hidden nodes parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="n">units</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span> <span class="o">=</span> <span class="n">num_experts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_tasks</span> <span class="o">=</span> <span class="n">num_tasks</span>
+
+        <span class="c1"># Weight parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_kernels</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_kernels</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_kernel_initializer</span> <span class="o">=</span> <span class="n">initializers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">expert_kernel_initializer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_kernel_initializer</span> <span class="o">=</span> <span class="n">initializers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gate_kernel_initializer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_kernel_regularizer</span> <span class="o">=</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">expert_kernel_regularizer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_kernel_regularizer</span> <span class="o">=</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gate_kernel_regularizer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_kernel_constraint</span> <span class="o">=</span> <span class="n">constraints</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">expert_kernel_constraint</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_kernel_constraint</span> <span class="o">=</span> <span class="n">constraints</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gate_kernel_constraint</span><span class="p">)</span>
+
+        <span class="c1"># Activation parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_activation</span> <span class="o">=</span> <span class="n">activations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">expert_activation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_activation</span> <span class="o">=</span> <span class="n">activations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gate_activation</span><span class="p">)</span>
+
+        <span class="c1"># Bias parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_bias</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_bias</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_expert_bias</span> <span class="o">=</span> <span class="n">use_expert_bias</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_gate_bias</span> <span class="o">=</span> <span class="n">use_gate_bias</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_bias_initializer</span> <span class="o">=</span> <span class="n">initializers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">expert_bias_initializer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_bias_initializer</span> <span class="o">=</span> <span class="n">initializers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gate_bias_initializer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_bias_regularizer</span> <span class="o">=</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">expert_bias_regularizer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_bias_regularizer</span> <span class="o">=</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gate_bias_regularizer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_bias_constraint</span> <span class="o">=</span> <span class="n">constraints</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">expert_bias_constraint</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_bias_constraint</span> <span class="o">=</span> <span class="n">constraints</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gate_bias_constraint</span><span class="p">)</span>
+
+        <span class="c1"># Activity parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">activity_regularizer</span> <span class="o">=</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">activity_regularizer</span><span class="p">)</span>
+
+        <span class="c1"># Keras parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_spec</span> <span class="o">=</span> <span class="n">InputSpec</span><span class="p">(</span><span class="n">min_ndim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">supports_masking</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">MMoE</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method for creating the layer weights.</span>
+<span class="sd">        :param input_shape: Keras tensor (future input to layer)</span>
+<span class="sd">                            or list/tuple of Keras tensors to reference</span>
+<span class="sd">                            for weight shape computations</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">input_shape</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_shape</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+
+        <span class="n">input_dimension</span> <span class="o">=</span> <span class="n">input_shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># Initialize expert weights (number of input features * number of units per expert * number of experts)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expert_kernels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_weight</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;expert_kernel&#39;</span><span class="p">,</span>
+            <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">input_dimension</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">),</span>
+            <span class="n">initializer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_kernel_initializer</span><span class="p">,</span>
+            <span class="n">regularizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_kernel_regularizer</span><span class="p">,</span>
+            <span class="n">constraint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_kernel_constraint</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Initialize expert bias (number of units per expert * number of experts)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_expert_bias</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">expert_bias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_weight</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;expert_bias&#39;</span><span class="p">,</span>
+                <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">),</span>
+                <span class="n">initializer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_bias_initializer</span><span class="p">,</span>
+                <span class="n">regularizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_bias_regularizer</span><span class="p">,</span>
+                <span class="n">constraint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_bias_constraint</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Initialize gate weights (number of input features * number of experts * number of tasks)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gate_kernels</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">add_weight</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;gate_kernel_task_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+            <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">input_dimension</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">),</span>
+            <span class="n">initializer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_kernel_initializer</span><span class="p">,</span>
+            <span class="n">regularizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_kernel_regularizer</span><span class="p">,</span>
+            <span class="n">constraint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_kernel_constraint</span>
+        <span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_tasks</span><span class="p">)]</span>
+
+        <span class="c1"># Initialize gate bias (number of experts * number of tasks)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_gate_bias</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gate_bias</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">add_weight</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;gate_bias_task_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+                <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">,),</span>
+                <span class="n">initializer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_bias_initializer</span><span class="p">,</span>
+                <span class="n">regularizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_bias_regularizer</span><span class="p">,</span>
+                <span class="n">constraint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_bias_constraint</span>
+            <span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_tasks</span><span class="p">)]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_spec</span> <span class="o">=</span> <span class="n">InputSpec</span><span class="p">(</span><span class="n">min_ndim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">input_dimension</span><span class="p">})</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">MMoE</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">input_shape</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method for the forward function of the layer.</span>
+<span class="sd">        :param inputs: Input tensor</span>
+<span class="sd">        :param kwargs: Additional keyword arguments for the base method</span>
+<span class="sd">        :return: A tensor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gate_outputs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">final_outputs</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># f_{i}(x) = activation(W_{i} * x + b), where activation is ReLU according to the paper</span>
+        <span class="n">expert_outputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">tensordot</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_kernels</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Add the bias term to the expert weights if necessary</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_expert_bias</span><span class="p">:</span>
+            <span class="n">expert_outputs</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">bias_add</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">expert_outputs</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_bias</span><span class="p">)</span>
+        <span class="n">expert_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expert_activation</span><span class="p">(</span><span class="n">expert_outputs</span><span class="p">)</span>
+
+        <span class="c1"># g^{k}(x) = activation(W_{gk} * x + b), where activation is softmax according to the paper</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">gate_kernel</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_kernels</span><span class="p">):</span>
+            <span class="n">gate_output</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">gate_kernel</span><span class="p">)</span>
+            <span class="c1"># Add the bias term to the gate weights if necessary</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_gate_bias</span><span class="p">:</span>
+                <span class="n">gate_output</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">bias_add</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">gate_output</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_bias</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="n">gate_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gate_activation</span><span class="p">(</span><span class="n">gate_output</span><span class="p">)</span>
+            <span class="n">gate_outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gate_output</span><span class="p">)</span>
+
+        <span class="c1"># f^{k}(x) = sum_{i=1}^{n}(g^{k}(x)_{i} * f_{i}(x))</span>
+        <span class="k">for</span> <span class="n">gate_output</span> <span class="ow">in</span> <span class="n">gate_outputs</span><span class="p">:</span>
+            <span class="n">expanded_gate_output</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">gate_output</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">weighted_expert_output</span> <span class="o">=</span> <span class="n">expert_outputs</span> <span class="o">*</span> <span class="n">K</span><span class="o">.</span><span class="n">repeat_elements</span><span class="p">(</span><span class="n">expanded_gate_output</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">final_outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weighted_expert_output</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">final_outputs</span>
+
+    <span class="k">def</span> <span class="nf">compute_output_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method for computing the output shape of the MMoE layer.</span>
+<span class="sd">        :param input_shape: Shape tuple (tuple of integers)</span>
+<span class="sd">        :return: List of input shape tuple where the size of the list is equal to the number of tasks</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">input_shape</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_shape</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+
+        <span class="n">output_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_shape</span><span class="p">)</span>
+        <span class="n">output_shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span>
+        <span class="n">output_shape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">output_shape</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">output_shape</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_tasks</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">get_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method for returning the configuration of the MMoE layer.</span>
+<span class="sd">        :return: Config dictionary</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">,</span>
+            <span class="s1">&#39;num_experts&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">,</span>
+            <span class="s1">&#39;num_tasks&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_tasks</span><span class="p">,</span>
+            <span class="s1">&#39;use_expert_bias&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_expert_bias</span><span class="p">,</span>
+            <span class="s1">&#39;use_gate_bias&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_gate_bias</span><span class="p">,</span>
+            <span class="s1">&#39;expert_activation&#39;</span><span class="p">:</span> <span class="n">activations</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_activation</span><span class="p">),</span>
+            <span class="s1">&#39;gate_activation&#39;</span><span class="p">:</span> <span class="n">activations</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_activation</span><span class="p">),</span>
+            <span class="s1">&#39;expert_bias_initializer&#39;</span><span class="p">:</span> <span class="n">initializers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_bias_initializer</span><span class="p">),</span>
+            <span class="s1">&#39;gate_bias_initializer&#39;</span><span class="p">:</span> <span class="n">initializers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_bias_initializer</span><span class="p">),</span>
+            <span class="s1">&#39;expert_bias_regularizer&#39;</span><span class="p">:</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_bias_regularizer</span><span class="p">),</span>
+            <span class="s1">&#39;gate_bias_regularizer&#39;</span><span class="p">:</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_bias_regularizer</span><span class="p">),</span>
+            <span class="s1">&#39;expert_bias_constraint&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_bias_constraint</span><span class="p">),</span>
+            <span class="s1">&#39;gate_bias_constraint&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_bias_constraint</span><span class="p">),</span>
+            <span class="s1">&#39;expert_kernel_initializer&#39;</span><span class="p">:</span> <span class="n">initializers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_kernel_initializer</span><span class="p">),</span>
+            <span class="s1">&#39;gate_kernel_initializer&#39;</span><span class="p">:</span> <span class="n">initializers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_kernel_initializer</span><span class="p">),</span>
+            <span class="s1">&#39;expert_kernel_regularizer&#39;</span><span class="p">:</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_kernel_regularizer</span><span class="p">),</span>
+            <span class="s1">&#39;gate_kernel_regularizer&#39;</span><span class="p">:</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_kernel_regularizer</span><span class="p">),</span>
+            <span class="s1">&#39;expert_kernel_constraint&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expert_kernel_constraint</span><span class="p">),</span>
+            <span class="s1">&#39;gate_kernel_constraint&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gate_kernel_constraint</span><span class="p">),</span>
+            <span class="s1">&#39;activity_regularizer&#39;</span><span class="p">:</span> <span class="n">regularizers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activity_regularizer</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">base_config</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">MMoE</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">base_config</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="synthetic-data">
+<h2>Synthetic data<a class="headerlink" href="#synthetic-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Fix numpy seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="c1"># Fix random seed for reproducibility</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="c1"># Fix TensorFlow graph-level seed for reproducibility</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">data_preparation</span><span class="p">():</span>
+    <span class="c1"># Synthetic data parameters</span>
+    <span class="n">num_dimension</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">num_row</span> <span class="o">=</span> <span class="mi">12000</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mf">0.3</span>
+    <span class="n">rho</span> <span class="o">=</span> <span class="mf">0.8</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="c1"># Initialize vectors u1, u2, w1, and w2 according to the paper</span>
+    <span class="n">mu1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">num_dimension</span><span class="p">)</span>
+    <span class="n">mu1</span> <span class="o">=</span> <span class="p">(</span><span class="n">mu1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mu1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">mu1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num_dimension</span><span class="p">))</span>
+    <span class="n">mu2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">num_dimension</span><span class="p">)</span>
+    <span class="n">mu2</span> <span class="o">-=</span> <span class="n">mu2</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mu1</span><span class="p">)</span> <span class="o">*</span> <span class="n">mu1</span>
+    <span class="n">mu2</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">mu2</span><span class="p">)</span>
+    <span class="n">w1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">mu1</span>
+    <span class="n">w2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="p">(</span><span class="n">rho</span> <span class="o">*</span> <span class="n">mu1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">rho</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">mu2</span><span class="p">)</span>
+
+    <span class="c1"># Feature and label generation</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_row</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">num_dimension</span><span class="p">)</span>
+        <span class="n">X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">num1</span> <span class="o">=</span> <span class="n">w1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">num2</span> <span class="o">=</span> <span class="n">w2</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">comp1</span><span class="p">,</span> <span class="n">comp2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
+
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="n">comp1</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">comp2</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+        <span class="n">y0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">comp1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">y1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num2</span> <span class="o">+</span> <span class="n">comp2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+    <span class="p">)</span>
+
+    <span class="n">train_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10000</span><span class="p">]</span>
+    <span class="n">train_label</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10000</span><span class="p">],</span> <span class="n">y1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10000</span><span class="p">]]</span>
+    <span class="n">validation_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">10000</span><span class="p">:</span><span class="mi">11000</span><span class="p">]</span>
+    <span class="n">validation_label</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">[</span><span class="mi">10000</span><span class="p">:</span><span class="mi">11000</span><span class="p">],</span> <span class="n">y1</span><span class="p">[</span><span class="mi">10000</span><span class="p">:</span><span class="mi">11000</span><span class="p">]]</span>
+    <span class="n">test_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">11000</span><span class="p">:]</span>
+    <span class="n">test_label</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">[</span><span class="mi">11000</span><span class="p">:],</span> <span class="n">y1</span><span class="p">[</span><span class="mi">11000</span><span class="p">:]]</span>
+
+    <span class="k">return</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">train_label</span><span class="p">,</span> <span class="n">validation_data</span><span class="p">,</span> <span class="n">validation_label</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">test_label</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Load the data</span>
+    <span class="n">train_data</span><span class="p">,</span> <span class="n">train_label</span><span class="p">,</span> <span class="n">validation_data</span><span class="p">,</span> <span class="n">validation_label</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">test_label</span> <span class="o">=</span> <span class="n">data_preparation</span><span class="p">()</span>
+    <span class="n">num_features</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training data shape = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation data shape = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">validation_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test data shape = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+
+    <span class="c1"># Set up the input layer</span>
+    <span class="n">input_layer</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">num_features</span><span class="p">,))</span>
+
+    <span class="c1"># Set up MMoE layer</span>
+    <span class="n">mmoe_layers</span> <span class="o">=</span> <span class="n">MMoE</span><span class="p">(</span>
+        <span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+        <span class="n">num_experts</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+        <span class="n">num_tasks</span><span class="o">=</span><span class="mi">2</span>
+    <span class="p">)(</span><span class="n">input_layer</span><span class="p">)</span>
+
+    <span class="n">output_layers</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">output_info</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;y0&#39;</span><span class="p">,</span> <span class="s1">&#39;y1&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Build tower layer from MMoE layer</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">task_layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mmoe_layers</span><span class="p">):</span>
+        <span class="n">tower_layer</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span>
+            <span class="n">units</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+            <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+            <span class="n">kernel_initializer</span><span class="o">=</span><span class="n">VarianceScaling</span><span class="p">())(</span><span class="n">task_layer</span><span class="p">)</span>
+        <span class="n">output_layer</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span>
+            <span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">output_info</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+            <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span>
+            <span class="n">kernel_initializer</span><span class="o">=</span><span class="n">VarianceScaling</span><span class="p">())(</span><span class="n">tower_layer</span><span class="p">)</span>
+        <span class="n">output_layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_layer</span><span class="p">)</span>
+
+    <span class="c1"># Compile model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">input_layer</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output_layers</span><span class="p">)</span>
+    <span class="n">learning_rates</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">]</span>
+    <span class="n">adam_optimizer</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="n">learning_rates</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="n">loss</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;y0&#39;</span><span class="p">:</span> <span class="s1">&#39;mean_squared_error&#39;</span><span class="p">,</span> <span class="s1">&#39;y1&#39;</span><span class="p">:</span> <span class="s1">&#39;mean_squared_error&#39;</span><span class="p">},</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="n">adam_optimizer</span><span class="p">,</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">metrics</span><span class="o">.</span><span class="n">mae</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Print out model architecture summary</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+    <span class="c1"># Train the model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">train_data</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">train_label</span><span class="p">,</span>
+        <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">validation_data</span><span class="p">,</span> <span class="n">validation_label</span><span class="p">),</span>
+        <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span>
+    <span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="census-data">
+<h2>Census data<a class="headerlink" href="#census-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># !wget -q --show-progress https://github.com/drawbridge/keras-mmoe/raw/master/data/census-income.data.gz</span>
+<span class="c1"># !wget -q --show-progress https://github.com/drawbridge/keras-mmoe/raw/master/data/census-income.test.gz</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!git clone -q https://github.com/sparsh-ai/multiobjective-optimizations.git
+!cp data/census-income.data.gz .
+!cp data/census-income.test.gz .
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple callback to print out ROC-AUC</span>
+<span class="k">class</span> <span class="nc">ROCCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">validation_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_X</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_Y</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validation_X</span> <span class="o">=</span> <span class="n">validation_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validation_Y</span> <span class="o">=</span> <span class="n">validation_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_X</span> <span class="o">=</span> <span class="n">test_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_Y</span> <span class="o">=</span> <span class="n">test_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">on_train_begin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">on_train_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">on_epoch_begin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">on_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="n">train_prediction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_X</span><span class="p">)</span>
+        <span class="n">validation_prediction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">validation_X</span><span class="p">)</span>
+        <span class="n">test_prediction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_X</span><span class="p">)</span>
+
+        <span class="c1"># Iterate through each task and output their ROC-AUC across different datasets</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">output_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">output_names</span><span class="p">):</span>
+            <span class="n">train_roc_auc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_Y</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">train_prediction</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="n">validation_roc_auc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">validation_Y</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">validation_prediction</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="n">test_roc_auc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_Y</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">test_prediction</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="s1">&#39;ROC-AUC-</span><span class="si">{}</span><span class="s1">-Train: </span><span class="si">{}</span><span class="s1"> ROC-AUC-</span><span class="si">{}</span><span class="s1">-Validation: </span><span class="si">{}</span><span class="s1"> ROC-AUC-</span><span class="si">{}</span><span class="s1">-Test: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">output_name</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">train_roc_auc</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+                    <span class="n">output_name</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">validation_roc_auc</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+                    <span class="n">output_name</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">test_roc_auc</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">on_batch_begin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">data_preparation</span><span class="p">():</span>
+    <span class="c1"># The column names are from</span>
+    <span class="c1"># https://www2.1010data.com/documentationcenter/prod/Tutorials/MachineLearningExamples/CensusIncomeDataSet.html</span>
+    <span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;class_worker&#39;</span><span class="p">,</span> <span class="s1">&#39;det_ind_code&#39;</span><span class="p">,</span> <span class="s1">&#39;det_occ_code&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">,</span> <span class="s1">&#39;wage_per_hour&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_college&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;marital_stat&#39;</span><span class="p">,</span> <span class="s1">&#39;major_ind_code&#39;</span><span class="p">,</span> <span class="s1">&#39;major_occ_code&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;hisp_origin&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;union_member&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;unemp_reason&#39;</span><span class="p">,</span> <span class="s1">&#39;full_or_part_emp&#39;</span><span class="p">,</span> <span class="s1">&#39;capital_gains&#39;</span><span class="p">,</span> <span class="s1">&#39;capital_losses&#39;</span><span class="p">,</span> <span class="s1">&#39;stock_dividends&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;tax_filer_stat&#39;</span><span class="p">,</span> <span class="s1">&#39;region_prev_res&#39;</span><span class="p">,</span> <span class="s1">&#39;state_prev_res&#39;</span><span class="p">,</span> <span class="s1">&#39;det_hh_fam_stat&#39;</span><span class="p">,</span> <span class="s1">&#39;det_hh_summ&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;instance_weight&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_chg_msa&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_chg_reg&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_move_reg&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_same&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_prev_sunbelt&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;num_emp&#39;</span><span class="p">,</span> <span class="s1">&#39;fam_under_18&#39;</span><span class="p">,</span> <span class="s1">&#39;country_father&#39;</span><span class="p">,</span> <span class="s1">&#39;country_mother&#39;</span><span class="p">,</span> <span class="s1">&#39;country_self&#39;</span><span class="p">,</span> <span class="s1">&#39;citizenship&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;own_or_self&#39;</span><span class="p">,</span> <span class="s1">&#39;vet_question&#39;</span><span class="p">,</span> <span class="s1">&#39;vet_benefits&#39;</span><span class="p">,</span> <span class="s1">&#39;weeks_worked&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;income_50k&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Load the dataset in Pandas</span>
+    <span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+        <span class="s1">&#39;census-income.data.gz&#39;</span><span class="p">,</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+        <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">names</span><span class="o">=</span><span class="n">column_names</span>
+    <span class="p">)</span>
+    <span class="n">other_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+        <span class="s1">&#39;census-income.test.gz&#39;</span><span class="p">,</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+        <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">names</span><span class="o">=</span><span class="n">column_names</span>
+    <span class="p">)</span>
+
+    <span class="c1"># First group of tasks according to the paper</span>
+    <span class="n">label_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;income_50k&#39;</span><span class="p">,</span> <span class="s1">&#39;marital_stat&#39;</span><span class="p">]</span>
+
+    <span class="c1"># One-hot encoding categorical columns</span>
+    <span class="n">categorical_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;class_worker&#39;</span><span class="p">,</span> <span class="s1">&#39;det_ind_code&#39;</span><span class="p">,</span> <span class="s1">&#39;det_occ_code&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_college&#39;</span><span class="p">,</span> <span class="s1">&#39;major_ind_code&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;major_occ_code&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;hisp_origin&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;union_member&#39;</span><span class="p">,</span> <span class="s1">&#39;unemp_reason&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;full_or_part_emp&#39;</span><span class="p">,</span> <span class="s1">&#39;tax_filer_stat&#39;</span><span class="p">,</span> <span class="s1">&#39;region_prev_res&#39;</span><span class="p">,</span> <span class="s1">&#39;state_prev_res&#39;</span><span class="p">,</span> <span class="s1">&#39;det_hh_fam_stat&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;det_hh_summ&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_chg_msa&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_chg_reg&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_move_reg&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_same&#39;</span><span class="p">,</span> <span class="s1">&#39;mig_prev_sunbelt&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;fam_under_18&#39;</span><span class="p">,</span> <span class="s1">&#39;country_father&#39;</span><span class="p">,</span> <span class="s1">&#39;country_mother&#39;</span><span class="p">,</span> <span class="s1">&#39;country_self&#39;</span><span class="p">,</span> <span class="s1">&#39;citizenship&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;vet_question&#39;</span><span class="p">]</span>
+    <span class="n">train_raw_labels</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="n">label_columns</span><span class="p">]</span>
+    <span class="n">other_raw_labels</span> <span class="o">=</span> <span class="n">other_df</span><span class="p">[</span><span class="n">label_columns</span><span class="p">]</span>
+    <span class="n">transformed_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">label_columns</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">categorical_columns</span><span class="p">)</span>
+    <span class="n">transformed_other</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">other_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">label_columns</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">categorical_columns</span><span class="p">)</span>
+
+    <span class="c1"># Filling the missing column in the other set</span>
+    <span class="n">transformed_other</span><span class="p">[</span><span class="s1">&#39;det_hh_fam_stat_ Grandchild &lt;18 ever marr not in subfamily&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># One-hot encoding categorical labels</span>
+    <span class="n">train_income</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">((</span><span class="n">train_raw_labels</span><span class="o">.</span><span class="n">income_50k</span> <span class="o">==</span> <span class="s1">&#39; 50000+.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">train_marital</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">((</span><span class="n">train_raw_labels</span><span class="o">.</span><span class="n">marital_stat</span> <span class="o">==</span> <span class="s1">&#39; Never married&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">other_income</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">((</span><span class="n">other_raw_labels</span><span class="o">.</span><span class="n">income_50k</span> <span class="o">==</span> <span class="s1">&#39; 50000+.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">other_marital</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">((</span><span class="n">other_raw_labels</span><span class="o">.</span><span class="n">marital_stat</span> <span class="o">==</span> <span class="s1">&#39; Never married&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">dict_outputs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;income&#39;</span><span class="p">:</span> <span class="n">train_income</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="s1">&#39;marital&#39;</span><span class="p">:</span> <span class="n">train_marital</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">dict_train_labels</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;income&#39;</span><span class="p">:</span> <span class="n">train_income</span><span class="p">,</span>
+        <span class="s1">&#39;marital&#39;</span><span class="p">:</span> <span class="n">train_marital</span>
+    <span class="p">}</span>
+    <span class="n">dict_other_labels</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;income&#39;</span><span class="p">:</span> <span class="n">other_income</span><span class="p">,</span>
+        <span class="s1">&#39;marital&#39;</span><span class="p">:</span> <span class="n">other_marital</span>
+    <span class="p">}</span>
+    <span class="n">output_info</span> <span class="o">=</span> <span class="p">[(</span><span class="n">dict_outputs</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict_outputs</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span>
+
+    <span class="c1"># Split the other dataset into 1:1 validation to test according to the paper</span>
+    <span class="n">validation_indices</span> <span class="o">=</span> <span class="n">transformed_other</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">test_indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">transformed_other</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">validation_indices</span><span class="p">))</span>
+    <span class="n">validation_data</span> <span class="o">=</span> <span class="n">transformed_other</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">validation_indices</span><span class="p">]</span>
+    <span class="n">validation_label</span> <span class="o">=</span> <span class="p">[</span><span class="n">dict_other_labels</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">validation_indices</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict_other_labels</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span>
+    <span class="n">test_data</span> <span class="o">=</span> <span class="n">transformed_other</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_indices</span><span class="p">]</span>
+    <span class="n">test_label</span> <span class="o">=</span> <span class="p">[</span><span class="n">dict_other_labels</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">test_indices</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict_other_labels</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span>
+    <span class="n">train_data</span> <span class="o">=</span> <span class="n">transformed_train</span>
+    <span class="n">train_label</span> <span class="o">=</span> <span class="p">[</span><span class="n">dict_train_labels</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict_train_labels</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span>
+
+    <span class="k">return</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">train_label</span><span class="p">,</span> <span class="n">validation_data</span><span class="p">,</span> <span class="n">validation_label</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">test_label</span><span class="p">,</span> <span class="n">output_info</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Load the data</span>
+    <span class="n">train_data</span><span class="p">,</span> <span class="n">train_label</span><span class="p">,</span> <span class="n">validation_data</span><span class="p">,</span> <span class="n">validation_label</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">test_label</span><span class="p">,</span> <span class="n">output_info</span> <span class="o">=</span> <span class="n">data_preparation</span><span class="p">()</span>
+    <span class="n">num_features</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training data shape = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation data shape = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">validation_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test data shape = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+
+    <span class="c1"># Set up the input layer</span>
+    <span class="n">input_layer</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">num_features</span><span class="p">,))</span>
+
+    <span class="c1"># Set up MMoE layer</span>
+    <span class="n">mmoe_layers</span> <span class="o">=</span> <span class="n">MMoE</span><span class="p">(</span>
+        <span class="n">units</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+        <span class="n">num_experts</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+        <span class="n">num_tasks</span><span class="o">=</span><span class="mi">2</span>
+    <span class="p">)(</span><span class="n">input_layer</span><span class="p">)</span>
+
+    <span class="n">output_layers</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Build tower layer from MMoE layer</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">task_layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mmoe_layers</span><span class="p">):</span>
+        <span class="n">tower_layer</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span>
+            <span class="n">units</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+            <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+            <span class="n">kernel_initializer</span><span class="o">=</span><span class="n">VarianceScaling</span><span class="p">())(</span><span class="n">task_layer</span><span class="p">)</span>
+        <span class="n">output_layer</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span>
+            <span class="n">units</span><span class="o">=</span><span class="n">output_info</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">output_info</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">,</span>
+            <span class="n">kernel_initializer</span><span class="o">=</span><span class="n">VarianceScaling</span><span class="p">())(</span><span class="n">tower_layer</span><span class="p">)</span>
+        <span class="n">output_layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_layer</span><span class="p">)</span>
+
+    <span class="c1"># Compile model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">input_layer</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output_layers</span><span class="p">)</span>
+    <span class="n">adam_optimizer</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="n">loss</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;income&#39;</span><span class="p">:</span> <span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="s1">&#39;marital&#39;</span><span class="p">:</span> <span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">},</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="n">adam_optimizer</span><span class="p">,</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Print out model architecture summary</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+    <span class="c1"># Train the model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">train_data</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">train_label</span><span class="p">,</span>
+        <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">validation_data</span><span class="p">,</span> <span class="n">validation_label</span><span class="p">),</span>
+        <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">ROCCallback</span><span class="p">(</span>
+                <span class="n">training_data</span><span class="o">=</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_label</span><span class="p">),</span>
+                <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">validation_data</span><span class="p">,</span> <span class="n">validation_label</span><span class="p">),</span>
+                <span class="n">test_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_label</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">],</span>
+        <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training data shape = (199523, 499)
+Validation data shape = (49881, 499)
+Test data shape = (49881, 499)
+Model: &quot;model_1&quot;
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_2 (InputLayer)            [(None, 499)]        0                                            
+__________________________________________________________________________________________________
+m_mo_e_1 (MMoE)                 [(None, 4), (None, 4 24000       input_2[0][0]                    
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 8)            40          m_mo_e_1[0][0]                   
+__________________________________________________________________________________________________
+dense_3 (Dense)                 (None, 8)            40          m_mo_e_1[0][1]                   
+__________________________________________________________________________________________________
+income (Dense)                  (None, 2)            18          dense_2[0][0]                    
+__________________________________________________________________________________________________
+marital (Dense)                 (None, 2)            18          dense_3[0][0]                    
+==================================================================================================
+Total params: 24,116
+Trainable params: 24,116
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Epoch 1/100
+6236/6236 [==============================] - 19s 3ms/step - loss: 0.4878 - income_loss: 0.1832 - marital_loss: 0.3046 - income_accuracy: 0.9378 - marital_accuracy: 0.8871 - val_loss: 0.4068 - val_income_loss: 0.1630 - val_marital_loss: 0.2438 - val_income_accuracy: 0.9378 - val_marital_accuracy: 0.9153
+ROC-AUC-income-Train: 0.9079 ROC-AUC-income-Validation: 0.9087 ROC-AUC-income-Test: 0.9081
+ROC-AUC-marital-Train: 0.938 ROC-AUC-marital-Validation: 0.9257 ROC-AUC-marital-Test: 0.9257
+Epoch 2/100
+6236/6236 [==============================] - 22s 3ms/step - loss: 0.3325 - income_loss: 0.1530 - marital_loss: 0.1795 - income_accuracy: 0.9379 - marital_accuracy: 0.9366 - val_loss: 0.3608 - val_income_loss: 0.1497 - val_marital_loss: 0.2111 - val_income_accuracy: 0.9378 - val_marital_accuracy: 0.9199
+ROC-AUC-income-Train: 0.9162 ROC-AUC-income-Validation: 0.9146 ROC-AUC-income-Test: 0.9144
+ROC-AUC-marital-Train: 0.9857 ROC-AUC-marital-Validation: 0.9716 ROC-AUC-marital-Test: 0.9713
+Epoch 3/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2844 - income_loss: 0.1500 - marital_loss: 0.1344 - income_accuracy: 0.9379 - marital_accuracy: 0.9448 - val_loss: 0.3743 - val_income_loss: 0.1830 - val_marital_loss: 0.1912 - val_income_accuracy: 0.9378 - val_marital_accuracy: 0.9233
+ROC-AUC-income-Train: 0.9172 ROC-AUC-income-Validation: 0.9157 ROC-AUC-income-Test: 0.913
+ROC-AUC-marital-Train: 0.9896 ROC-AUC-marital-Validation: 0.9767 ROC-AUC-marital-Test: 0.9759
+Epoch 4/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2738 - income_loss: 0.1468 - marital_loss: 0.1270 - income_accuracy: 0.9379 - marital_accuracy: 0.9466 - val_loss: 0.3629 - val_income_loss: 0.1506 - val_marital_loss: 0.2123 - val_income_accuracy: 0.9378 - val_marital_accuracy: 0.9157
+ROC-AUC-income-Train: 0.9141 ROC-AUC-income-Validation: 0.9132 ROC-AUC-income-Test: 0.9142
+ROC-AUC-marital-Train: 0.9909 ROC-AUC-marital-Validation: 0.9764 ROC-AUC-marital-Test: 0.9755
+Epoch 5/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2602 - income_loss: 0.1433 - marital_loss: 0.1169 - income_accuracy: 0.9379 - marital_accuracy: 0.9507 - val_loss: 0.4082 - val_income_loss: 0.1983 - val_marital_loss: 0.2099 - val_income_accuracy: 0.9378 - val_marital_accuracy: 0.9169
+ROC-AUC-income-Train: 0.9247 ROC-AUC-income-Validation: 0.9225 ROC-AUC-income-Test: 0.9201
+ROC-AUC-marital-Train: 0.9918 ROC-AUC-marital-Validation: 0.9744 ROC-AUC-marital-Test: 0.9735
+Epoch 6/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2583 - income_loss: 0.1427 - marital_loss: 0.1157 - income_accuracy: 0.9379 - marital_accuracy: 0.9510 - val_loss: 0.4272 - val_income_loss: 0.1736 - val_marital_loss: 0.2536 - val_income_accuracy: 0.9378 - val_marital_accuracy: 0.9014
+ROC-AUC-income-Train: 0.9242 ROC-AUC-income-Validation: 0.9219 ROC-AUC-income-Test: 0.9214
+ROC-AUC-marital-Train: 0.9884 ROC-AUC-marital-Validation: 0.9643 ROC-AUC-marital-Test: 0.9638
+Epoch 7/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2562 - income_loss: 0.1420 - marital_loss: 0.1143 - income_accuracy: 0.9379 - marital_accuracy: 0.9521 - val_loss: 0.3594 - val_income_loss: 0.1501 - val_marital_loss: 0.2093 - val_income_accuracy: 0.9378 - val_marital_accuracy: 0.9161
+ROC-AUC-income-Train: 0.9332 ROC-AUC-income-Validation: 0.9317 ROC-AUC-income-Test: 0.9313
+ROC-AUC-marital-Train: 0.9929 ROC-AUC-marital-Validation: 0.9746 ROC-AUC-marital-Test: 0.9738
+Epoch 8/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2547 - income_loss: 0.1417 - marital_loss: 0.1129 - income_accuracy: 0.9381 - marital_accuracy: 0.9513 - val_loss: 0.3981 - val_income_loss: 0.1691 - val_marital_loss: 0.2290 - val_income_accuracy: 0.9384 - val_marital_accuracy: 0.9093
+ROC-AUC-income-Train: 0.9319 ROC-AUC-income-Validation: 0.9299 ROC-AUC-income-Test: 0.9297
+ROC-AUC-marital-Train: 0.9916 ROC-AUC-marital-Validation: 0.9707 ROC-AUC-marital-Test: 0.97
+Epoch 9/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2519 - income_loss: 0.1415 - marital_loss: 0.1104 - income_accuracy: 0.9379 - marital_accuracy: 0.9527 - val_loss: 0.3822 - val_income_loss: 0.1573 - val_marital_loss: 0.2249 - val_income_accuracy: 0.9378 - val_marital_accuracy: 0.9142
+ROC-AUC-income-Train: 0.929 ROC-AUC-income-Validation: 0.9244 ROC-AUC-income-Test: 0.923
+ROC-AUC-marital-Train: 0.9932 ROC-AUC-marital-Validation: 0.9744 ROC-AUC-marital-Test: 0.9736
+Epoch 10/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2526 - income_loss: 0.1399 - marital_loss: 0.1127 - income_accuracy: 0.9379 - marital_accuracy: 0.9528 - val_loss: 0.3936 - val_income_loss: 0.1452 - val_marital_loss: 0.2484 - val_income_accuracy: 0.9378 - val_marital_accuracy: 0.9085
+ROC-AUC-income-Train: 0.9306 ROC-AUC-income-Validation: 0.9308 ROC-AUC-income-Test: 0.9296
+ROC-AUC-marital-Train: 0.9916 ROC-AUC-marital-Validation: 0.9702 ROC-AUC-marital-Test: 0.9697
+Epoch 11/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2454 - income_loss: 0.1382 - marital_loss: 0.1073 - income_accuracy: 0.9393 - marital_accuracy: 0.9532 - val_loss: 0.4045 - val_income_loss: 0.1691 - val_marital_loss: 0.2353 - val_income_accuracy: 0.9352 - val_marital_accuracy: 0.9064
+ROC-AUC-income-Train: 0.9326 ROC-AUC-income-Validation: 0.9297 ROC-AUC-income-Test: 0.9285
+ROC-AUC-marital-Train: 0.9929 ROC-AUC-marital-Validation: 0.9714 ROC-AUC-marital-Test: 0.9709
+Epoch 12/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2426 - income_loss: 0.1369 - marital_loss: 0.1057 - income_accuracy: 0.9397 - marital_accuracy: 0.9543 - val_loss: 0.4535 - val_income_loss: 0.2296 - val_marital_loss: 0.2238 - val_income_accuracy: 0.9315 - val_marital_accuracy: 0.9156
+ROC-AUC-income-Train: 0.9 ROC-AUC-income-Validation: 0.8918 ROC-AUC-income-Test: 0.8949
+ROC-AUC-marital-Train: 0.9926 ROC-AUC-marital-Validation: 0.9723 ROC-AUC-marital-Test: 0.9716
+Epoch 13/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2426 - income_loss: 0.1364 - marital_loss: 0.1061 - income_accuracy: 0.9435 - marital_accuracy: 0.9540 - val_loss: 0.3841 - val_income_loss: 0.1415 - val_marital_loss: 0.2426 - val_income_accuracy: 0.9476 - val_marital_accuracy: 0.9075
+ROC-AUC-income-Train: 0.9372 ROC-AUC-income-Validation: 0.9363 ROC-AUC-income-Test: 0.9349
+ROC-AUC-marital-Train: 0.9935 ROC-AUC-marital-Validation: 0.9711 ROC-AUC-marital-Test: 0.9702
+Epoch 14/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2395 - income_loss: 0.1351 - marital_loss: 0.1044 - income_accuracy: 0.9439 - marital_accuracy: 0.9547 - val_loss: 0.3808 - val_income_loss: 0.1649 - val_marital_loss: 0.2159 - val_income_accuracy: 0.9454 - val_marital_accuracy: 0.9155
+ROC-AUC-income-Train: 0.9409 ROC-AUC-income-Validation: 0.9374 ROC-AUC-income-Test: 0.9361
+ROC-AUC-marital-Train: 0.9933 ROC-AUC-marital-Validation: 0.9736 ROC-AUC-marital-Test: 0.9729
+Epoch 15/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2399 - income_loss: 0.1358 - marital_loss: 0.1042 - income_accuracy: 0.9418 - marital_accuracy: 0.9550 - val_loss: 0.4345 - val_income_loss: 0.1799 - val_marital_loss: 0.2546 - val_income_accuracy: 0.9431 - val_marital_accuracy: 0.9055
+ROC-AUC-income-Train: 0.9321 ROC-AUC-income-Validation: 0.9295 ROC-AUC-income-Test: 0.927
+ROC-AUC-marital-Train: 0.9919 ROC-AUC-marital-Validation: 0.9698 ROC-AUC-marital-Test: 0.9691
+Epoch 16/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2398 - income_loss: 0.1358 - marital_loss: 0.1041 - income_accuracy: 0.9430 - marital_accuracy: 0.9547 - val_loss: 0.4354 - val_income_loss: 0.1728 - val_marital_loss: 0.2625 - val_income_accuracy: 0.9439 - val_marital_accuracy: 0.9017
+ROC-AUC-income-Train: 0.9371 ROC-AUC-income-Validation: 0.9348 ROC-AUC-income-Test: 0.9336
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9711 ROC-AUC-marital-Test: 0.9703
+Epoch 17/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2360 - income_loss: 0.1344 - marital_loss: 0.1017 - income_accuracy: 0.9441 - marital_accuracy: 0.9556 - val_loss: 0.4007 - val_income_loss: 0.1494 - val_marital_loss: 0.2513 - val_income_accuracy: 0.9448 - val_marital_accuracy: 0.9126
+ROC-AUC-income-Train: 0.9362 ROC-AUC-income-Validation: 0.9339 ROC-AUC-income-Test: 0.9329
+ROC-AUC-marital-Train: 0.9927 ROC-AUC-marital-Validation: 0.9762 ROC-AUC-marital-Test: 0.9756
+Epoch 18/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2366 - income_loss: 0.1343 - marital_loss: 0.1024 - income_accuracy: 0.9445 - marital_accuracy: 0.9556 - val_loss: 0.3909 - val_income_loss: 0.1675 - val_marital_loss: 0.2234 - val_income_accuracy: 0.9442 - val_marital_accuracy: 0.9141
+ROC-AUC-income-Train: 0.9394 ROC-AUC-income-Validation: 0.9359 ROC-AUC-income-Test: 0.935
+ROC-AUC-marital-Train: 0.9912 ROC-AUC-marital-Validation: 0.9725 ROC-AUC-marital-Test: 0.9717
+Epoch 19/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2388 - income_loss: 0.1333 - marital_loss: 0.1055 - income_accuracy: 0.9449 - marital_accuracy: 0.9551 - val_loss: 0.4076 - val_income_loss: 0.1660 - val_marital_loss: 0.2416 - val_income_accuracy: 0.9463 - val_marital_accuracy: 0.9047
+ROC-AUC-income-Train: 0.9406 ROC-AUC-income-Validation: 0.9386 ROC-AUC-income-Test: 0.9372
+ROC-AUC-marital-Train: 0.9936 ROC-AUC-marital-Validation: 0.9718 ROC-AUC-marital-Test: 0.971
+Epoch 20/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2359 - income_loss: 0.1332 - marital_loss: 0.1027 - income_accuracy: 0.9451 - marital_accuracy: 0.9555 - val_loss: 0.4299 - val_income_loss: 0.1784 - val_marital_loss: 0.2515 - val_income_accuracy: 0.9447 - val_marital_accuracy: 0.9004
+ROC-AUC-income-Train: 0.9433 ROC-AUC-income-Validation: 0.9404 ROC-AUC-income-Test: 0.9393
+ROC-AUC-marital-Train: 0.9936 ROC-AUC-marital-Validation: 0.9683 ROC-AUC-marital-Test: 0.9675
+Epoch 21/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2354 - income_loss: 0.1330 - marital_loss: 0.1024 - income_accuracy: 0.9470 - marital_accuracy: 0.9559 - val_loss: 0.4072 - val_income_loss: 0.1631 - val_marital_loss: 0.2441 - val_income_accuracy: 0.9406 - val_marital_accuracy: 0.9023
+ROC-AUC-income-Train: 0.9363 ROC-AUC-income-Validation: 0.9323 ROC-AUC-income-Test: 0.9313
+ROC-AUC-marital-Train: 0.9942 ROC-AUC-marital-Validation: 0.9711 ROC-AUC-marital-Test: 0.9702
+Epoch 22/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2372 - income_loss: 0.1329 - marital_loss: 0.1043 - income_accuracy: 0.9473 - marital_accuracy: 0.9553 - val_loss: 0.4273 - val_income_loss: 0.1670 - val_marital_loss: 0.2603 - val_income_accuracy: 0.9383 - val_marital_accuracy: 0.9073
+ROC-AUC-income-Train: 0.9339 ROC-AUC-income-Validation: 0.9285 ROC-AUC-income-Test: 0.9258
+ROC-AUC-marital-Train: 0.9934 ROC-AUC-marital-Validation: 0.9694 ROC-AUC-marital-Test: 0.9683
+Epoch 23/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2414 - income_loss: 0.1336 - marital_loss: 0.1077 - income_accuracy: 0.9472 - marital_accuracy: 0.9552 - val_loss: 0.4415 - val_income_loss: 0.1976 - val_marital_loss: 0.2439 - val_income_accuracy: 0.9428 - val_marital_accuracy: 0.9133
+ROC-AUC-income-Train: 0.941 ROC-AUC-income-Validation: 0.9377 ROC-AUC-income-Test: 0.9364
+ROC-AUC-marital-Train: 0.9926 ROC-AUC-marital-Validation: 0.9736 ROC-AUC-marital-Test: 0.9726
+Epoch 24/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2361 - income_loss: 0.1331 - marital_loss: 0.1030 - income_accuracy: 0.9460 - marital_accuracy: 0.9549 - val_loss: 0.4271 - val_income_loss: 0.1911 - val_marital_loss: 0.2360 - val_income_accuracy: 0.9422 - val_marital_accuracy: 0.9101
+ROC-AUC-income-Train: 0.9431 ROC-AUC-income-Validation: 0.9395 ROC-AUC-income-Test: 0.938
+ROC-AUC-marital-Train: 0.9933 ROC-AUC-marital-Validation: 0.9714 ROC-AUC-marital-Test: 0.9703
+Epoch 25/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2346 - income_loss: 0.1314 - marital_loss: 0.1031 - income_accuracy: 0.9476 - marital_accuracy: 0.9550 - val_loss: 0.4053 - val_income_loss: 0.1684 - val_marital_loss: 0.2369 - val_income_accuracy: 0.9451 - val_marital_accuracy: 0.9126
+ROC-AUC-income-Train: 0.9442 ROC-AUC-income-Validation: 0.941 ROC-AUC-income-Test: 0.9399
+ROC-AUC-marital-Train: 0.9927 ROC-AUC-marital-Validation: 0.9735 ROC-AUC-marital-Test: 0.9728
+Epoch 26/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2343 - income_loss: 0.1316 - marital_loss: 0.1027 - income_accuracy: 0.9481 - marital_accuracy: 0.9550 - val_loss: 0.4045 - val_income_loss: 0.1808 - val_marital_loss: 0.2238 - val_income_accuracy: 0.9448 - val_marital_accuracy: 0.9117
+ROC-AUC-income-Train: 0.9423 ROC-AUC-income-Validation: 0.939 ROC-AUC-income-Test: 0.9378
+ROC-AUC-marital-Train: 0.9938 ROC-AUC-marital-Validation: 0.9738 ROC-AUC-marital-Test: 0.9729
+Epoch 27/100
+6236/6236 [==============================] - 21s 3ms/step - loss: 0.2341 - income_loss: 0.1312 - marital_loss: 0.1029 - income_accuracy: 0.9491 - marital_accuracy: 0.9549 - val_loss: 0.4414 - val_income_loss: 0.1712 - val_marital_loss: 0.2702 - val_income_accuracy: 0.9445 - val_marital_accuracy: 0.9091
+ROC-AUC-income-Train: 0.9395 ROC-AUC-income-Validation: 0.9362 ROC-AUC-income-Test: 0.9345
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9721 ROC-AUC-marital-Test: 0.9713
+Epoch 28/100
+6236/6236 [==============================] - 25s 4ms/step - loss: 0.2324 - income_loss: 0.1303 - marital_loss: 0.1021 - income_accuracy: 0.9490 - marital_accuracy: 0.9554 - val_loss: 0.4315 - val_income_loss: 0.1675 - val_marital_loss: 0.2640 - val_income_accuracy: 0.9467 - val_marital_accuracy: 0.8931
+ROC-AUC-income-Train: 0.9441 ROC-AUC-income-Validation: 0.9405 ROC-AUC-income-Test: 0.939
+ROC-AUC-marital-Train: 0.9909 ROC-AUC-marital-Validation: 0.9646 ROC-AUC-marital-Test: 0.964
+Epoch 29/100
+6236/6236 [==============================] - 23s 4ms/step - loss: 0.2341 - income_loss: 0.1319 - marital_loss: 0.1022 - income_accuracy: 0.9468 - marital_accuracy: 0.9556 - val_loss: 0.4096 - val_income_loss: 0.1656 - val_marital_loss: 0.2440 - val_income_accuracy: 0.9440 - val_marital_accuracy: 0.9120
+ROC-AUC-income-Train: 0.9402 ROC-AUC-income-Validation: 0.936 ROC-AUC-income-Test: 0.935
+ROC-AUC-marital-Train: 0.9927 ROC-AUC-marital-Validation: 0.9725 ROC-AUC-marital-Test: 0.9716
+Epoch 30/100
+6236/6236 [==============================] - 23s 4ms/step - loss: 0.2330 - income_loss: 0.1310 - marital_loss: 0.1019 - income_accuracy: 0.9494 - marital_accuracy: 0.9555 - val_loss: 0.4374 - val_income_loss: 0.1822 - val_marital_loss: 0.2552 - val_income_accuracy: 0.9412 - val_marital_accuracy: 0.9118
+ROC-AUC-income-Train: 0.9416 ROC-AUC-income-Validation: 0.9364 ROC-AUC-income-Test: 0.9363
+ROC-AUC-marital-Train: 0.9932 ROC-AUC-marital-Validation: 0.9728 ROC-AUC-marital-Test: 0.9723
+Epoch 31/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2318 - income_loss: 0.1315 - marital_loss: 0.1003 - income_accuracy: 0.9498 - marital_accuracy: 0.9559 - val_loss: 0.4398 - val_income_loss: 0.1761 - val_marital_loss: 0.2637 - val_income_accuracy: 0.9446 - val_marital_accuracy: 0.9093
+ROC-AUC-income-Train: 0.9434 ROC-AUC-income-Validation: 0.9383 ROC-AUC-income-Test: 0.9371
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9721 ROC-AUC-marital-Test: 0.9711
+Epoch 32/100
+6236/6236 [==============================] - 19s 3ms/step - loss: 0.2321 - income_loss: 0.1299 - marital_loss: 0.1022 - income_accuracy: 0.9486 - marital_accuracy: 0.9556 - val_loss: 0.4243 - val_income_loss: 0.1635 - val_marital_loss: 0.2608 - val_income_accuracy: 0.9466 - val_marital_accuracy: 0.9036
+ROC-AUC-income-Train: 0.9409 ROC-AUC-income-Validation: 0.9371 ROC-AUC-income-Test: 0.9356
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9708 ROC-AUC-marital-Test: 0.9697
+Epoch 33/100
+6236/6236 [==============================] - 19s 3ms/step - loss: 0.2318 - income_loss: 0.1313 - marital_loss: 0.1005 - income_accuracy: 0.9490 - marital_accuracy: 0.9559 - val_loss: 0.3851 - val_income_loss: 0.1589 - val_marital_loss: 0.2262 - val_income_accuracy: 0.9461 - val_marital_accuracy: 0.9136
+ROC-AUC-income-Train: 0.942 ROC-AUC-income-Validation: 0.9382 ROC-AUC-income-Test: 0.937
+ROC-AUC-marital-Train: 0.9929 ROC-AUC-marital-Validation: 0.9718 ROC-AUC-marital-Test: 0.9711
+Epoch 34/100
+6236/6236 [==============================] - 16s 2ms/step - loss: 0.2322 - income_loss: 0.1315 - marital_loss: 0.1007 - income_accuracy: 0.9494 - marital_accuracy: 0.9555 - val_loss: 0.4588 - val_income_loss: 0.2103 - val_marital_loss: 0.2485 - val_income_accuracy: 0.9449 - val_marital_accuracy: 0.9063
+ROC-AUC-income-Train: 0.9024 ROC-AUC-income-Validation: 0.8959 ROC-AUC-income-Test: 0.8977
+ROC-AUC-marital-Train: 0.9933 ROC-AUC-marital-Validation: 0.9695 ROC-AUC-marital-Test: 0.9687
+Epoch 35/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2327 - income_loss: 0.1316 - marital_loss: 0.1011 - income_accuracy: 0.9493 - marital_accuracy: 0.9562 - val_loss: 0.3952 - val_income_loss: 0.1719 - val_marital_loss: 0.2234 - val_income_accuracy: 0.9435 - val_marital_accuracy: 0.9151
+ROC-AUC-income-Train: 0.937 ROC-AUC-income-Validation: 0.9323 ROC-AUC-income-Test: 0.9316
+ROC-AUC-marital-Train: 0.9932 ROC-AUC-marital-Validation: 0.9748 ROC-AUC-marital-Test: 0.9738
+Epoch 36/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2300 - income_loss: 0.1293 - marital_loss: 0.1006 - income_accuracy: 0.9492 - marital_accuracy: 0.9559 - val_loss: 0.4054 - val_income_loss: 0.1813 - val_marital_loss: 0.2241 - val_income_accuracy: 0.9396 - val_marital_accuracy: 0.9091
+ROC-AUC-income-Train: 0.9154 ROC-AUC-income-Validation: 0.9077 ROC-AUC-income-Test: 0.9088
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9726 ROC-AUC-marital-Test: 0.9716
+Epoch 37/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2319 - income_loss: 0.1315 - marital_loss: 0.1004 - income_accuracy: 0.9496 - marital_accuracy: 0.9557 - val_loss: 0.4367 - val_income_loss: 0.2053 - val_marital_loss: 0.2314 - val_income_accuracy: 0.9422 - val_marital_accuracy: 0.9143
+ROC-AUC-income-Train: 0.9443 ROC-AUC-income-Validation: 0.9395 ROC-AUC-income-Test: 0.938
+ROC-AUC-marital-Train: 0.9937 ROC-AUC-marital-Validation: 0.9731 ROC-AUC-marital-Test: 0.9723
+Epoch 38/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2314 - income_loss: 0.1318 - marital_loss: 0.0996 - income_accuracy: 0.9492 - marital_accuracy: 0.9556 - val_loss: 0.4146 - val_income_loss: 0.1687 - val_marital_loss: 0.2459 - val_income_accuracy: 0.9466 - val_marital_accuracy: 0.9108
+ROC-AUC-income-Train: 0.944 ROC-AUC-income-Validation: 0.9374 ROC-AUC-income-Test: 0.9363
+ROC-AUC-marital-Train: 0.9934 ROC-AUC-marital-Validation: 0.9715 ROC-AUC-marital-Test: 0.9706
+Epoch 39/100
+6236/6236 [==============================] - 20s 3ms/step - loss: 0.2302 - income_loss: 0.1304 - marital_loss: 0.0998 - income_accuracy: 0.9501 - marital_accuracy: 0.9563 - val_loss: 0.4248 - val_income_loss: 0.1821 - val_marital_loss: 0.2428 - val_income_accuracy: 0.9441 - val_marital_accuracy: 0.9094
+ROC-AUC-income-Train: 0.9439 ROC-AUC-income-Validation: 0.9394 ROC-AUC-income-Test: 0.9383
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9716 ROC-AUC-marital-Test: 0.9708
+Epoch 40/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2289 - income_loss: 0.1298 - marital_loss: 0.0991 - income_accuracy: 0.9487 - marital_accuracy: 0.9559 - val_loss: 0.4881 - val_income_loss: 0.2320 - val_marital_loss: 0.2561 - val_income_accuracy: 0.9404 - val_marital_accuracy: 0.9103
+ROC-AUC-income-Train: 0.9411 ROC-AUC-income-Validation: 0.9346 ROC-AUC-income-Test: 0.9342
+ROC-AUC-marital-Train: 0.994 ROC-AUC-marital-Validation: 0.9717 ROC-AUC-marital-Test: 0.9708
+Epoch 41/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2314 - income_loss: 0.1315 - marital_loss: 0.0999 - income_accuracy: 0.9486 - marital_accuracy: 0.9564 - val_loss: 0.4375 - val_income_loss: 0.1841 - val_marital_loss: 0.2534 - val_income_accuracy: 0.9424 - val_marital_accuracy: 0.9090
+ROC-AUC-income-Train: 0.9402 ROC-AUC-income-Validation: 0.935 ROC-AUC-income-Test: 0.9343
+ROC-AUC-marital-Train: 0.9932 ROC-AUC-marital-Validation: 0.9704 ROC-AUC-marital-Test: 0.9697
+Epoch 42/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2293 - income_loss: 0.1310 - marital_loss: 0.0983 - income_accuracy: 0.9475 - marital_accuracy: 0.9563 - val_loss: 0.4033 - val_income_loss: 0.1869 - val_marital_loss: 0.2164 - val_income_accuracy: 0.9418 - val_marital_accuracy: 0.9142
+ROC-AUC-income-Train: 0.9383 ROC-AUC-income-Validation: 0.9336 ROC-AUC-income-Test: 0.9326
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9738 ROC-AUC-marital-Test: 0.9727
+Epoch 43/100
+6236/6236 [==============================] - 16s 2ms/step - loss: 0.2311 - income_loss: 0.1307 - marital_loss: 0.1004 - income_accuracy: 0.9481 - marital_accuracy: 0.9563 - val_loss: 0.4265 - val_income_loss: 0.1820 - val_marital_loss: 0.2446 - val_income_accuracy: 0.9435 - val_marital_accuracy: 0.9107
+ROC-AUC-income-Train: 0.9446 ROC-AUC-income-Validation: 0.9398 ROC-AUC-income-Test: 0.9389
+ROC-AUC-marital-Train: 0.9935 ROC-AUC-marital-Validation: 0.9707 ROC-AUC-marital-Test: 0.9699
+Epoch 44/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2296 - income_loss: 0.1314 - marital_loss: 0.0982 - income_accuracy: 0.9496 - marital_accuracy: 0.9569 - val_loss: 0.4512 - val_income_loss: 0.1911 - val_marital_loss: 0.2601 - val_income_accuracy: 0.9459 - val_marital_accuracy: 0.9119
+ROC-AUC-income-Train: 0.9413 ROC-AUC-income-Validation: 0.9364 ROC-AUC-income-Test: 0.9353
+ROC-AUC-marital-Train: 0.993 ROC-AUC-marital-Validation: 0.97 ROC-AUC-marital-Test: 0.9694
+Epoch 45/100
+6236/6236 [==============================] - 16s 2ms/step - loss: 0.2283 - income_loss: 0.1298 - marital_loss: 0.0984 - income_accuracy: 0.9480 - marital_accuracy: 0.9564 - val_loss: 0.4141 - val_income_loss: 0.1790 - val_marital_loss: 0.2351 - val_income_accuracy: 0.9424 - val_marital_accuracy: 0.9112
+ROC-AUC-income-Train: 0.9434 ROC-AUC-income-Validation: 0.9379 ROC-AUC-income-Test: 0.9379
+ROC-AUC-marital-Train: 0.9934 ROC-AUC-marital-Validation: 0.9734 ROC-AUC-marital-Test: 0.9726
+Epoch 46/100
+6236/6236 [==============================] - 15s 2ms/step - loss: 0.2276 - income_loss: 0.1292 - marital_loss: 0.0984 - income_accuracy: 0.9494 - marital_accuracy: 0.9565 - val_loss: 0.4280 - val_income_loss: 0.1889 - val_marital_loss: 0.2391 - val_income_accuracy: 0.9452 - val_marital_accuracy: 0.9097
+ROC-AUC-income-Train: 0.9441 ROC-AUC-income-Validation: 0.9398 ROC-AUC-income-Test: 0.9387
+ROC-AUC-marital-Train: 0.9934 ROC-AUC-marital-Validation: 0.9712 ROC-AUC-marital-Test: 0.9704
+Epoch 47/100
+6236/6236 [==============================] - 21s 3ms/step - loss: 0.2271 - income_loss: 0.1293 - marital_loss: 0.0978 - income_accuracy: 0.9492 - marital_accuracy: 0.9568 - val_loss: 0.4257 - val_income_loss: 0.1765 - val_marital_loss: 0.2492 - val_income_accuracy: 0.9444 - val_marital_accuracy: 0.9032
+ROC-AUC-income-Train: 0.9444 ROC-AUC-income-Validation: 0.9394 ROC-AUC-income-Test: 0.9386
+ROC-AUC-marital-Train: 0.994 ROC-AUC-marital-Validation: 0.9707 ROC-AUC-marital-Test: 0.9698
+Epoch 48/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2275 - income_loss: 0.1299 - marital_loss: 0.0976 - income_accuracy: 0.9492 - marital_accuracy: 0.9570 - val_loss: 0.4601 - val_income_loss: 0.1796 - val_marital_loss: 0.2805 - val_income_accuracy: 0.9455 - val_marital_accuracy: 0.9046
+ROC-AUC-income-Train: 0.9369 ROC-AUC-income-Validation: 0.9322 ROC-AUC-income-Test: 0.9301
+ROC-AUC-marital-Train: 0.9943 ROC-AUC-marital-Validation: 0.971 ROC-AUC-marital-Test: 0.97
+Epoch 49/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2278 - income_loss: 0.1298 - marital_loss: 0.0980 - income_accuracy: 0.9489 - marital_accuracy: 0.9567 - val_loss: 0.4148 - val_income_loss: 0.1683 - val_marital_loss: 0.2465 - val_income_accuracy: 0.9458 - val_marital_accuracy: 0.9078
+ROC-AUC-income-Train: 0.9399 ROC-AUC-income-Validation: 0.9361 ROC-AUC-income-Test: 0.935
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9716 ROC-AUC-marital-Test: 0.9707
+Epoch 50/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2282 - income_loss: 0.1305 - marital_loss: 0.0978 - income_accuracy: 0.9491 - marital_accuracy: 0.9570 - val_loss: 0.4584 - val_income_loss: 0.1842 - val_marital_loss: 0.2742 - val_income_accuracy: 0.9440 - val_marital_accuracy: 0.9028
+ROC-AUC-income-Train: 0.9429 ROC-AUC-income-Validation: 0.9373 ROC-AUC-income-Test: 0.9364
+ROC-AUC-marital-Train: 0.993 ROC-AUC-marital-Validation: 0.97 ROC-AUC-marital-Test: 0.969
+Epoch 51/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2285 - income_loss: 0.1300 - marital_loss: 0.0985 - income_accuracy: 0.9503 - marital_accuracy: 0.9566 - val_loss: 0.4055 - val_income_loss: 0.1864 - val_marital_loss: 0.2191 - val_income_accuracy: 0.9449 - val_marital_accuracy: 0.9139
+ROC-AUC-income-Train: 0.9433 ROC-AUC-income-Validation: 0.9383 ROC-AUC-income-Test: 0.9375
+ROC-AUC-marital-Train: 0.9937 ROC-AUC-marital-Validation: 0.9742 ROC-AUC-marital-Test: 0.9731
+Epoch 52/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2268 - income_loss: 0.1286 - marital_loss: 0.0982 - income_accuracy: 0.9504 - marital_accuracy: 0.9570 - val_loss: 0.4449 - val_income_loss: 0.1879 - val_marital_loss: 0.2570 - val_income_accuracy: 0.9420 - val_marital_accuracy: 0.9010
+ROC-AUC-income-Train: 0.9387 ROC-AUC-income-Validation: 0.9336 ROC-AUC-income-Test: 0.9332
+ROC-AUC-marital-Train: 0.9935 ROC-AUC-marital-Validation: 0.97 ROC-AUC-marital-Test: 0.9691
+Epoch 53/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2259 - income_loss: 0.1281 - marital_loss: 0.0978 - income_accuracy: 0.9503 - marital_accuracy: 0.9567 - val_loss: 0.4288 - val_income_loss: 0.1821 - val_marital_loss: 0.2468 - val_income_accuracy: 0.9456 - val_marital_accuracy: 0.8988
+ROC-AUC-income-Train: 0.9436 ROC-AUC-income-Validation: 0.9376 ROC-AUC-income-Test: 0.9369
+ROC-AUC-marital-Train: 0.9942 ROC-AUC-marital-Validation: 0.9702 ROC-AUC-marital-Test: 0.9692
+Epoch 54/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2252 - income_loss: 0.1282 - marital_loss: 0.0970 - income_accuracy: 0.9496 - marital_accuracy: 0.9575 - val_loss: 0.4368 - val_income_loss: 0.1865 - val_marital_loss: 0.2503 - val_income_accuracy: 0.9440 - val_marital_accuracy: 0.9059
+ROC-AUC-income-Train: 0.9423 ROC-AUC-income-Validation: 0.9363 ROC-AUC-income-Test: 0.9357
+ROC-AUC-marital-Train: 0.994 ROC-AUC-marital-Validation: 0.9713 ROC-AUC-marital-Test: 0.9702
+Epoch 55/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2272 - income_loss: 0.1298 - marital_loss: 0.0974 - income_accuracy: 0.9500 - marital_accuracy: 0.9569 - val_loss: 0.4551 - val_income_loss: 0.1843 - val_marital_loss: 0.2707 - val_income_accuracy: 0.9439 - val_marital_accuracy: 0.9024
+ROC-AUC-income-Train: 0.9408 ROC-AUC-income-Validation: 0.9338 ROC-AUC-income-Test: 0.9333
+ROC-AUC-marital-Train: 0.9937 ROC-AUC-marital-Validation: 0.9694 ROC-AUC-marital-Test: 0.9684
+Epoch 56/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2266 - income_loss: 0.1287 - marital_loss: 0.0979 - income_accuracy: 0.9511 - marital_accuracy: 0.9570 - val_loss: 0.4020 - val_income_loss: 0.1608 - val_marital_loss: 0.2412 - val_income_accuracy: 0.9445 - val_marital_accuracy: 0.9107
+ROC-AUC-income-Train: 0.9443 ROC-AUC-income-Validation: 0.9391 ROC-AUC-income-Test: 0.9383
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9743 ROC-AUC-marital-Test: 0.9734
+Epoch 57/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2224 - income_loss: 0.1266 - marital_loss: 0.0957 - income_accuracy: 0.9513 - marital_accuracy: 0.9571 - val_loss: 0.4548 - val_income_loss: 0.2151 - val_marital_loss: 0.2398 - val_income_accuracy: 0.9447 - val_marital_accuracy: 0.9109
+ROC-AUC-income-Train: 0.9403 ROC-AUC-income-Validation: 0.9351 ROC-AUC-income-Test: 0.9331
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9742 ROC-AUC-marital-Test: 0.9735
+Epoch 58/100
+6236/6236 [==============================] - 16s 2ms/step - loss: 0.2247 - income_loss: 0.1275 - marital_loss: 0.0972 - income_accuracy: 0.9507 - marital_accuracy: 0.9574 - val_loss: 0.4973 - val_income_loss: 0.2313 - val_marital_loss: 0.2660 - val_income_accuracy: 0.9394 - val_marital_accuracy: 0.9059
+ROC-AUC-income-Train: 0.9415 ROC-AUC-income-Validation: 0.9336 ROC-AUC-income-Test: 0.9342
+ROC-AUC-marital-Train: 0.9942 ROC-AUC-marital-Validation: 0.972 ROC-AUC-marital-Test: 0.9707
+Epoch 59/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2241 - income_loss: 0.1273 - marital_loss: 0.0968 - income_accuracy: 0.9505 - marital_accuracy: 0.9571 - val_loss: 0.4732 - val_income_loss: 0.1971 - val_marital_loss: 0.2761 - val_income_accuracy: 0.9450 - val_marital_accuracy: 0.9098
+ROC-AUC-income-Train: 0.941 ROC-AUC-income-Validation: 0.9358 ROC-AUC-income-Test: 0.9347
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9742 ROC-AUC-marital-Test: 0.9734
+Epoch 60/100
+6236/6236 [==============================] - 16s 2ms/step - loss: 0.2245 - income_loss: 0.1277 - marital_loss: 0.0968 - income_accuracy: 0.9499 - marital_accuracy: 0.9571 - val_loss: 0.4431 - val_income_loss: 0.1711 - val_marital_loss: 0.2719 - val_income_accuracy: 0.9419 - val_marital_accuracy: 0.9069
+ROC-AUC-income-Train: 0.9421 ROC-AUC-income-Validation: 0.9355 ROC-AUC-income-Test: 0.9355
+ROC-AUC-marital-Train: 0.9942 ROC-AUC-marital-Validation: 0.9722 ROC-AUC-marital-Test: 0.9711
+Epoch 61/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2257 - income_loss: 0.1284 - marital_loss: 0.0973 - income_accuracy: 0.9499 - marital_accuracy: 0.9575 - val_loss: 0.4493 - val_income_loss: 0.1729 - val_marital_loss: 0.2764 - val_income_accuracy: 0.9441 - val_marital_accuracy: 0.9108
+ROC-AUC-income-Train: 0.9441 ROC-AUC-income-Validation: 0.9383 ROC-AUC-income-Test: 0.937
+ROC-AUC-marital-Train: 0.9938 ROC-AUC-marital-Validation: 0.9716 ROC-AUC-marital-Test: 0.9708
+Epoch 62/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2251 - income_loss: 0.1279 - marital_loss: 0.0972 - income_accuracy: 0.9505 - marital_accuracy: 0.9571 - val_loss: 0.4082 - val_income_loss: 0.1659 - val_marital_loss: 0.2423 - val_income_accuracy: 0.9457 - val_marital_accuracy: 0.9125
+ROC-AUC-income-Train: 0.9442 ROC-AUC-income-Validation: 0.938 ROC-AUC-income-Test: 0.937
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9738 ROC-AUC-marital-Test: 0.973
+Epoch 63/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2256 - income_loss: 0.1289 - marital_loss: 0.0967 - income_accuracy: 0.9504 - marital_accuracy: 0.9573 - val_loss: 0.4234 - val_income_loss: 0.2002 - val_marital_loss: 0.2232 - val_income_accuracy: 0.9430 - val_marital_accuracy: 0.9140
+ROC-AUC-income-Train: 0.9441 ROC-AUC-income-Validation: 0.9364 ROC-AUC-income-Test: 0.9359
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9776 ROC-AUC-marital-Test: 0.9768
+Epoch 64/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2243 - income_loss: 0.1273 - marital_loss: 0.0970 - income_accuracy: 0.9509 - marital_accuracy: 0.9572 - val_loss: 0.4273 - val_income_loss: 0.1714 - val_marital_loss: 0.2559 - val_income_accuracy: 0.9444 - val_marital_accuracy: 0.9061
+ROC-AUC-income-Train: 0.944 ROC-AUC-income-Validation: 0.9382 ROC-AUC-income-Test: 0.9374
+ROC-AUC-marital-Train: 0.9936 ROC-AUC-marital-Validation: 0.9714 ROC-AUC-marital-Test: 0.9703
+Epoch 65/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2237 - income_loss: 0.1268 - marital_loss: 0.0969 - income_accuracy: 0.9513 - marital_accuracy: 0.9573 - val_loss: 0.4625 - val_income_loss: 0.1973 - val_marital_loss: 0.2653 - val_income_accuracy: 0.9441 - val_marital_accuracy: 0.9086
+ROC-AUC-income-Train: 0.9456 ROC-AUC-income-Validation: 0.9394 ROC-AUC-income-Test: 0.9387
+ROC-AUC-marital-Train: 0.9935 ROC-AUC-marital-Validation: 0.9714 ROC-AUC-marital-Test: 0.9706
+Epoch 66/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2243 - income_loss: 0.1271 - marital_loss: 0.0971 - income_accuracy: 0.9505 - marital_accuracy: 0.9571 - val_loss: 0.4533 - val_income_loss: 0.1905 - val_marital_loss: 0.2629 - val_income_accuracy: 0.9456 - val_marital_accuracy: 0.9096
+ROC-AUC-income-Train: 0.9443 ROC-AUC-income-Validation: 0.9385 ROC-AUC-income-Test: 0.9376
+ROC-AUC-marital-Train: 0.9944 ROC-AUC-marital-Validation: 0.9736 ROC-AUC-marital-Test: 0.9728
+Epoch 67/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2251 - income_loss: 0.1285 - marital_loss: 0.0966 - income_accuracy: 0.9506 - marital_accuracy: 0.9575 - val_loss: 0.4970 - val_income_loss: 0.2239 - val_marital_loss: 0.2731 - val_income_accuracy: 0.9420 - val_marital_accuracy: 0.9091
+ROC-AUC-income-Train: 0.9145 ROC-AUC-income-Validation: 0.9053 ROC-AUC-income-Test: 0.907
+ROC-AUC-marital-Train: 0.9943 ROC-AUC-marital-Validation: 0.9745 ROC-AUC-marital-Test: 0.9738
+Epoch 68/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2245 - income_loss: 0.1286 - marital_loss: 0.0959 - income_accuracy: 0.9506 - marital_accuracy: 0.9572 - val_loss: 0.4594 - val_income_loss: 0.1832 - val_marital_loss: 0.2762 - val_income_accuracy: 0.9437 - val_marital_accuracy: 0.9099
+ROC-AUC-income-Train: 0.9452 ROC-AUC-income-Validation: 0.938 ROC-AUC-income-Test: 0.9379
+ROC-AUC-marital-Train: 0.9937 ROC-AUC-marital-Validation: 0.9724 ROC-AUC-marital-Test: 0.9718
+Epoch 69/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2249 - income_loss: 0.1294 - marital_loss: 0.0955 - income_accuracy: 0.9512 - marital_accuracy: 0.9577 - val_loss: 0.4537 - val_income_loss: 0.1891 - val_marital_loss: 0.2646 - val_income_accuracy: 0.9437 - val_marital_accuracy: 0.9096
+ROC-AUC-income-Train: 0.9446 ROC-AUC-income-Validation: 0.9374 ROC-AUC-income-Test: 0.9381
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9737 ROC-AUC-marital-Test: 0.973
+Epoch 70/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2231 - income_loss: 0.1270 - marital_loss: 0.0961 - income_accuracy: 0.9507 - marital_accuracy: 0.9575 - val_loss: 0.4000 - val_income_loss: 0.1827 - val_marital_loss: 0.2174 - val_income_accuracy: 0.9460 - val_marital_accuracy: 0.9150
+ROC-AUC-income-Train: 0.9446 ROC-AUC-income-Validation: 0.9384 ROC-AUC-income-Test: 0.9389
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9764 ROC-AUC-marital-Test: 0.9756
+Epoch 71/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2240 - income_loss: 0.1280 - marital_loss: 0.0960 - income_accuracy: 0.9506 - marital_accuracy: 0.9575 - val_loss: 0.3929 - val_income_loss: 0.1731 - val_marital_loss: 0.2198 - val_income_accuracy: 0.9442 - val_marital_accuracy: 0.9126
+ROC-AUC-income-Train: 0.9432 ROC-AUC-income-Validation: 0.9374 ROC-AUC-income-Test: 0.9385
+ROC-AUC-marital-Train: 0.9942 ROC-AUC-marital-Validation: 0.9753 ROC-AUC-marital-Test: 0.9745
+Epoch 72/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2217 - income_loss: 0.1264 - marital_loss: 0.0953 - income_accuracy: 0.9516 - marital_accuracy: 0.9575 - val_loss: 0.4115 - val_income_loss: 0.1841 - val_marital_loss: 0.2274 - val_income_accuracy: 0.9458 - val_marital_accuracy: 0.9146
+ROC-AUC-income-Train: 0.9449 ROC-AUC-income-Validation: 0.9382 ROC-AUC-income-Test: 0.9385
+ROC-AUC-marital-Train: 0.9938 ROC-AUC-marital-Validation: 0.9774 ROC-AUC-marital-Test: 0.9767
+Epoch 73/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2212 - income_loss: 0.1261 - marital_loss: 0.0951 - income_accuracy: 0.9513 - marital_accuracy: 0.9579 - val_loss: 0.4839 - val_income_loss: 0.1827 - val_marital_loss: 0.3013 - val_income_accuracy: 0.9416 - val_marital_accuracy: 0.9058
+ROC-AUC-income-Train: 0.9406 ROC-AUC-income-Validation: 0.935 ROC-AUC-income-Test: 0.9354
+ROC-AUC-marital-Train: 0.9935 ROC-AUC-marital-Validation: 0.9713 ROC-AUC-marital-Test: 0.9706
+Epoch 74/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2234 - income_loss: 0.1282 - marital_loss: 0.0953 - income_accuracy: 0.9486 - marital_accuracy: 0.9578 - val_loss: 0.4546 - val_income_loss: 0.1955 - val_marital_loss: 0.2591 - val_income_accuracy: 0.9451 - val_marital_accuracy: 0.9091
+ROC-AUC-income-Train: 0.9462 ROC-AUC-income-Validation: 0.9403 ROC-AUC-income-Test: 0.9403
+ROC-AUC-marital-Train: 0.9943 ROC-AUC-marital-Validation: 0.9722 ROC-AUC-marital-Test: 0.9714
+Epoch 75/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2219 - income_loss: 0.1263 - marital_loss: 0.0957 - income_accuracy: 0.9514 - marital_accuracy: 0.9576 - val_loss: 0.4874 - val_income_loss: 0.2557 - val_marital_loss: 0.2317 - val_income_accuracy: 0.9389 - val_marital_accuracy: 0.9118
+ROC-AUC-income-Train: 0.8883 ROC-AUC-income-Validation: 0.8805 ROC-AUC-income-Test: 0.8777
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9743 ROC-AUC-marital-Test: 0.9737
+Epoch 76/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2221 - income_loss: 0.1266 - marital_loss: 0.0955 - income_accuracy: 0.9505 - marital_accuracy: 0.9579 - val_loss: 0.4567 - val_income_loss: 0.1727 - val_marital_loss: 0.2840 - val_income_accuracy: 0.9428 - val_marital_accuracy: 0.8972
+ROC-AUC-income-Train: 0.9395 ROC-AUC-income-Validation: 0.9327 ROC-AUC-income-Test: 0.9335
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9678 ROC-AUC-marital-Test: 0.967
+Epoch 77/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2252 - income_loss: 0.1295 - marital_loss: 0.0957 - income_accuracy: 0.9508 - marital_accuracy: 0.9575 - val_loss: 0.6249 - val_income_loss: 0.1956 - val_marital_loss: 0.4293 - val_income_accuracy: 0.9458 - val_marital_accuracy: 0.8717
+ROC-AUC-income-Train: 0.9448 ROC-AUC-income-Validation: 0.9362 ROC-AUC-income-Test: 0.937
+ROC-AUC-marital-Train: 0.994 ROC-AUC-marital-Validation: 0.9504 ROC-AUC-marital-Test: 0.95
+Epoch 78/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2209 - income_loss: 0.1260 - marital_loss: 0.0949 - income_accuracy: 0.9510 - marital_accuracy: 0.9578 - val_loss: 0.5312 - val_income_loss: 0.1982 - val_marital_loss: 0.3330 - val_income_accuracy: 0.9418 - val_marital_accuracy: 0.8913
+ROC-AUC-income-Train: 0.9402 ROC-AUC-income-Validation: 0.9335 ROC-AUC-income-Test: 0.9341
+ROC-AUC-marital-Train: 0.9944 ROC-AUC-marital-Validation: 0.9643 ROC-AUC-marital-Test: 0.9637
+Epoch 79/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2252 - income_loss: 0.1300 - marital_loss: 0.0952 - income_accuracy: 0.9501 - marital_accuracy: 0.9580 - val_loss: 0.5868 - val_income_loss: 0.1801 - val_marital_loss: 0.4068 - val_income_accuracy: 0.9452 - val_marital_accuracy: 0.8755
+ROC-AUC-income-Train: 0.9409 ROC-AUC-income-Validation: 0.9255 ROC-AUC-income-Test: 0.9254
+ROC-AUC-marital-Train: 0.994 ROC-AUC-marital-Validation: 0.9527 ROC-AUC-marital-Test: 0.9522
+Epoch 80/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2219 - income_loss: 0.1265 - marital_loss: 0.0954 - income_accuracy: 0.9511 - marital_accuracy: 0.9577 - val_loss: 0.5189 - val_income_loss: 0.1854 - val_marital_loss: 0.3335 - val_income_accuracy: 0.9449 - val_marital_accuracy: 0.9072
+ROC-AUC-income-Train: 0.9464 ROC-AUC-income-Validation: 0.9397 ROC-AUC-income-Test: 0.9398
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9714 ROC-AUC-marital-Test: 0.9707
+Epoch 81/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2213 - income_loss: 0.1265 - marital_loss: 0.0947 - income_accuracy: 0.9500 - marital_accuracy: 0.9580 - val_loss: 0.4432 - val_income_loss: 0.1736 - val_marital_loss: 0.2696 - val_income_accuracy: 0.9443 - val_marital_accuracy: 0.9097
+ROC-AUC-income-Train: 0.9408 ROC-AUC-income-Validation: 0.9354 ROC-AUC-income-Test: 0.9353
+ROC-AUC-marital-Train: 0.9945 ROC-AUC-marital-Validation: 0.9748 ROC-AUC-marital-Test: 0.9741
+Epoch 82/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2214 - income_loss: 0.1264 - marital_loss: 0.0950 - income_accuracy: 0.9511 - marital_accuracy: 0.9580 - val_loss: 0.4064 - val_income_loss: 0.1753 - val_marital_loss: 0.2311 - val_income_accuracy: 0.9453 - val_marital_accuracy: 0.9149
+ROC-AUC-income-Train: 0.9454 ROC-AUC-income-Validation: 0.9379 ROC-AUC-income-Test: 0.9392
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9771 ROC-AUC-marital-Test: 0.9763
+Epoch 83/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2198 - income_loss: 0.1251 - marital_loss: 0.0947 - income_accuracy: 0.9516 - marital_accuracy: 0.9580 - val_loss: 0.4988 - val_income_loss: 0.2002 - val_marital_loss: 0.2987 - val_income_accuracy: 0.9446 - val_marital_accuracy: 0.9018
+ROC-AUC-income-Train: 0.946 ROC-AUC-income-Validation: 0.9389 ROC-AUC-income-Test: 0.939
+ROC-AUC-marital-Train: 0.9939 ROC-AUC-marital-Validation: 0.9692 ROC-AUC-marital-Test: 0.9686
+Epoch 84/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2221 - income_loss: 0.1273 - marital_loss: 0.0949 - income_accuracy: 0.9508 - marital_accuracy: 0.9581 - val_loss: 0.4383 - val_income_loss: 0.1786 - val_marital_loss: 0.2598 - val_income_accuracy: 0.9426 - val_marital_accuracy: 0.9091
+ROC-AUC-income-Train: 0.9436 ROC-AUC-income-Validation: 0.9356 ROC-AUC-income-Test: 0.9366
+ROC-AUC-marital-Train: 0.9944 ROC-AUC-marital-Validation: 0.974 ROC-AUC-marital-Test: 0.9733
+Epoch 85/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2215 - income_loss: 0.1271 - marital_loss: 0.0944 - income_accuracy: 0.9503 - marital_accuracy: 0.9583 - val_loss: 0.5437 - val_income_loss: 0.2258 - val_marital_loss: 0.3179 - val_income_accuracy: 0.9406 - val_marital_accuracy: 0.9001
+ROC-AUC-income-Train: 0.9462 ROC-AUC-income-Validation: 0.9386 ROC-AUC-income-Test: 0.9392
+ROC-AUC-marital-Train: 0.9944 ROC-AUC-marital-Validation: 0.9687 ROC-AUC-marital-Test: 0.9681
+Epoch 86/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2221 - income_loss: 0.1271 - marital_loss: 0.0950 - income_accuracy: 0.9510 - marital_accuracy: 0.9579 - val_loss: 0.4784 - val_income_loss: 0.1979 - val_marital_loss: 0.2805 - val_income_accuracy: 0.9451 - val_marital_accuracy: 0.9053
+ROC-AUC-income-Train: 0.9447 ROC-AUC-income-Validation: 0.9386 ROC-AUC-income-Test: 0.9388
+ROC-AUC-marital-Train: 0.9943 ROC-AUC-marital-Validation: 0.971 ROC-AUC-marital-Test: 0.9705
+Epoch 87/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2205 - income_loss: 0.1260 - marital_loss: 0.0945 - income_accuracy: 0.9503 - marital_accuracy: 0.9580 - val_loss: 0.5688 - val_income_loss: 0.1889 - val_marital_loss: 0.3799 - val_income_accuracy: 0.9447 - val_marital_accuracy: 0.8845
+ROC-AUC-income-Train: 0.9436 ROC-AUC-income-Validation: 0.937 ROC-AUC-income-Test: 0.937
+ROC-AUC-marital-Train: 0.9943 ROC-AUC-marital-Validation: 0.96 ROC-AUC-marital-Test: 0.9596
+Epoch 88/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2211 - income_loss: 0.1267 - marital_loss: 0.0944 - income_accuracy: 0.9508 - marital_accuracy: 0.9579 - val_loss: 0.4672 - val_income_loss: 0.1937 - val_marital_loss: 0.2735 - val_income_accuracy: 0.9417 - val_marital_accuracy: 0.9098
+ROC-AUC-income-Train: 0.9455 ROC-AUC-income-Validation: 0.9382 ROC-AUC-income-Test: 0.9385
+ROC-AUC-marital-Train: 0.9944 ROC-AUC-marital-Validation: 0.9753 ROC-AUC-marital-Test: 0.9747
+Epoch 89/100
+6236/6236 [==============================] - 16s 3ms/step - loss: 0.2211 - income_loss: 0.1269 - marital_loss: 0.0943 - income_accuracy: 0.9504 - marital_accuracy: 0.9583 - val_loss: 0.4627 - val_income_loss: 0.1747 - val_marital_loss: 0.2879 - val_income_accuracy: 0.9432 - val_marital_accuracy: 0.9064
+ROC-AUC-income-Train: 0.9459 ROC-AUC-income-Validation: 0.9383 ROC-AUC-income-Test: 0.9388
+ROC-AUC-marital-Train: 0.9944 ROC-AUC-marital-Validation: 0.9722 ROC-AUC-marital-Test: 0.9716
+Epoch 90/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2227 - income_loss: 0.1281 - marital_loss: 0.0946 - income_accuracy: 0.9506 - marital_accuracy: 0.9579 - val_loss: 0.6135 - val_income_loss: 0.1877 - val_marital_loss: 0.4258 - val_income_accuracy: 0.9456 - val_marital_accuracy: 0.8738
+ROC-AUC-income-Train: 0.9437 ROC-AUC-income-Validation: 0.9357 ROC-AUC-income-Test: 0.9364
+ROC-AUC-marital-Train: 0.9937 ROC-AUC-marital-Validation: 0.9509 ROC-AUC-marital-Test: 0.9505
+Epoch 91/100
+6236/6236 [==============================] - 18s 3ms/step - loss: 0.2235 - income_loss: 0.1276 - marital_loss: 0.0959 - income_accuracy: 0.9486 - marital_accuracy: 0.9582 - val_loss: 0.4589 - val_income_loss: 0.1812 - val_marital_loss: 0.2777 - val_income_accuracy: 0.9442 - val_marital_accuracy: 0.9038
+ROC-AUC-income-Train: 0.9429 ROC-AUC-income-Validation: 0.9361 ROC-AUC-income-Test: 0.9366
+ROC-AUC-marital-Train: 0.9944 ROC-AUC-marital-Validation: 0.9704 ROC-AUC-marital-Test: 0.9698
+Epoch 92/100
+6236/6236 [==============================] - 18s 3ms/step - loss: 0.2209 - income_loss: 0.1264 - marital_loss: 0.0945 - income_accuracy: 0.9506 - marital_accuracy: 0.9580 - val_loss: 0.5161 - val_income_loss: 0.1894 - val_marital_loss: 0.3267 - val_income_accuracy: 0.9458 - val_marital_accuracy: 0.8963
+ROC-AUC-income-Train: 0.9443 ROC-AUC-income-Validation: 0.9371 ROC-AUC-income-Test: 0.9376
+ROC-AUC-marital-Train: 0.9942 ROC-AUC-marital-Validation: 0.9648 ROC-AUC-marital-Test: 0.9641
+Epoch 93/100
+6236/6236 [==============================] - 18s 3ms/step - loss: 0.2205 - income_loss: 0.1256 - marital_loss: 0.0949 - income_accuracy: 0.9511 - marital_accuracy: 0.9579 - val_loss: 0.4910 - val_income_loss: 0.1938 - val_marital_loss: 0.2973 - val_income_accuracy: 0.9409 - val_marital_accuracy: 0.9028
+ROC-AUC-income-Train: 0.9457 ROC-AUC-income-Validation: 0.9361 ROC-AUC-income-Test: 0.9374
+ROC-AUC-marital-Train: 0.994 ROC-AUC-marital-Validation: 0.97 ROC-AUC-marital-Test: 0.9694
+Epoch 94/100
+6236/6236 [==============================] - 18s 3ms/step - loss: 0.2205 - income_loss: 0.1262 - marital_loss: 0.0942 - income_accuracy: 0.9507 - marital_accuracy: 0.9580 - val_loss: 0.6300 - val_income_loss: 0.1877 - val_marital_loss: 0.4424 - val_income_accuracy: 0.9459 - val_marital_accuracy: 0.8671
+ROC-AUC-income-Train: 0.9452 ROC-AUC-income-Validation: 0.9384 ROC-AUC-income-Test: 0.9386
+ROC-AUC-marital-Train: 0.9943 ROC-AUC-marital-Validation: 0.9495 ROC-AUC-marital-Test: 0.9494
+Epoch 95/100
+6236/6236 [==============================] - 18s 3ms/step - loss: 0.2218 - income_loss: 0.1269 - marital_loss: 0.0949 - income_accuracy: 0.9494 - marital_accuracy: 0.9579 - val_loss: 0.7888 - val_income_loss: 0.2005 - val_marital_loss: 0.5884 - val_income_accuracy: 0.9438 - val_marital_accuracy: 0.8629
+ROC-AUC-income-Train: 0.9433 ROC-AUC-income-Validation: 0.9358 ROC-AUC-income-Test: 0.9367
+ROC-AUC-marital-Train: 0.9941 ROC-AUC-marital-Validation: 0.9453 ROC-AUC-marital-Test: 0.9455
+Epoch 96/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2210 - income_loss: 0.1266 - marital_loss: 0.0945 - income_accuracy: 0.9515 - marital_accuracy: 0.9582 - val_loss: 0.5288 - val_income_loss: 0.1797 - val_marital_loss: 0.3491 - val_income_accuracy: 0.9429 - val_marital_accuracy: 0.8932
+ROC-AUC-income-Train: 0.9452 ROC-AUC-income-Validation: 0.9348 ROC-AUC-income-Test: 0.9354
+ROC-AUC-marital-Train: 0.9943 ROC-AUC-marital-Validation: 0.9633 ROC-AUC-marital-Test: 0.9626
+Epoch 97/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2192 - income_loss: 0.1249 - marital_loss: 0.0944 - income_accuracy: 0.9519 - marital_accuracy: 0.9584 - val_loss: 0.5172 - val_income_loss: 0.1925 - val_marital_loss: 0.3247 - val_income_accuracy: 0.9437 - val_marital_accuracy: 0.9008
+ROC-AUC-income-Train: 0.9465 ROC-AUC-income-Validation: 0.9394 ROC-AUC-income-Test: 0.9393
+ROC-AUC-marital-Train: 0.9944 ROC-AUC-marital-Validation: 0.9689 ROC-AUC-marital-Test: 0.9684
+Epoch 98/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2210 - income_loss: 0.1268 - marital_loss: 0.0942 - income_accuracy: 0.9499 - marital_accuracy: 0.9585 - val_loss: 0.4602 - val_income_loss: 0.1786 - val_marital_loss: 0.2816 - val_income_accuracy: 0.9421 - val_marital_accuracy: 0.9060
+ROC-AUC-income-Train: 0.9451 ROC-AUC-income-Validation: 0.9381 ROC-AUC-income-Test: 0.9385
+ROC-AUC-marital-Train: 0.9944 ROC-AUC-marital-Validation: 0.972 ROC-AUC-marital-Test: 0.9714
+Epoch 99/100
+6236/6236 [==============================] - 18s 3ms/step - loss: 0.2237 - income_loss: 0.1289 - marital_loss: 0.0948 - income_accuracy: 0.9509 - marital_accuracy: 0.9580 - val_loss: 0.4398 - val_income_loss: 0.2055 - val_marital_loss: 0.2343 - val_income_accuracy: 0.9442 - val_marital_accuracy: 0.9140
+ROC-AUC-income-Train: 0.9455 ROC-AUC-income-Validation: 0.9351 ROC-AUC-income-Test: 0.9359
+ROC-AUC-marital-Train: 0.9943 ROC-AUC-marital-Validation: 0.9769 ROC-AUC-marital-Test: 0.9762
+Epoch 100/100
+6236/6236 [==============================] - 17s 3ms/step - loss: 0.2205 - income_loss: 0.1269 - marital_loss: 0.0936 - income_accuracy: 0.9502 - marital_accuracy: 0.9581 - val_loss: 0.5826 - val_income_loss: 0.1929 - val_marital_loss: 0.3898 - val_income_accuracy: 0.9454 - val_marital_accuracy: 0.8891
+ROC-AUC-income-Train: 0.9452 ROC-AUC-income-Validation: 0.9372 ROC-AUC-income-Test: 0.9374
+ROC-AUC-marital-Train: 0.9942 ROC-AUC-marital-Validation: 0.9598 ROC-AUC-marital-Test: 0.9592
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "sparsh-ai/multiobjective-optimizations",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="T175823_MoE_in_Tensorflow.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">MoE in Tensorflow</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="T948705_Sparsely_gated_Mixture_of_Experts.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Sparsely-gated Mixture-of-Experts</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Sparsh A.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAMO Framework &#8212; multiobjective-optimizations</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MKR" href="T952247_MKR.html" />
+    <link rel="prev" title="Multi-Task Recommender on Olist dataset using TFRS Library" href="T368830_Multi_Task_Recommender_on_Olist_dataset_using_TFRS_Library.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">multiobjective-optimizations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L069335_Multi_Objective_Optimization.html">
+   Multi-Objective Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Concepts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L492548_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
+   Pareto Optimality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L483593_MOO_Decision_Maker.html">
+   MOO Decision Maker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L336869_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L553498_MOO_in_Recommender_Systems.html">
+   MOO in Recommender Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L480379_Marketplace_Recommenders.html">
+   Marketplace Recommenders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L556513_Multi_Objective_Hyperparameter_Optimization.html">
+   Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Methods
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L005003_Scalarization.html">
+   Scalarization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L762719_Shared_Bottom.html">
+   Shared Bottom
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L915313_Expected_Hypervolume_Improvement_%28EHVI%29.html">
+   Expected Hypervolume Improvement (EHVI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html">
+   Multi-gradient Descent (MGDRec)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L861465_Mixture_of_Experts_%28MoE%29.html">
+   Mixture of Experts (MoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L485744_Multi_gate_Mixture_of_Experts_%28MMoE%29.html">
+   Multi-gate Mixture-of-Experts (MMoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L519476_Entire_Space_Multi_Task_Model_%28ESSM%29.html">
+   Entire Space Multi-Task Model (ESSM)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L718205_Progressive_Layered_Extraction_%28PLE%29.html">
+   Progressive Layered Extraction (PLE)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L749932_MTL_for_Related_Products_Recommendations_at_Pinterest.html">
+   MTL for Related Products Recommendations at Pinterest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L792752_UberEats.html">
+   UberEats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L106645_Etsy.html">
+   Etsy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L149938_Airbnb_Experiences.html">
+   Airbnb Experiences
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T929652_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T854417_Linear_Optimization_with_OR_Tools.html">
+   Linear Optimization with OR-Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T209908_Stein%27s_Paradox.html">
+   Stein’s Paradox
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T423887_Solving_MOO_with_SMT_Toolkit.html">
+   Solving MOO with SMT Toolkit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T277640_Efficient_Continuous_Pareto_Exploration_in_MTL_on_UCI_Census.html">
+   Efficient Continuous Pareto Exploration in MTL on UCI Census
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T851476_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T307666_Pareto_Efficient_algorithm_for_MOO.html">
+   Pareto-Efficient algorithm for MOO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T465017_Shared_Bottom_in_Tensorflow.html">
+   Shared Bottom in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T175823_MoE_in_Tensorflow.html">
+   MoE in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T580632_MMoE_on_Census_income_data_in_Tensorflow.html">
+   MMoE on Census income data in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T948705_Sparsely_gated_Mixture_of_Experts.html">
+   Sparsely-gated Mixture-of-Experts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T458949_Multi_Objective_Ranking_using_Constrained_Optimization_in_GBTs.html">
+   Multi-Objective Ranking using Constrained Optimization in GBTs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T145475_Multi_objective_Optimization_using_Pymoo_Library.html">
+   Multi-objective Optimization using Pymoo Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T892775_Exploring_Multi_Objective_Hyperparameter_Optimization.html">
+   Exploring Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T660394_Implicit_Hybrid_Movie_Recommender_using_Collie_Library.html">
+   Implicit Hybrid Movie Recommender using Collie Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T559084_Multi_task_Learning_on_ML_100k_in_TFRS.html">
+   Multi-task Learning on ML-100k in TFRS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T368830_Multi_Task_Recommender_on_Olist_dataset_using_TFRS_Library.html">
+   Multi-Task Recommender on Olist dataset using TFRS Library
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   MAMO Framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T952247_MKR.html">
+   MKR
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/T671443_MAMO_Framework.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/T671443_MAMO_Framework.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/T671443_MAMO_Framework.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api-setup">
+   API setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api-run-for-movielens">
+   API run for movielens
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="mamo-framework">
+<h1>MAMO Framework<a class="headerlink" href="#mamo-framework" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api-setup">
+<h2>API setup<a class="headerlink" href="#api-setup" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!git clone https://github.com/swisscom/ai-research-mamo-framework.git
+%cd ai-research-mamo-framework
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;ai-research-mamo-framework&#39;...
+remote: Enumerating objects: 158, done.
+remote: Counting objects: 100% (158/158), done.
+remote: Compressing objects: 100% (93/93), done.
+remote: Total 158 (delta 78), reused 132 (delta 63), pack-reused 0
+Receiving objects: 100% (158/158), 77.61 KiB | 12.93 MiB/s, done.
+Resolving deltas: 100% (78/78), done.
+/content/ai-research-mamo-framework
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="api-run-for-movielens">
+<h2>API run for movielens<a class="headerlink" href="#api-run-for-movielens" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!mkdir -p data
+!cd data &amp;&amp; gdown --id 15KwO7tk9S4M5raro2ndkYswFLh7MpPkt
+!cd data &amp;&amp; unzip movielens_data.zip
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading...
+From: https://drive.google.com/uc?id=15KwO7tk9S4M5raro2ndkYswFLh7MpPkt
+To: /content/ai-research-mamo-framework/movielens_data.zip
+100% 17.2M/17.2M [00:00&lt;00:00, 35.2MB/s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!mkdir -p outputs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">dataloader.ae_data_handler</span> <span class="kn">import</span> <span class="n">AEDataHandler</span>
+<span class="kn">from</span> <span class="nn">models.multi_VAE</span> <span class="kn">import</span> <span class="n">MultiVAE</span>
+<span class="kn">from</span> <span class="nn">loss.vae_loss</span> <span class="kn">import</span> <span class="n">VAELoss</span>
+<span class="kn">from</span> <span class="nn">metric.recall_at_k</span> <span class="kn">import</span> <span class="n">RecallAtK</span>
+<span class="kn">from</span> <span class="nn">metric.revenue_at_k</span> <span class="kn">import</span> <span class="n">RevenueAtK</span>
+<span class="kn">from</span> <span class="nn">trainer</span> <span class="kn">import</span> <span class="n">Trainer</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--data_dir&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;the path to the directory where the data is stored&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--models_dir&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;the path to the directory where to save the models, it must be empty&quot;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="p">{})</span>
+
+<span class="c1"># get the arguments</span>
+<span class="n">dir_path</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">data_dir</span>
+<span class="n">save_to_path</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">models_dir</span>
+
+<span class="c1"># set up logging</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># set cuda if available</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+
+<span class="n">train_data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">dir_path</span><span class="p">,</span> <span class="s2">&quot;movielens_small_training.npy&quot;</span><span class="p">)</span>
+<span class="n">validation_input_data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">dir_path</span><span class="p">,</span> <span class="s2">&quot;movielens_small_validation_input.npy&quot;</span><span class="p">)</span>
+<span class="n">validation_output_data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">dir_path</span><span class="p">,</span> <span class="s2">&quot;movielens_small_validation_test.npy&quot;</span><span class="p">)</span>
+<span class="n">test_input_data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">dir_path</span><span class="p">,</span> <span class="s2">&quot;movielens_small_test_input.npy&quot;</span><span class="p">)</span>
+<span class="n">test_output_data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">dir_path</span><span class="p">,</span> <span class="s2">&quot;movielens_small_test_test.npy&quot;</span><span class="p">)</span>
+<span class="n">products_data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">dir_path</span><span class="p">,</span> <span class="s2">&quot;movielens_products_data.npy&quot;</span><span class="p">)</span>
+
+<span class="n">data_handler</span> <span class="o">=</span> <span class="n">AEDataHandler</span><span class="p">(</span>
+    <span class="s2">&quot;MovieLensSmall&quot;</span><span class="p">,</span> <span class="n">train_data_path</span><span class="p">,</span> <span class="n">validation_input_data_path</span><span class="p">,</span>
+    <span class="n">validation_output_data_path</span><span class="p">,</span> <span class="n">test_input_data_path</span><span class="p">,</span>
+    <span class="n">test_output_data_path</span><span class="p">)</span>
+
+<span class="n">input_dim</span> <span class="o">=</span> <span class="n">data_handler</span><span class="o">.</span><span class="n">get_input_dim</span><span class="p">()</span>
+<span class="n">output_dim</span> <span class="o">=</span> <span class="n">data_handler</span><span class="o">.</span><span class="n">get_output_dim</span><span class="p">()</span>
+
+<span class="n">products_data_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">products_data_path</span><span class="p">)</span>
+<span class="n">products_data_torch</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span>
+    <span class="n">products_data_np</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># create model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">MultiVAE</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="s2">&quot;yaml_files/params_multi_VAE_training.yaml&quot;</span><span class="p">)</span>
+
+<span class="n">correctness_loss</span> <span class="o">=</span> <span class="n">VAELoss</span><span class="p">()</span>
+<span class="n">revenue_loss</span> <span class="o">=</span> <span class="n">VAELoss</span><span class="p">(</span><span class="n">weighted_vector</span><span class="o">=</span><span class="n">products_data_torch</span><span class="p">)</span>
+<span class="n">losses</span> <span class="o">=</span> <span class="p">[</span><span class="n">correctness_loss</span><span class="p">,</span> <span class="n">revenue_loss</span><span class="p">]</span>
+
+<span class="n">recallAtK</span> <span class="o">=</span> <span class="n">RecallAtK</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">revenueAtK</span> <span class="o">=</span> <span class="n">RevenueAtK</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">revenue</span><span class="o">=</span><span class="n">products_data_np</span><span class="p">)</span>
+<span class="n">validation_metrics</span> <span class="o">=</span> <span class="p">[</span><span class="n">recallAtK</span><span class="p">,</span> <span class="n">revenueAtK</span><span class="p">]</span>
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">data_handler</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">losses</span><span class="p">,</span> <span class="n">validation_metrics</span><span class="p">,</span> <span class="n">save_to_path</span><span class="p">)</span>
+<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trainer</span><span class="o">.</span><span class="n">pareto_manager</span><span class="o">.</span><span class="n">_pareto_front</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:main:Trainer: Started with initializing trainer...
+INFO:main:Trainer: Reading trainer parameters.
+INFO:main:Trainer: Random seed: 42
+INFO:main:Trainer: Normalize gradients: True
+INFO:main:Trainer: Learning rate: 0.001000
+INFO:main:Trainer: Batch size training: 500
+INFO:main:Trainer: Shuffle training: 1
+INFO:main:Trainer: Drop last batch training: 1
+INFO:main:Trainer: Batch size validation: 500
+INFO:main:Trainer: Shuffle validation: 1
+INFO:main:Trainer: Drop last batch validation: 0
+INFO:main:Trainer: Number of epochs: 50.000000
+INFO:main:Trainer: Frank Wolfe max iterations: 100
+INFO:main:Trainer: Annealing: True
+INFO:main:Trainer: Beta start: 0.000000
+INFO:main:Trainer: Beta cap: 0.300000
+INFO:main:Trainer: Beta step: 0.000030
+INFO:main:Trainer: Losses: 
+INFO:main:VAELoss Trainer: VAELoss 
+INFO:main:Trainer: Validation metrics: 
+INFO:main:Recall at 10 Trainer: Revenue at 10 
+INFO:main:Trainer: Saving models to: outputs
+INFO:main:Trainer: Training on device: cpu
+INFO:main:Trainer: Initializing helper trainer objects.
+INFO:main:Trainer: Max empirical losses: [433.6191848626657, 4212.469121339942]
+INFO:main:Trainer: Initialization done.
+INFO:main:Trainer: Started training...
+INFO:main:Trainer: Batch: 10/239, Batch time: 1727.78ms, Training loss: 0.992, Alphas: [0.6158, 0.3842]
+INFO:main:Trainer: Batch: 20/239, Batch time: 1702.64ms, Training loss: 0.921, Alphas: [0.7016, 0.2984]
+INFO:main:Trainer: Batch: 30/239, Batch time: 1695.55ms, Training loss: 0.871, Alphas: [0.6970, 0.3030]
+INFO:main:Trainer: Batch: 40/239, Batch time: 1691.22ms, Training loss: 0.845, Alphas: [0.7143, 0.2857]
+INFO:main:Trainer: Batch: 50/239, Batch time: 1689.26ms, Training loss: 0.832, Alphas: [0.7480, 0.2520]
+INFO:main:Trainer: Batch: 60/239, Batch time: 1688.89ms, Training loss: 0.824, Alphas: [0.7850, 0.2150]
+INFO:main:Trainer: Batch: 70/239, Batch time: 1687.32ms, Training loss: 0.825, Alphas: [0.8125, 0.1875]
+INFO:main:Trainer: Batch: 80/239, Batch time: 1685.81ms, Training loss: 0.820, Alphas: [0.8314, 0.1686]
+INFO:main:Trainer: Batch: 90/239, Batch time: 1685.14ms, Training loss: 0.817, Alphas: [0.8485, 0.1515]
+INFO:main:Trainer: Batch: 100/239, Batch time: 1684.51ms, Training loss: 0.814, Alphas: [0.8615, 0.1385]
+INFO:main:Trainer: Batch: 110/239, Batch time: 1683.44ms, Training loss: 0.811, Alphas: [0.8716, 0.1284]
+INFO:main:Trainer: Batch: 120/239, Batch time: 1683.04ms, Training loss: 0.806, Alphas: [0.8808, 0.1192]
+INFO:main:Trainer: Batch: 130/239, Batch time: 1682.13ms, Training loss: 0.804, Alphas: [0.8889, 0.1111]
+INFO:main:Trainer: Batch: 140/239, Batch time: 1681.35ms, Training loss: 0.801, Alphas: [0.8959, 0.1041]
+INFO:main:Trainer: Batch: 150/239, Batch time: 1680.49ms, Training loss: 0.800, Alphas: [0.9008, 0.0992]
+INFO:main:Trainer: Batch: 160/239, Batch time: 1680.03ms, Training loss: 0.796, Alphas: [0.9047, 0.0953]
+INFO:main:Trainer: Batch: 170/239, Batch time: 1681.90ms, Training loss: 0.795, Alphas: [0.9080, 0.0920]
+INFO:main:Trainer: Batch: 180/239, Batch time: 1681.50ms, Training loss: 0.793, Alphas: [0.9111, 0.0889]
+INFO:main:Trainer: Batch: 190/239, Batch time: 1681.00ms, Training loss: 0.791, Alphas: [0.9141, 0.0859]
+INFO:main:Trainer: Batch: 200/239, Batch time: 1680.31ms, Training loss: 0.789, Alphas: [0.9167, 0.0833]
+INFO:main:Trainer: Batch: 210/239, Batch time: 1679.87ms, Training loss: 0.786, Alphas: [0.9175, 0.0825]
+INFO:main:Trainer: Batch: 220/239, Batch time: 1679.26ms, Training loss: 0.783, Alphas: [0.9181, 0.0819]
+INFO:main:Trainer: Batch: 230/239, Batch time: 1678.76ms, Training loss: 0.781, Alphas: [0.9197, 0.0803]
+INFO:root:Validation loss: VAELoss: 63.65 VAELoss: 634.11
+INFO:root:Validation metrics: Recall at 10: 0.24 Revenue at 10: 11.35
+INFO:main:Trainer: Epoch: 1, Epoch time: 405.66s, Training loss: 0.780, Validation loss: 0.147, Validation metrics: [0.2375, 11.3480], Validation losses: [63.6465, 634.1064]
+INFO:main:Trainer: Batch: 10/239, Batch time: 1678.34ms, Training loss: 0.731, Alphas: [0.9693, 0.0307]
+INFO:main:Trainer: Batch: 20/239, Batch time: 1679.13ms, Training loss: 0.743, Alphas: [0.9581, 0.0419]
+INFO:main:Trainer: Batch: 30/239, Batch time: 1677.09ms, Training loss: 0.743, Alphas: [0.9492, 0.0508]
+INFO:main:Trainer: Batch: 40/239, Batch time: 1675.63ms, Training loss: 0.744, Alphas: [0.9464, 0.0536]
+INFO:main:Trainer: Batch: 50/239, Batch time: 1675.53ms, Training loss: 0.734, Alphas: [0.9454, 0.0546]
+INFO:main:Trainer: Batch: 60/239, Batch time: 1676.42ms, Training loss: 0.732, Alphas: [0.9444, 0.0556]
+INFO:main:Trainer: Batch: 70/239, Batch time: 1682.76ms, Training loss: 0.731, Alphas: [0.9427, 0.0573]
+INFO:main:Trainer: Batch: 80/239, Batch time: 1688.18ms, Training loss: 0.727, Alphas: [0.9411, 0.0589]
+INFO:main:Trainer: Batch: 90/239, Batch time: 1686.71ms, Training loss: 0.728, Alphas: [0.9391, 0.0609]
+INFO:main:Trainer: Batch: 100/239, Batch time: 1685.23ms, Training loss: 0.727, Alphas: [0.9392, 0.0608]
+INFO:main:Trainer: Batch: 110/239, Batch time: 1684.28ms, Training loss: 0.726, Alphas: [0.9413, 0.0587]
+INFO:main:Trainer: Batch: 120/239, Batch time: 1683.46ms, Training loss: 0.724, Alphas: [0.9424, 0.0576]
+INFO:main:Trainer: Batch: 130/239, Batch time: 1682.56ms, Training loss: 0.724, Alphas: [0.9418, 0.0582]
+INFO:main:Trainer: Batch: 140/239, Batch time: 1681.68ms, Training loss: 0.722, Alphas: [0.9397, 0.0603]
+INFO:main:Trainer: Batch: 150/239, Batch time: 1681.13ms, Training loss: 0.722, Alphas: [0.9372, 0.0628]
+INFO:main:Trainer: Batch: 160/239, Batch time: 1680.55ms, Training loss: 0.720, Alphas: [0.9352, 0.0648]
+INFO:main:Trainer: Batch: 170/239, Batch time: 1680.42ms, Training loss: 0.720, Alphas: [0.9339, 0.0661]
+INFO:main:Trainer: Batch: 180/239, Batch time: 1679.75ms, Training loss: 0.720, Alphas: [0.9329, 0.0671]
+INFO:main:Trainer: Batch: 190/239, Batch time: 1679.07ms, Training loss: 0.721, Alphas: [0.9323, 0.0677]
+INFO:main:Trainer: Batch: 200/239, Batch time: 1678.81ms, Training loss: 0.718, Alphas: [0.9315, 0.0685]
+INFO:main:Trainer: Batch: 210/239, Batch time: 1678.60ms, Training loss: 0.719, Alphas: [0.9298, 0.0702]
+INFO:main:Trainer: Batch: 220/239, Batch time: 1678.43ms, Training loss: 0.718, Alphas: [0.9281, 0.0719]
+INFO:main:Trainer: Batch: 230/239, Batch time: 1678.71ms, Training loss: 0.719, Alphas: [0.9269, 0.0731]
+INFO:root:Validation loss: VAELoss: 61.04 VAELoss: 603.60
+INFO:root:Validation metrics: Recall at 10: 0.28 Revenue at 10: 15.08
+INFO:main:Trainer: Epoch: 2, Epoch time: 405.74s, Training loss: 0.718, Validation loss: 0.141, Validation metrics: [0.2807, 15.0773], Validation losses: [61.0370, 603.5996]
+INFO:main:Trainer: Batch: 10/239, Batch time: 1682.38ms, Training loss: 0.708, Alphas: [0.9238, 0.0762]
+INFO:main:Trainer: Batch: 20/239, Batch time: 1679.36ms, Training loss: 0.707, Alphas: [0.9232, 0.0768]
+INFO:main:Trainer: Batch: 30/239, Batch time: 1676.80ms, Training loss: 0.702, Alphas: [0.9202, 0.0798]
+INFO:main:Trainer: Batch: 40/239, Batch time: 1675.88ms, Training loss: 0.707, Alphas: [0.9226, 0.0774]
+INFO:main:Trainer: Batch: 50/239, Batch time: 1675.10ms, Training loss: 0.705, Alphas: [0.9233, 0.0767]
+INFO:main:Trainer: Batch: 60/239, Batch time: 1674.20ms, Training loss: 0.707, Alphas: [0.9235, 0.0765]
+INFO:main:Trainer: Batch: 70/239, Batch time: 1673.52ms, Training loss: 0.707, Alphas: [0.9219, 0.0781]
+INFO:main:Trainer: Batch: 80/239, Batch time: 1673.21ms, Training loss: 0.705, Alphas: [0.9189, 0.0811]
+INFO:main:Trainer: Batch: 90/239, Batch time: 1673.61ms, Training loss: 0.704, Alphas: [0.9163, 0.0837]
+INFO:main:Trainer: Batch: 100/239, Batch time: 1674.16ms, Training loss: 0.706, Alphas: [0.9149, 0.0851]
+INFO:main:Trainer: Batch: 110/239, Batch time: 1674.34ms, Training loss: 0.706, Alphas: [0.9159, 0.0841]
+INFO:main:Trainer: Batch: 120/239, Batch time: 1674.56ms, Training loss: 0.704, Alphas: [0.9168, 0.0832]
+INFO:main:Trainer: Batch: 130/239, Batch time: 1675.25ms, Training loss: 0.702, Alphas: [0.9161, 0.0839]
+INFO:main:Trainer: Batch: 140/239, Batch time: 1675.82ms, Training loss: 0.702, Alphas: [0.9152, 0.0848]
+INFO:main:Trainer: Batch: 150/239, Batch time: 1676.00ms, Training loss: 0.702, Alphas: [0.9148, 0.0852]
+INFO:main:Trainer: Batch: 160/239, Batch time: 1676.21ms, Training loss: 0.701, Alphas: [0.9139, 0.0861]
+INFO:main:Trainer: Batch: 170/239, Batch time: 1676.22ms, Training loss: 0.701, Alphas: [0.9122, 0.0878]
+INFO:main:Trainer: Batch: 180/239, Batch time: 1676.18ms, Training loss: 0.701, Alphas: [0.9107, 0.0893]
+INFO:main:Trainer: Batch: 190/239, Batch time: 1676.24ms, Training loss: 0.701, Alphas: [0.9095, 0.0905]
+INFO:main:Trainer: Batch: 200/239, Batch time: 1680.01ms, Training loss: 0.702, Alphas: [0.9088, 0.0912]
+INFO:main:Trainer: Batch: 210/239, Batch time: 1680.09ms, Training loss: 0.701, Alphas: [0.9091, 0.0909]
+INFO:main:Trainer: Batch: 220/239, Batch time: 1680.15ms, Training loss: 0.701, Alphas: [0.9090, 0.0910]
+INFO:main:Trainer: Batch: 230/239, Batch time: 1680.08ms, Training loss: 0.702, Alphas: [0.9088, 0.0912]
+INFO:root:Validation loss: VAELoss: 60.43 VAELoss: 597.17
+INFO:root:Validation metrics: Recall at 10: 0.30 Revenue at 10: 16.29
+INFO:main:Trainer: Epoch: 3, Epoch time: 406.23s, Training loss: 0.703, Validation loss: 0.140, Validation metrics: [0.2989, 16.2907], Validation losses: [60.4276, 597.1650]
+INFO:main:Trainer: Batch: 10/239, Batch time: 1685.35ms, Training loss: 0.705, Alphas: [0.9185, 0.0815]
+INFO:main:Trainer: Batch: 20/239, Batch time: 1685.41ms, Training loss: 0.700, Alphas: [0.9186, 0.0814]
+INFO:main:Trainer: Batch: 30/239, Batch time: 1685.88ms, Training loss: 0.697, Alphas: [0.9164, 0.0836]
+INFO:main:Trainer: Batch: 40/239, Batch time: 1686.94ms, Training loss: 0.697, Alphas: [0.9118, 0.0882]
+INFO:main:Trainer: Batch: 50/239, Batch time: 1686.54ms, Training loss: 0.694, Alphas: [0.9026, 0.0974]
+INFO:main:Trainer: Batch: 60/239, Batch time: 1685.72ms, Training loss: 0.693, Alphas: [0.8911, 0.1089]
+INFO:main:Trainer: Batch: 70/239, Batch time: 1684.78ms, Training loss: 0.695, Alphas: [0.8835, 0.1165]
+INFO:main:Trainer: Batch: 80/239, Batch time: 1684.16ms, Training loss: 0.695, Alphas: [0.8823, 0.1177]
+INFO:main:Trainer: Batch: 90/239, Batch time: 1683.57ms, Training loss: 0.695, Alphas: [0.8833, 0.1167]
+INFO:main:Trainer: Batch: 100/239, Batch time: 1683.09ms, Training loss: 0.695, Alphas: [0.8848, 0.1152]
+INFO:main:Trainer: Batch: 110/239, Batch time: 1683.73ms, Training loss: 0.698, Alphas: [0.8858, 0.1142]
+INFO:main:Trainer: Batch: 120/239, Batch time: 1683.39ms, Training loss: 0.697, Alphas: [0.8863, 0.1137]
+INFO:main:Trainer: Batch: 130/239, Batch time: 1683.34ms, Training loss: 0.698, Alphas: [0.8867, 0.1133]
+INFO:main:Trainer: Batch: 140/239, Batch time: 1683.01ms, Training loss: 0.697, Alphas: [0.8861, 0.1139]
+INFO:main:Trainer: Batch: 150/239, Batch time: 1682.90ms, Training loss: 0.698, Alphas: [0.8863, 0.1137]
+INFO:main:Trainer: Batch: 160/239, Batch time: 1683.13ms, Training loss: 0.698, Alphas: [0.8872, 0.1128]
+INFO:main:Trainer: Batch: 170/239, Batch time: 1683.41ms, Training loss: 0.698, Alphas: [0.8868, 0.1132]
+INFO:main:Trainer: Batch: 180/239, Batch time: 1683.29ms, Training loss: 0.698, Alphas: [0.8848, 0.1152]
+INFO:main:Trainer: Batch: 190/239, Batch time: 1683.30ms, Training loss: 0.696, Alphas: [0.8813, 0.1187]
+INFO:main:Trainer: Batch: 200/239, Batch time: 1683.22ms, Training loss: 0.695, Alphas: [0.8792, 0.1208]
+INFO:main:Trainer: Batch: 210/239, Batch time: 1683.19ms, Training loss: 0.696, Alphas: [0.8779, 0.1221]
+INFO:main:Trainer: Batch: 220/239, Batch time: 1682.96ms, Training loss: 0.696, Alphas: [0.8778, 0.1222]
+INFO:main:Trainer: Batch: 230/239, Batch time: 1682.93ms, Training loss: 0.696, Alphas: [0.8785, 0.1215]
+INFO:root:Validation loss: VAELoss: 60.07 VAELoss: 594.40
+INFO:root:Validation metrics: Recall at 10: 0.30 Revenue at 10: 16.88
+INFO:main:Trainer: Epoch: 4, Epoch time: 406.73s, Training loss: 0.695, Validation loss: 0.139, Validation metrics: [0.3033, 16.8823], Validation losses: [60.0685, 594.3957]
+INFO:main:Trainer: Batch: 10/239, Batch time: 1680.76ms, Training loss: 0.699, Alphas: [0.8894, 0.1106]
+INFO:main:Trainer: Batch: 20/239, Batch time: 1677.24ms, Training loss: 0.688, Alphas: [0.8814, 0.1186]
+INFO:main:Trainer: Batch: 30/239, Batch time: 1678.39ms, Training loss: 0.686, Alphas: [0.8752, 0.1248]
+INFO:main:Trainer: Batch: 40/239, Batch time: 1678.45ms, Training loss: 0.690, Alphas: [0.8704, 0.1296]
+INFO:main:Trainer: Batch: 50/239, Batch time: 1678.79ms, Training loss: 0.693, Alphas: [0.8691, 0.1309]
+INFO:main:Trainer: Batch: 60/239, Batch time: 1679.15ms, Training loss: 0.690, Alphas: [0.8729, 0.1271]
+INFO:main:Trainer: Batch: 70/239, Batch time: 1679.08ms, Training loss: 0.688, Alphas: [0.8763, 0.1237]
+INFO:main:Trainer: Batch: 80/239, Batch time: 1679.33ms, Training loss: 0.688, Alphas: [0.8761, 0.1239]
+INFO:main:Trainer: Batch: 90/239, Batch time: 1679.55ms, Training loss: 0.690, Alphas: [0.8730, 0.1270]
+INFO:main:Trainer: Batch: 100/239, Batch time: 1680.41ms, Training loss: 0.689, Alphas: [0.8700, 0.1300]
+INFO:main:Trainer: Batch: 110/239, Batch time: 1680.11ms, Training loss: 0.689, Alphas: [0.8692, 0.1308]
+INFO:main:Trainer: Batch: 120/239, Batch time: 1680.37ms, Training loss: 0.689, Alphas: [0.8704, 0.1296]
+INFO:main:Trainer: Batch: 130/239, Batch time: 1681.16ms, Training loss: 0.689, Alphas: [0.8710, 0.1290]
+INFO:main:Trainer: Batch: 140/239, Batch time: 1681.70ms, Training loss: 0.688, Alphas: [0.8708, 0.1292]
+INFO:main:Trainer: Batch: 150/239, Batch time: 1682.60ms, Training loss: 0.690, Alphas: [0.8702, 0.1298]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "sparsh-ai/multiobjective-optimizations",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="T368830_Multi_Task_Recommender_on_Olist_dataset_using_TFRS_Library.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Multi-Task Recommender on Olist dataset using TFRS Library</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="T952247_MKR.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">MKR</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Sparsh A.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,1378 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MKR &#8212; multiobjective-optimizations</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="MAMO Framework" href="T671443_MAMO_Framework.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">multiobjective-optimizations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L069335_Multi_Objective_Optimization.html">
+   Multi-Objective Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Concepts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L492548_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
+   Pareto Optimality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L483593_MOO_Decision_Maker.html">
+   MOO Decision Maker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L336869_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L553498_MOO_in_Recommender_Systems.html">
+   MOO in Recommender Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L480379_Marketplace_Recommenders.html">
+   Marketplace Recommenders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L556513_Multi_Objective_Hyperparameter_Optimization.html">
+   Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Methods
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L005003_Scalarization.html">
+   Scalarization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L762719_Shared_Bottom.html">
+   Shared Bottom
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L915313_Expected_Hypervolume_Improvement_%28EHVI%29.html">
+   Expected Hypervolume Improvement (EHVI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html">
+   Multi-gradient Descent (MGDRec)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L861465_Mixture_of_Experts_%28MoE%29.html">
+   Mixture of Experts (MoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L485744_Multi_gate_Mixture_of_Experts_%28MMoE%29.html">
+   Multi-gate Mixture-of-Experts (MMoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L519476_Entire_Space_Multi_Task_Model_%28ESSM%29.html">
+   Entire Space Multi-Task Model (ESSM)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L718205_Progressive_Layered_Extraction_%28PLE%29.html">
+   Progressive Layered Extraction (PLE)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L749932_MTL_for_Related_Products_Recommendations_at_Pinterest.html">
+   MTL for Related Products Recommendations at Pinterest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L792752_UberEats.html">
+   UberEats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L106645_Etsy.html">
+   Etsy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L149938_Airbnb_Experiences.html">
+   Airbnb Experiences
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T929652_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T854417_Linear_Optimization_with_OR_Tools.html">
+   Linear Optimization with OR-Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T209908_Stein%27s_Paradox.html">
+   Stein’s Paradox
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T423887_Solving_MOO_with_SMT_Toolkit.html">
+   Solving MOO with SMT Toolkit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T277640_Efficient_Continuous_Pareto_Exploration_in_MTL_on_UCI_Census.html">
+   Efficient Continuous Pareto Exploration in MTL on UCI Census
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T851476_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T307666_Pareto_Efficient_algorithm_for_MOO.html">
+   Pareto-Efficient algorithm for MOO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T465017_Shared_Bottom_in_Tensorflow.html">
+   Shared Bottom in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T175823_MoE_in_Tensorflow.html">
+   MoE in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T580632_MMoE_on_Census_income_data_in_Tensorflow.html">
+   MMoE on Census income data in Tensorflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T948705_Sparsely_gated_Mixture_of_Experts.html">
+   Sparsely-gated Mixture-of-Experts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T458949_Multi_Objective_Ranking_using_Constrained_Optimization_in_GBTs.html">
+   Multi-Objective Ranking using Constrained Optimization in GBTs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T145475_Multi_objective_Optimization_using_Pymoo_Library.html">
+   Multi-objective Optimization using Pymoo Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T892775_Exploring_Multi_Objective_Hyperparameter_Optimization.html">
+   Exploring Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T660394_Implicit_Hybrid_Movie_Recommender_using_Collie_Library.html">
+   Implicit Hybrid Movie Recommender using Collie Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T559084_Multi_task_Learning_on_ML_100k_in_TFRS.html">
+   Multi-task Learning on ML-100k in TFRS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T368830_Multi_Task_Recommender_on_Olist_dataset_using_TFRS_Library.html">
+   Multi-Task Recommender on Olist dataset using TFRS Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T671443_MAMO_Framework.html">
+   MAMO Framework
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   MKR
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/T952247_MKR.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/T952247_MKR.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/T952247_MKR.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing">
+   Preprocessing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataloader">
+   Dataloader
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#layers">
+   Layers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model">
+   Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training">
+   Training
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="mkr">
+<h1>MKR<a class="headerlink" href="#mkr" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">abstractmethod</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span>
+<span class="c1"># from trace_grad import plot_grad_flow</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="nn">torch.nn.parameter</span> <span class="kn">import</span> <span class="n">Parameter</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data.sampler</span> <span class="kn">import</span> <span class="n">SubsetRandomSampler</span>
+<span class="kn">from</span> <span class="nn">torch.utils.tensorboard</span> <span class="kn">import</span> <span class="n">SummaryWriter</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="preprocessing">
+<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># !git clone https://github.com/hsientzucheng/MKR.PyTorch.git</span>
+<span class="c1"># !mv MKR.PyTorch/data/* /content</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!git clone https://github.com/sparsh-ai/multiobjective-optimizations.git
+!mv multiobjective-optimizations/data/book .
+!mv multiobjective-optimizations/data/movie .
+!mv multiobjective-optimizations/data/music .
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Args</span><span class="p">:</span>
+    <span class="n">datapath</span> <span class="o">=</span> <span class="s1">&#39;/content/&#39;</span>
+    <span class="n">DATASET</span> <span class="o">=</span> <span class="s1">&#39;book&#39;</span>
+    <span class="n">RATING_FILE_NAME</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="s1">&#39;movie&#39;</span><span class="p">:</span> <span class="s1">&#39;ratings.dat&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;book&#39;</span><span class="p">:</span> <span class="s1">&#39;BX-Book-Ratings.csv&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;music&#39;</span><span class="p">:</span> <span class="s1">&#39;user_artists.dat&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;news&#39;</span><span class="p">:</span> <span class="s1">&#39;ratings.txt&#39;</span><span class="p">})</span>
+    <span class="n">SEP</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="s1">&#39;movie&#39;</span><span class="p">:</span> <span class="s1">&#39;::&#39;</span><span class="p">,</span> <span class="s1">&#39;book&#39;</span><span class="p">:</span> <span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="s1">&#39;music&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;news&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">})</span>
+    <span class="n">THRESHOLD</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="s1">&#39;movie&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;book&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;music&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;news&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">Args</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_item_index_to_entity_id_file</span><span class="p">():</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">datapath</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">DATASET</span> <span class="o">+</span> <span class="s1">&#39;/item_index2entity_id.txt&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;reading item index to entity id file: &#39;</span> <span class="o">+</span> <span class="n">file</span> <span class="o">+</span> <span class="s1">&#39; ...&#39;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="n">item_index</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">satori_id</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">item_index_old2new</span><span class="p">[</span><span class="n">item_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">entity_id2index</span><span class="p">[</span><span class="n">satori_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">convert_rating</span><span class="p">():</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">datapath</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">DATASET</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">RATING_FILE_NAME</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">DATASET</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;reading rating file ...&#39;</span><span class="p">)</span>
+    <span class="n">item_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">item_index_old2new</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">user_pos_ratings</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">user_neg_ratings</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEP</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">DATASET</span><span class="p">])</span>
+
+        <span class="c1"># remove prefix and suffix quotation marks for BX dataset</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">DATASET</span> <span class="o">==</span> <span class="s1">&#39;book&#39;</span><span class="p">:</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">array</span><span class="p">))</span>
+
+        <span class="n">item_index_old</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">item_index_old</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">item_index_old2new</span><span class="p">:</span>  <span class="c1"># the item is not in the final item set</span>
+            <span class="k">continue</span>
+        <span class="n">item_index</span> <span class="o">=</span> <span class="n">item_index_old2new</span><span class="p">[</span><span class="n">item_index_old</span><span class="p">]</span>
+
+        <span class="n">user_index_old</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">rating</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">rating</span> <span class="o">&gt;=</span> <span class="n">args</span><span class="o">.</span><span class="n">THRESHOLD</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">DATASET</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">user_index_old</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">user_pos_ratings</span><span class="p">:</span>
+                <span class="n">user_pos_ratings</span><span class="p">[</span><span class="n">user_index_old</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="n">user_pos_ratings</span><span class="p">[</span><span class="n">user_index_old</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item_index</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">user_index_old</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">user_neg_ratings</span><span class="p">:</span>
+                <span class="n">user_neg_ratings</span><span class="p">[</span><span class="n">user_index_old</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="n">user_neg_ratings</span><span class="p">[</span><span class="n">user_index_old</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item_index</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;converting rating file ...&#39;</span><span class="p">)</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">datapath</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">DATASET</span> <span class="o">+</span> <span class="s1">&#39;/ratings_final.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">user_cnt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">user_index_old2new</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">user_index_old</span><span class="p">,</span> <span class="n">pos_item_set</span> <span class="ow">in</span> <span class="n">user_pos_ratings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">user_index_old</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">user_index_old2new</span><span class="p">:</span>
+            <span class="n">user_index_old2new</span><span class="p">[</span><span class="n">user_index_old</span><span class="p">]</span> <span class="o">=</span> <span class="n">user_cnt</span>
+            <span class="n">user_cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">user_index</span> <span class="o">=</span> <span class="n">user_index_old2new</span><span class="p">[</span><span class="n">user_index_old</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">pos_item_set</span><span class="p">:</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="se">\t</span><span class="si">%d</span><span class="se">\t</span><span class="s1">1</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">user_index</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span>
+        <span class="n">unwatched_set</span> <span class="o">=</span> <span class="n">item_set</span> <span class="o">-</span> <span class="n">pos_item_set</span>
+        <span class="k">if</span> <span class="n">user_index_old</span> <span class="ow">in</span> <span class="n">user_neg_ratings</span><span class="p">:</span>
+            <span class="n">unwatched_set</span> <span class="o">-=</span> <span class="n">user_neg_ratings</span><span class="p">[</span><span class="n">user_index_old</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">unwatched_set</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pos_item_set</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="se">\t</span><span class="si">%d</span><span class="se">\t</span><span class="s1">0</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">user_index</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of users: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">user_cnt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of items: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">item_set</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">convert_kg</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;converting kg.txt file ...&#39;</span><span class="p">)</span>
+    <span class="n">entity_cnt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">entity_id2index</span><span class="p">)</span>
+    <span class="n">relation_cnt</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">datapath</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">DATASET</span> <span class="o">+</span> <span class="s1">&#39;/kg_final.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">datapath</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">DATASET</span> <span class="o">+</span> <span class="s1">&#39;/kg.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">head_old</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">relation_old</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">tail_old</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">head_old</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">entity_id2index</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">entity_id2index</span><span class="p">[</span><span class="n">head_old</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">tail_old</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">entity_id2index</span><span class="p">:</span>
+            <span class="n">entity_id2index</span><span class="p">[</span><span class="n">tail_old</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity_cnt</span>
+            <span class="n">entity_cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">tail</span> <span class="o">=</span> <span class="n">entity_id2index</span><span class="p">[</span><span class="n">tail_old</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">relation_old</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">relation_id2index</span><span class="p">:</span>
+            <span class="n">relation_id2index</span><span class="p">[</span><span class="n">relation_old</span><span class="p">]</span> <span class="o">=</span> <span class="n">relation_cnt</span>
+            <span class="n">relation_cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">relation</span> <span class="o">=</span> <span class="n">relation_id2index</span><span class="p">[</span><span class="n">relation_old</span><span class="p">]</span>
+
+        <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="se">\t</span><span class="si">%d</span><span class="se">\t</span><span class="si">%d</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">relation</span><span class="p">,</span> <span class="n">tail</span><span class="p">))</span>
+
+    <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of entities (containing items): </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">entity_cnt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of relations: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">relation_cnt</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">555</span><span class="p">)</span>
+
+    <span class="n">entity_id2index</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">relation_id2index</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">item_index_old2new</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="n">read_item_index_to_entity_id_file</span><span class="p">()</span>
+    <span class="n">convert_rating</span><span class="p">()</span>
+    <span class="n">convert_kg</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading item index to entity id file: /content/book/item_index2entity_id.txt ...
+reading rating file ...
+converting rating file ...
+number of users: 17860
+number of items: 14910
+converting kg.txt file ...
+number of entities (containing items): 24039
+number of relations: 10
+done
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dataloader">
+<h2>Dataloader<a class="headerlink" href="#dataloader" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RSDataset</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_user</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_rating</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_data</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_load_rating</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reading rating file&#39;</span><span class="p">)</span>
+
+        <span class="n">rating_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="s1">&#39;ratings_final&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">rating_file</span> <span class="o">+</span> <span class="s1">&#39;.npy&#39;</span><span class="p">):</span>
+            <span class="n">rating_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">rating_file</span> <span class="o">+</span> <span class="s1">&#39;.npy&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rating_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">rating_file</span> <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">rating_file</span> <span class="o">+</span> <span class="s1">&#39;.npy&#39;</span><span class="p">,</span> <span class="n">rating_np</span><span class="p">)</span>
+
+        <span class="n">n_user</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">rating_np</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]))</span>
+        <span class="n">n_item</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">rating_np</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]))</span>
+        <span class="n">raw_data</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_split</span><span class="p">(</span><span class="n">rating_np</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">n_user</span><span class="p">,</span> <span class="n">n_item</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">indices</span>
+
+
+    <span class="k">def</span> <span class="nf">_dataset_split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rating_np</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Splitting dataset&#39;</span><span class="p">)</span>
+
+        <span class="c1"># train:eval:test = 6:2:2</span>
+        <span class="n">eval_ratio</span> <span class="o">=</span> <span class="mf">0.2</span>
+        <span class="n">test_ratio</span> <span class="o">=</span> <span class="mf">0.2</span>
+        <span class="n">n_ratings</span> <span class="o">=</span> <span class="n">rating_np</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">eval_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_ratings</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n_ratings</span> <span class="o">*</span> <span class="n">eval_ratio</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_ratings</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">eval_indices</span><span class="p">)</span>
+        <span class="n">test_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n_ratings</span> <span class="o">*</span> <span class="n">test_ratio</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">train_indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">left</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_indices</span><span class="p">))</span>
+
+        <span class="n">train_data</span> <span class="o">=</span> <span class="n">rating_np</span><span class="p">[</span><span class="n">train_indices</span><span class="p">]</span>
+        <span class="n">eval_data</span> <span class="o">=</span> <span class="n">rating_np</span><span class="p">[</span><span class="n">eval_indices</span><span class="p">]</span>
+        <span class="n">test_data</span> <span class="o">=</span> <span class="n">rating_np</span><span class="p">[</span><span class="n">test_indices</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">rating_np</span><span class="p">,</span> <span class="p">[</span><span class="n">train_data</span><span class="p">,</span> <span class="n">eval_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">],</span> <span class="p">[</span><span class="n">train_indices</span><span class="p">,</span> <span class="n">eval_indices</span><span class="p">,</span> <span class="n">test_indices</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">KGDataset</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_entity</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_relation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_kg</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">kg</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kg</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_load_kg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reading KG file&#39;</span><span class="p">)</span>
+
+        <span class="n">kg_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="s1">&#39;kg_final&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">kg_file</span> <span class="o">+</span> <span class="s1">&#39;.npy&#39;</span><span class="p">):</span>
+            <span class="n">kg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">kg_file</span> <span class="o">+</span> <span class="s1">&#39;.npy&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">kg_file</span> <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">kg_file</span> <span class="o">+</span> <span class="s1">&#39;.npy&#39;</span><span class="p">,</span> <span class="n">kg</span><span class="p">)</span>
+
+        <span class="n">n_entity</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">kg</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">kg</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]))</span>
+        <span class="n">n_relation</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">kg</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]))</span>
+
+        <span class="k">return</span> <span class="n">n_entity</span><span class="p">,</span> <span class="n">n_relation</span><span class="p">,</span> <span class="n">kg</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="layers">
+<h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LAYER_IDS</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">class</span> <span class="nc">Dense</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">chnl</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Dense</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_dim</span> <span class="o">=</span> <span class="n">input_dim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dim</span> <span class="o">=</span> <span class="n">output_dim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">dropout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">act</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">drop_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">)</span> <span class="c1"># Pytorch drop: ratio to zeroed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_dim</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">drop_layer</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">act</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Bias</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Bias</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dim</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+
+<span class="k">class</span> <span class="nc">CrossCompressUnit</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">CrossCompressUnit</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dim</span> <span class="o">=</span> <span class="n">dim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc_vv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc_ev</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc_ve</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc_ee</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias_v</span> <span class="o">=</span> <span class="n">Bias</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias_e</span> <span class="o">=</span> <span class="n">Bias</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+
+        <span class="c1"># self.fc_v = nn.Linear(dim, dim)</span>
+        <span class="c1"># self.fc_e = nn.Linear(dim, dim)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="n">v</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">inputs</span>
+
+        <span class="c1"># [batch_size, dim, 1], [batch_size, 1, dim]</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># [batch_size, dim, dim]</span>
+        <span class="n">c_matrix</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+        <span class="n">c_matrix_transpose</span> <span class="o">=</span> <span class="n">c_matrix</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># [batch_size * dim, dim]</span>
+        <span class="n">c_matrix</span> <span class="o">=</span> <span class="n">c_matrix</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="n">c_matrix_transpose</span> <span class="o">=</span> <span class="n">c_matrix_transpose</span><span class="o">.</span><span class="n">contiguous</span><span class="p">()</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+
+        <span class="c1"># [batch_size, dim]</span>
+        <span class="n">v_intermediate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc_vv</span><span class="p">(</span><span class="n">c_matrix</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc_ev</span><span class="p">(</span><span class="n">c_matrix_transpose</span><span class="p">)</span>
+        <span class="n">e_intermediate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc_ve</span><span class="p">(</span><span class="n">c_matrix</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc_ee</span><span class="p">(</span><span class="n">c_matrix_transpose</span><span class="p">)</span>
+        <span class="n">v_intermediate</span> <span class="o">=</span> <span class="n">v_intermediate</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="n">e_intermediate</span> <span class="o">=</span> <span class="n">e_intermediate</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+
+        <span class="n">v_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias_v</span><span class="p">(</span><span class="n">v_intermediate</span><span class="p">)</span>
+        <span class="n">e_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias_e</span><span class="p">(</span><span class="n">e_intermediate</span><span class="p">)</span>
+
+        <span class="c1"># v_output = self.fc_v(v_intermediate)</span>
+        <span class="c1"># e_output = self.fc_e(e_intermediate)</span>
+
+
+        <span class="k">return</span> <span class="n">v_output</span><span class="p">,</span> <span class="n">e_output</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="model">
+<h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MKR_model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">n_user</span><span class="p">,</span> <span class="n">n_item</span><span class="p">,</span> <span class="n">n_entity</span><span class="p">,</span> <span class="n">n_relation</span><span class="p">,</span> <span class="n">use_inner_product</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MKR_model</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="c1"># &lt;Lower Model&gt;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_user</span> <span class="o">=</span> <span class="n">n_user</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_item</span> <span class="o">=</span> <span class="n">n_item</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_entity</span> <span class="o">=</span> <span class="n">n_entity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_relation</span> <span class="o">=</span> <span class="n">n_relation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_inner_product</span> <span class="o">=</span> <span class="n">use_inner_product</span>
+
+        <span class="c1"># Init embeddings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_embeddings_lookup</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_user</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item_embeddings_lookup</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entity_embeddings_lookup</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_entity</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relation_embeddings_lookup</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_relation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_mlp</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail_mlp</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cc_unit</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i_cnt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">L</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_mlp</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s1">&#39;user_mlp</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i_cnt</span><span class="p">),</span>
+                                     <span class="n">Dense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tail_mlp</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s1">&#39;tail_mlp</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i_cnt</span><span class="p">),</span>
+                                     <span class="n">Dense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cc_unit</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s1">&#39;cc_unit</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i_cnt</span><span class="p">),</span>
+                                     <span class="n">CrossCompressUnit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">))</span>
+        <span class="c1"># &lt;Higher Model&gt;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kge_pred_mlp</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kge_mlp</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i_cnt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">H</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">kge_mlp</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s1">&#39;kge_mlp</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i_cnt</span><span class="p">),</span>
+                                    <span class="n">Dense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_inner_product</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rs_pred_mlp</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rs_mlp</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">i_cnt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">H</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rs_mlp</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s1">&#39;rs_mlp</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i_cnt</span><span class="p">),</span>
+                                       <span class="n">Dense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">item_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">head_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">relation_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tail_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="c1"># &lt;Lower Model&gt;</span>
+
+        <span class="k">if</span> <span class="n">user_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_indices</span> <span class="o">=</span> <span class="n">user_indices</span>
+        <span class="k">if</span> <span class="n">item_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">item_indices</span> <span class="o">=</span> <span class="n">item_indices</span>
+        <span class="k">if</span> <span class="n">head_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head_indices</span> <span class="o">=</span> <span class="n">head_indices</span>
+        <span class="k">if</span> <span class="n">relation_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">relation_indices</span> <span class="o">=</span> <span class="n">relation_indices</span>
+        <span class="k">if</span> <span class="n">tail_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tail_indices</span> <span class="o">=</span> <span class="n">tail_indices</span>
+
+        <span class="c1"># Embeddings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_embeddings_lookup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item_indices</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entity_embeddings_lookup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head_indices</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item_embeddings</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cc_unit</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">item_embeddings</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_embeddings</span><span class="p">])</span>
+
+        <span class="c1"># &lt;Higher Model&gt;</span>
+        <span class="k">if</span> <span class="n">user_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># RS</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_embeddings_lookup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_indices</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_mlp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_embeddings</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_inner_product</span><span class="p">:</span>
+                <span class="c1"># [batch_size]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">scores</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_embeddings</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_embeddings</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># [batch_size, dim * 2]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">user_item_concat</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">user_embeddings</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_embeddings</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">user_item_concat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rs_mlp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_item_concat</span><span class="p">)</span>
+                <span class="c1"># [batch_size]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">scores</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rs_pred_mlp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_item_concat</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scores_normalized</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">user_embeddings</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_embeddings</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores_normalized</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">relation_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># KGE</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tail_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entity_embeddings_lookup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tail_indices</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">relation_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relation_embeddings_lookup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">relation_indices</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tail_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_mlp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tail_embeddings</span><span class="p">)</span>
+            <span class="c1"># [batch_size, dim * 2]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head_relation_concat</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">head_embeddings</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">relation_embeddings</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head_relation_concat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kge_mlp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head_relation_concat</span><span class="p">)</span>
+            <span class="c1"># [batch_size, 1]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tail_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kge_pred_mlp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head_relation_concat</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tail_pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tail_pred</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scores_kge</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tail_embeddings</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_pred</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rmse</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tail_embeddings</span> <span class="o">-</span>
+                           <span class="bp">self</span><span class="o">.</span><span class="n">tail_pred</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dim</span><span class="p">))</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">head_embeddings</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_embeddings</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores_kge</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rmse</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">outputs</span>
+
+
+<span class="k">class</span> <span class="nc">MKR</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">n_users</span><span class="p">,</span> <span class="n">n_items</span><span class="p">,</span> <span class="n">n_entities</span><span class="p">,</span>
+                 <span class="n">n_relations</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parse_args</span><span class="p">(</span><span class="n">n_users</span><span class="p">,</span> <span class="n">n_items</span><span class="p">,</span> <span class="n">n_entities</span><span class="p">,</span> <span class="n">n_relations</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_build_model</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_build_loss</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_build_ops</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_parse_args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_users</span><span class="p">,</span> <span class="n">n_items</span><span class="p">,</span> <span class="n">n_entities</span><span class="p">,</span> <span class="n">n_relations</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_user</span> <span class="o">=</span> <span class="n">n_users</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_item</span> <span class="o">=</span> <span class="n">n_items</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_entity</span> <span class="o">=</span> <span class="n">n_entities</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_relation</span> <span class="o">=</span> <span class="n">n_relations</span>
+
+    <span class="k">def</span> <span class="nf">_build_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Build models&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span> <span class="o">=</span> <span class="n">MKR_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_user</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_entity</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_relation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">non_blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">modules</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">):</span>
+                <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">xavier_uniform_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">bias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">zeros_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">):</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">xavier_uniform_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
+        <span class="c1"># for param in self.MKR_model.parameters():</span>
+        <span class="c1">#     param.requires_grad = True</span>
+
+    <span class="k">def</span> <span class="nf">_build_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid_BCE</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCEWithLogitsLoss</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_build_ops</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer_rs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
+                                             <span class="n">lr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">lr_rs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer_kge</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
+                                              <span class="n">lr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">lr_kge</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_inference_rs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="c1"># Inputs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_indices</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">non_blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item_indices</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">non_blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head_indices</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">non_blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Inference</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="p">(</span><span class="n">user_indices</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user_indices</span><span class="p">,</span>
+                                 <span class="n">item_indices</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">item_indices</span><span class="p">,</span>
+                                 <span class="n">head_indices</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">head_indices</span><span class="p">,</span>
+                                 <span class="n">relation_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                 <span class="n">tail_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+        <span class="n">user_embeddings</span><span class="p">,</span> <span class="n">item_embeddings</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">scores_normalized</span> <span class="o">=</span> <span class="n">outputs</span>
+        <span class="k">return</span> <span class="n">user_embeddings</span><span class="p">,</span> <span class="n">item_embeddings</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">scores_normalized</span><span class="p">,</span> <span class="n">labels</span>
+
+    <span class="k">def</span> <span class="nf">_inference_kge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="c1"># Inputs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item_indices</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">non_blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head_indices</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">non_blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relation_indices</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">non_blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail_indices</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">non_blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Inference</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="p">(</span><span class="n">user_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                 <span class="n">item_indices</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">item_indices</span><span class="p">,</span>
+                                 <span class="n">head_indices</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">head_indices</span><span class="p">,</span>
+                                 <span class="n">relation_indices</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">relation_indices</span><span class="p">,</span>
+                                 <span class="n">tail_indices</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tail_indices</span><span class="p">)</span>
+
+        <span class="n">head_embeddings</span><span class="p">,</span> <span class="n">tail_embeddings</span><span class="p">,</span> <span class="n">scores_kge</span><span class="p">,</span> <span class="n">rmse</span> <span class="o">=</span> <span class="n">outputs</span>
+        <span class="k">return</span> <span class="n">head_embeddings</span><span class="p">,</span> <span class="n">tail_embeddings</span><span class="p">,</span> <span class="n">scores_kge</span><span class="p">,</span> <span class="n">rmse</span>
+
+    <span class="k">def</span> <span class="nf">l2_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">inputs</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">loss_rs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_embeddings</span><span class="p">,</span> <span class="n">item_embeddings</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+        <span class="c1"># scores_for_signll = torch.cat([1-self.sigmoid(scores).unsqueeze(1),</span>
+        <span class="c1">#                                self.sigmoid(scores).unsqueeze(1)], 1)</span>
+        <span class="c1"># base_loss_rs = torch.mean(self.nll_loss(scores_for_signll, labels))</span>
+        <span class="n">base_loss_rs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sigmoid_BCE</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span>
+        <span class="n">l2_loss_rs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">l2_loss</span><span class="p">(</span><span class="n">user_embeddings</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">l2_loss</span><span class="p">(</span><span class="n">item_embeddings</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;embeddings_lookup&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)</span> \
+                    <span class="ow">and</span> <span class="p">((</span><span class="s1">&#39;rs&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s1">&#39;cc_unit&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s1">&#39;user&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">))</span> \
+                    <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;weight&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">):</span>
+                <span class="n">l2_loss_rs</span> <span class="o">=</span> <span class="n">l2_loss_rs</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">l2_loss</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+        <span class="n">loss_rs</span> <span class="o">=</span> <span class="n">base_loss_rs</span> <span class="o">+</span> <span class="n">l2_loss_rs</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">l2_weight</span>
+        <span class="k">return</span> <span class="n">loss_rs</span><span class="p">,</span> <span class="n">base_loss_rs</span><span class="p">,</span> <span class="n">l2_loss_rs</span>
+
+    <span class="k">def</span> <span class="nf">loss_kge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scores_kge</span><span class="p">,</span> <span class="n">head_embeddings</span><span class="p">,</span> <span class="n">tail_embeddings</span><span class="p">):</span>
+        <span class="n">base_loss_kge</span> <span class="o">=</span> <span class="o">-</span><span class="n">scores_kge</span>
+        <span class="n">l2_loss_kge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">l2_loss</span><span class="p">(</span><span class="n">head_embeddings</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">l2_loss</span><span class="p">(</span><span class="n">tail_embeddings</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;embeddings_lookup&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)</span> \
+                    <span class="ow">and</span> <span class="p">((</span><span class="s1">&#39;kge&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s1">&#39;tail&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s1">&#39;cc_unit&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">))</span> \
+                    <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;weight&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">):</span>
+                <span class="n">l2_loss_kge</span> <span class="o">=</span> <span class="n">l2_loss_kge</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">l2_loss</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+        <span class="c1"># Note: L2 regularization will be done by weight_decay of pytorch optimizer</span>
+        <span class="n">loss_kge</span> <span class="o">=</span> <span class="n">base_loss_kge</span> <span class="o">+</span> <span class="n">l2_loss_kge</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">l2_weight</span>
+        <span class="k">return</span> <span class="n">loss_kge</span><span class="p">,</span> <span class="n">base_loss_kge</span><span class="p">,</span> <span class="n">l2_loss_kge</span>
+
+    <span class="k">def</span> <span class="nf">train_rs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">show_grad</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">glob_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">user_embeddings</span><span class="p">,</span> <span class="n">item_embeddings</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inference_rs</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">loss_rs</span><span class="p">,</span> <span class="n">base_loss_rs</span><span class="p">,</span> <span class="n">l2_loss_rs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss_rs</span><span class="p">(</span><span class="n">user_embeddings</span><span class="p">,</span> <span class="n">item_embeddings</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer_rs</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss_rs</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="c1"># if show_grad:</span>
+        <span class="c1">#     plot_grad_flow(self.MKR_model.named_parameters(),</span>
+        <span class="c1">#                    &quot;grad_plot/rs_grad_step{}&quot;.format(glob_step))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer_rs</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="n">loss_rs</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">user_embeddings</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">item_embeddings</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">scores</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">labels</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">loss_rs</span><span class="p">,</span> <span class="n">base_loss_rs</span><span class="p">,</span> <span class="n">l2_loss_rs</span>
+
+    <span class="k">def</span> <span class="nf">train_kge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">show_grad</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">glob_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">head_embeddings</span><span class="p">,</span> <span class="n">tail_embeddings</span><span class="p">,</span> <span class="n">scores_kge</span><span class="p">,</span> <span class="n">rmse</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inference_kge</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">loss_kge</span><span class="p">,</span> <span class="n">base_loss_kge</span><span class="p">,</span> <span class="n">l2_loss_kge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss_kge</span><span class="p">(</span><span class="n">scores_kge</span><span class="p">,</span> <span class="n">head_embeddings</span><span class="p">,</span> <span class="n">tail_embeddings</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer_kge</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss_kge</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="c1"># if show_grad:</span>
+        <span class="c1">#     plot_grad_flow(self.MKR_model.named_parameters(),</span>
+        <span class="c1">#                    &quot;grad_plot/kge_grad_step{}&quot;.format(glob_step))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer_kge</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="n">loss_kge</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">head_embeddings</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">tail_embeddings</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">scores_kge</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">rmse</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">rmse</span><span class="p">,</span> <span class="n">loss_kge</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">base_loss_kge</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">l2_loss_kge</span>
+
+    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">user_embeddings</span><span class="p">,</span> <span class="n">item_embeddings</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inference_rs</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">auc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_true</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">y_score</span><span class="o">=</span><span class="n">scores</span><span class="p">)</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
+        <span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">auc</span><span class="p">,</span> <span class="n">acc</span>
+
+    <span class="k">def</span> <span class="nf">topk_eval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_list</span><span class="p">,</span> <span class="n">train_record</span><span class="p">,</span> <span class="n">test_record</span><span class="p">,</span> <span class="n">item_set</span><span class="p">,</span> <span class="n">k_list</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eval TopK&quot;</span><span class="p">)</span>
+        <span class="n">precision_list</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_list</span><span class="p">}</span>
+        <span class="n">recall_list</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_list</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">user_list</span><span class="p">):</span>
+            <span class="n">test_item_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">item_set</span> <span class="o">-</span> <span class="n">train_record</span><span class="p">[</span><span class="n">user</span><span class="p">])</span>
+            <span class="n">item_score_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_scores</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">user</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">test_item_list</span><span class="p">)),</span>
+                                      <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_item_list</span><span class="p">),</span>
+                                      <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_item_list</span><span class="p">))</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_item_list</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
+                <span class="n">item_score_map</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span>
+            <span class="n">item_score_pair_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">item_score_map</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">item_sorted</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">item_score_pair_sorted</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_list</span><span class="p">:</span>
+                <span class="n">hit_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">item_sorted</span><span class="p">[:</span><span class="n">k</span><span class="p">])</span> <span class="o">&amp;</span> <span class="n">test_record</span><span class="p">[</span><span class="n">user</span><span class="p">])</span>
+                <span class="n">precision_list</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hit_num</span> <span class="o">/</span> <span class="n">k</span><span class="p">)</span>
+                <span class="n">recall_list</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hit_num</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_record</span><span class="p">[</span><span class="n">user</span><span class="p">]))</span>
+        <span class="n">precision</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precision_list</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_list</span><span class="p">]</span>
+        <span class="n">recall</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">recall_list</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_list</span><span class="p">]</span>
+        <span class="n">f1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">precision</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">recall</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k_list</span><span class="p">))]</span>
+
+        <span class="k">return</span> <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">f1</span>
+
+    <span class="k">def</span> <span class="nf">_get_scores</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">item_list</span><span class="p">,</span> <span class="n">head_list</span><span class="p">):</span>
+        <span class="c1"># Inputs</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+        <span class="n">item_list</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">item_list</span><span class="p">)</span>
+        <span class="n">head_list</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">head_list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_indices</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item_indices</span> <span class="o">=</span> <span class="n">item_list</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head_indices</span> <span class="o">=</span> <span class="n">head_list</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">MKR_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_indices</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_indices</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">head_indices</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">relation_indices</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">tail_indices</span><span class="p">)</span>
+        <span class="n">user_embeddings</span><span class="p">,</span> <span class="n">item_embeddings</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">outputs</span>
+        <span class="k">return</span> <span class="n">scores</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="training">
+<h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">rs_dataset</span><span class="p">,</span> <span class="n">kg_dataset</span><span class="p">):</span>
+
+    <span class="n">show_loss</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">show_loss</span>
+    <span class="n">show_topk</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">show_topk</span>
+
+    <span class="c1"># Get RS data</span>
+    <span class="n">n_user</span> <span class="o">=</span> <span class="n">rs_dataset</span><span class="o">.</span><span class="n">n_user</span>
+    <span class="n">n_item</span> <span class="o">=</span> <span class="n">rs_dataset</span><span class="o">.</span><span class="n">n_item</span>
+    <span class="n">train_data</span><span class="p">,</span> <span class="n">eval_data</span><span class="p">,</span> <span class="n">test_data</span> <span class="o">=</span> <span class="n">rs_dataset</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">train_indices</span><span class="p">,</span> <span class="n">eval_indices</span><span class="p">,</span> <span class="n">test_indices</span> <span class="o">=</span> <span class="n">rs_dataset</span><span class="o">.</span><span class="n">indices</span>
+
+    <span class="c1"># Get KG data</span>
+    <span class="n">n_entity</span> <span class="o">=</span> <span class="n">kg_dataset</span><span class="o">.</span><span class="n">n_entity</span>
+    <span class="n">n_relation</span> <span class="o">=</span> <span class="n">kg_dataset</span><span class="o">.</span><span class="n">n_relation</span>
+    <span class="n">kg</span> <span class="o">=</span> <span class="n">kg_dataset</span><span class="o">.</span><span class="n">kg</span>
+
+    <span class="c1"># Init train sampler</span>
+    <span class="n">train_sampler</span> <span class="o">=</span> <span class="n">SubsetRandomSampler</span><span class="p">(</span><span class="n">train_indices</span><span class="p">)</span>
+
+    <span class="c1"># Init MKR model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">MKR</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">n_user</span><span class="p">,</span> <span class="n">n_item</span><span class="p">,</span> <span class="n">n_entity</span><span class="p">,</span> <span class="n">n_relation</span><span class="p">)</span>
+
+    <span class="c1"># Init Sumwriter</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">SummaryWriter</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">summary_path</span><span class="p">)</span>
+
+    <span class="c1"># Top-K evaluation settings</span>
+    <span class="n">user_num</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+    <span class="n">train_record</span> <span class="o">=</span> <span class="n">get_user_record</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">test_record</span> <span class="o">=</span> <span class="n">get_user_record</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">user_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_record</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_record</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">user_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">user_num</span><span class="p">:</span>
+        <span class="n">user_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">user_list</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">user_num</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">item_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_item</span><span class="p">)))</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">n_epochs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train RS&quot;</span><span class="p">)</span>
+        <span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">rs_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+                                  <span class="n">num_workers</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">workers</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="n">train_sampler</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">rs_batch_data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+            <span class="n">loss</span><span class="p">,</span> <span class="n">base_loss_rs</span><span class="p">,</span> <span class="n">l2_loss_rs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">train_rs</span><span class="p">(</span><span class="n">rs_batch_data</span><span class="p">)</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">add_scalar</span><span class="p">(</span><span class="s2">&quot;rs_loss&quot;</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">global_step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">add_scalar</span><span class="p">(</span><span class="s2">&quot;rs_base_loss&quot;</span><span class="p">,</span> <span class="n">base_loss_rs</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">global_step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">add_scalar</span><span class="p">(</span><span class="s2">&quot;rs_l2_loss&quot;</span><span class="p">,</span> <span class="n">l2_loss_rs</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">global_step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+            <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">show_loss</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="n">args</span><span class="o">.</span><span class="n">kge_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train KGE&quot;</span><span class="p">)</span>
+            <span class="n">kg_train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">kg_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+                                         <span class="n">num_workers</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">workers</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">kg_batch_data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">kg_train_loader</span><span class="p">):</span>
+                <span class="n">rmse</span><span class="p">,</span> <span class="n">loss_kge</span><span class="p">,</span> <span class="n">base_loss_kge</span><span class="p">,</span> <span class="n">l2_loss_kge</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">train_kge</span><span class="p">(</span><span class="n">kg_batch_data</span><span class="p">)</span>
+                <span class="n">writer</span><span class="o">.</span><span class="n">add_scalar</span><span class="p">(</span><span class="s2">&quot;kge_rmse_loss&quot;</span><span class="p">,</span> <span class="n">rmse</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">global_step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+                <span class="n">writer</span><span class="o">.</span><span class="n">add_scalar</span><span class="p">(</span><span class="s2">&quot;kge_loss&quot;</span><span class="p">,</span> <span class="n">loss_kge</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">global_step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+                <span class="n">writer</span><span class="o">.</span><span class="n">add_scalar</span><span class="p">(</span><span class="s2">&quot;kge_base_loss&quot;</span><span class="p">,</span> <span class="n">base_loss_kge</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">global_step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+                <span class="n">writer</span><span class="o">.</span><span class="n">add_scalar</span><span class="p">(</span><span class="s2">&quot;kge_l2_loss&quot;</span><span class="p">,</span> <span class="n">l2_loss_kge</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">global_step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+                <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">show_loss</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+
+
+        <span class="c1"># CTR evaluation</span>
+        <span class="n">train_auc</span><span class="p">,</span> <span class="n">train_acc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+        <span class="n">eval_auc</span><span class="p">,</span> <span class="n">eval_acc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">eval_data</span><span class="p">)</span>
+        <span class="n">test_auc</span><span class="p">,</span> <span class="n">test_acc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;epoch </span><span class="si">%d</span><span class="s1">    train auc: </span><span class="si">%.4f</span><span class="s1">  acc: </span><span class="si">%.4f</span><span class="s1">    eval auc: </span><span class="si">%.4f</span><span class="s1">  acc: </span><span class="si">%.4f</span><span class="s1">    test auc: </span><span class="si">%.4f</span><span class="s1">  acc: </span><span class="si">%.4f</span><span class="s1">&#39;</span>
+              <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">train_auc</span><span class="p">,</span> <span class="n">train_acc</span><span class="p">,</span> <span class="n">eval_auc</span><span class="p">,</span> <span class="n">eval_acc</span><span class="p">,</span> <span class="n">test_auc</span><span class="p">,</span> <span class="n">test_acc</span><span class="p">))</span>
+
+        <span class="c1"># top-K evaluation</span>
+        <span class="k">if</span> <span class="n">show_topk</span><span class="p">:</span>
+            <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">f1</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">topk_eval</span><span class="p">(</span><span class="n">user_list</span><span class="p">,</span> <span class="n">train_record</span><span class="p">,</span> <span class="n">test_record</span><span class="p">,</span> <span class="n">item_set</span><span class="p">,</span> <span class="n">k_list</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precision: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">precision</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.4f</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;recall: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">recall</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.4f</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f1: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">f1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.4f</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_user_record</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">is_train</span><span class="p">):</span>
+    <span class="n">user_history_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">interaction</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">interaction</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">interaction</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">interaction</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">is_train</span> <span class="ow">or</span> <span class="n">label</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">user</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">user_history_dict</span><span class="p">:</span>
+                <span class="n">user_history_dict</span><span class="p">[</span><span class="n">user</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="n">user_history_dict</span><span class="p">[</span><span class="n">user</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">user_history_dict</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd"># movie</span>
+<span class="sd">parser.add_argument(&#39;--dataset&#39;, type=str, default=&#39;movie&#39;, help=&#39;which dataset to use&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--n_epochs&#39;, type=int, default=20, help=&#39;the number of epochs&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--dim&#39;, type=int, default=8, help=&#39;dimension of user and entity embeddings&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--L&#39;, type=int, default=1, help=&#39;number of low layers&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--H&#39;, type=int, default=1, help=&#39;number of high layers&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--batch_size&#39;, type=int, default=4096, help=&#39;batch size&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--l2_weight&#39;, type=float, default=1e-6, help=&#39;weight of l2 regularization&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--lr_rs&#39;, type=float, default=0.02, help=&#39;learning rate of RS task&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--lr_kge&#39;, type=float, default=0.01, help=&#39;learning rate of KGE task&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--kge_interval&#39;, type=int, default=3, help=&#39;training interval of KGE task&#39;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="c1"># &#39;&#39;&#39;</span>
+<span class="c1"># book</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--dataset&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;book&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;which dataset to use&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--n_epochs&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;the number of epochs&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--dim&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;dimension of user and entity embeddings&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--L&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;number of low layers&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--H&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;number of high layers&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--batch_size&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;batch size&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--l2_weight&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;weight of l2 regularization&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--lr_rs&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">2e-4</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;learning rate of RS task&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--lr_kge&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">2e-5</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;learning rate of KGE task&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--kge_interval&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;training interval of KGE task&#39;</span><span class="p">)</span>
+<span class="c1"># &#39;&#39;&#39;</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd"># music</span>
+<span class="sd">parser.add_argument(&#39;--dataset&#39;, type=str, default=&#39;music&#39;, help=&#39;which dataset to use&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--n_epochs&#39;, type=int, default=10, help=&#39;the number of epochs&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--dim&#39;, type=int, default=4, help=&#39;dimension of user and entity embeddings&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--L&#39;, type=int, default=2, help=&#39;number of low layers&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--H&#39;, type=int, default=1, help=&#39;number of high layers&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--batch_size&#39;, type=int, default=256, help=&#39;batch size&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--l2_weight&#39;, type=float, default=1e-6, help=&#39;weight of l2 regularization&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--lr_rs&#39;, type=float, default=1e-3, help=&#39;learning rate of RS task&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--lr_kge&#39;, type=float, default=2e-4, help=&#39;learning rate of KGE task&#39;)</span>
+<span class="sd">parser.add_argument(&#39;--kge_interval&#39;, type=int, default=2, help=&#39;training interval of KGE task&#39;)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--workers&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;number of data loading workers&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-sl&#39;</span><span class="p">,</span> <span class="s1">&#39;--show_loss&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;show loss or not&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-st&#39;</span><span class="p">,</span> <span class="s1">&#39;--show_topk&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;show topK or not&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-sum&#39;</span><span class="p">,</span> <span class="s1">&#39;--summary_path&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;./summary&#39;</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;path to store training summary&#39;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="p">{})</span>
+
+
+<span class="n">rs_dataset</span> <span class="o">=</span> <span class="n">RSDataset</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="n">kg_dataset</span> <span class="o">=</span> <span class="n">KGDataset</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="n">train</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">rs_dataset</span><span class="p">,</span> <span class="n">kg_dataset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading rating file
+Splitting dataset
+Reading KG file
+Build models
+Train RS
+Train KGE
+epoch 0    train auc: 0.8203  acc: 0.6389    eval auc: 0.7148  acc: 0.6267    test auc: 0.7138  acc: 0.6308
+Train RS
+epoch 1    train auc: 0.8390  acc: 0.6982    eval auc: 0.7180  acc: 0.6778    test auc: 0.7189  acc: 0.6772
+Train RS
+Train KGE
+epoch 2    train auc: 0.8541  acc: 0.7280    eval auc: 0.7256  acc: 0.6962    test auc: 0.7267  acc: 0.6972
+Train RS
+epoch 3    train auc: 0.8636  acc: 0.7424    eval auc: 0.7281  acc: 0.7035    test auc: 0.7295  acc: 0.7025
+Train RS
+Train KGE
+epoch 4    train auc: 0.8716  acc: 0.7567    eval auc: 0.7281  acc: 0.7029    test auc: 0.7296  acc: 0.7018
+Train RS
+epoch 5    train auc: 0.8783  acc: 0.7725    eval auc: 0.7259  acc: 0.6883    test auc: 0.7278  acc: 0.6912
+Train RS
+Train KGE
+epoch 6    train auc: 0.8840  acc: 0.7823    eval auc: 0.7234  acc: 0.6762    test auc: 0.7255  acc: 0.6800
+Train RS
+epoch 7    train auc: 0.8889  acc: 0.7896    eval auc: 0.7216  acc: 0.6637    test auc: 0.7239  acc: 0.6667
+Train RS
+Train KGE
+epoch 8    train auc: 0.8931  acc: 0.7935    eval auc: 0.7195  acc: 0.6556    test auc: 0.7222  acc: 0.6607
+Train RS
+epoch 9    train auc: 0.8968  acc: 0.7951    eval auc: 0.7176  acc: 0.6528    test auc: 0.7205  acc: 0.6571
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "sparsh-ai/multiobjective-optimizations",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="T671443_MAMO_Framework.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">MAMO Framework</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Sparsh A.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
