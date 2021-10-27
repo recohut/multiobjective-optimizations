@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb Experiences &#8212; multiobjective-optimizations</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Etsy" href="L106645_Etsy.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">multiobjective-optimizations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L069335_Multi_Objective_Optimization.html">
+   Multi-Objective Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Concepts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L492548_Efficient_Frontier.html">
+   Efficient Frontier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L839342_Pareto_Optimality.html">
+   Pareto Optimality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L483593_MOO_Decision_Maker.html">
+   MOO Decision Maker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L336869_Multi_Task_Learning.html">
+   Multi-Task Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L553498_MOO_in_Recommender_Systems.html">
+   MOO in Recommender Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L480379_Marketplace_Recommenders.html">
+   Marketplace Recommenders
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L556513_Multi_Objective_Hyperparameter_Optimization.html">
+   Multi-Objective Hyperparameter Optimization
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Methods
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L005003_Scalarization.html">
+   Scalarization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L762719_Shared_Bottom.html">
+   Shared Bottom
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L915313_Expected_Hypervolume_Improvement_%28EHVI%29.html">
+   Expected Hypervolume Improvement (EHVI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L587138_Multi_gradient_Descent_%28MGDRec%29.html">
+   Multi-gradient Descent (MGDRec)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L861465_Mixture_of_Experts_%28MoE%29.html">
+   Mixture of Experts (MoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L485744_Multi_gate_Mixture_of_Experts_%28MMoE%29.html">
+   Multi-gate Mixture-of-Experts (MMoE)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L519476_Entire_Space_Multi_Task_Model_%28ESSM%29.html">
+   Entire Space Multi-Task Model (ESSM)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L718205_Progressive_Layered_Extraction_%28PLE%29.html">
+   Progressive Layered Extraction (PLE)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Cases
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="L749932_MTL_for_Related_Products_Recommendations_at_Pinterest.html">
+   MTL for Related Products Recommendations at Pinterest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L792752_UberEats.html">
+   UberEats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L106645_Etsy.html">
+   Etsy
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Airbnb Experiences
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/L149938_Airbnb_Experiences.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sparsh-ai/multiobjective-optimizations/main?urlpath=tree/docs/L149938_Airbnb_Experiences.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/sparsh-ai/multiobjective-optimizations/blob/main/docs/L149938_Airbnb_Experiences.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#launch">
+   Launch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#need-for-personalization">
+   Need for Personalization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-1-mvp">
+   Stage 1: MVP
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#labels">
+     Labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training">
+     Training
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#offline-evaluation">
+     Offline evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#online-evaluation">
+     Online evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mlops">
+     MLOps
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-2-personalization">
+   Stage 2: Personalization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features-based-on-airbnb-s-home-booking-data">
+     Features based on Airbnb’s home booking data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features-based-on-clickstream-data">
+     Features based on clickstream data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing">
+     Preprocessing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Training
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Online evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     MLOps
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-3-move-to-online-scoring">
+   Stage 3: Move to Online Scoring
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Training
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Online evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation">
+     Implementation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-4-handle-business-rules">
+   Stage 4: Handle Business Rules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#monitoring-and-explaining">
+   Monitoring and Explaining
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-business-impact-so-far">
+   Summary of Business Impact so far
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links-and-references">
+   Links and References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="airbnb-experiences">
+<h1>Airbnb Experiences<a class="headerlink" href="#airbnb-experiences" title="Permalink to this headline">¶</a></h1>
+<p><center><img src='_images/L149938_1.png'></center></p>
+<p>Airbnb Experiences is a one-of-a-kind offering by Airbnb where people get to experience the local culture of their hosts. These are handcrafted activities designed and led by expert hosts that offer a unique taste of the local scene and culture. Each experience is vetted for quality by a team of editors before it makes its way onto the platform. As the number of Experiences grew, Search &amp; Discoverability, as well as Personalization, have become very important factors for the growth and success of the marketplace. But when Airbnb started the Experiences offering, they were not sure how to rank them.</p>
+<p>In this story, we describe the stages of Experience Ranking development using machine learning at different growth phases of the marketplace, from small to mid-size and large. We will learn how Airbnb built and iterated on a machine learning Search Ranking platform for a new two-sided marketplace and how they helped it grow.</p>
+<!---------------------------->
+<div class="section" id="launch">
+<h2>Launch<a class="headerlink" href="#launch" title="Permalink to this headline">¶</a></h2>
+<p>Duration: 2</p>
+<p>Airbnb Experiences was launched in November 2016 with 500 Experiences in 12 cities worldwide.</p>
+<p>During 2017, Airbnb grew the business to 5,000 Experiences in 60 cities.</p>
+<p>In 2018, the rapid growth continued, and Airbnb managed to bring Experiences to more than 1,000 destinations, including unique places like Easter Island, Tasmania, and Iceland. Airbnb finished the year strong with more than 20,000 active Experiences.</p>
+<!---------------------------->
+</div>
+<div class="section" id="need-for-personalization">
+<h2>Need for Personalization<a class="headerlink" href="#need-for-personalization" title="Permalink to this headline">¶</a></h2>
+<p>Duration: 2</p>
+<p>As the number of Experiences grew, Search &amp; Discoverability, as well as Personalization, have become very important factors for the growth and success of the marketplace. But when Airbnb started the Experiences offering, they were not sure how to rank them.</p>
+<p>In the beginning, the amount of Experiences that needed to be ranked in Search was small, and Airbnb just started collecting data on user interactions with Experiences (impressions, clicks, and bookings). At that moment, the best choice was to just randomly re-rank Experiences daily, until a small dataset is collected for development of the Stage 1 ML model.</p>
+<!---------------------------->
+</div>
+<div class="section" id="stage-1-mvp">
+<h2>Stage 1: MVP<a class="headerlink" href="#stage-1-mvp" title="Permalink to this headline">¶</a></h2>
+<p>Duration: 5</p>
+<div class="section" id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<p>To train the first machine learning model for ranking Experiences, Airbnb collected search logs (i.e. clicks) of users who ended up making bookings.</p>
+</div>
+<div class="section" id="labels">
+<h3>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h3>
+<p>When labeling training data, Airbnb was mainly interested in two labels: experiences that were booked (which were treated as positive labels) and experiences that were clicked but not booked (which were treated as negative labels). In this manner, Airbnb collected a training dataset of 50,000 examples.</p>
+</div>
+<div class="section" id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<p>They decided to rank solely based on <em>Experience Features.</em> In total they built 25 features, some of which were:</p>
+<ul class="simple">
+<li><p><strong>Experience duration</strong> (e.g. 1h, 2h, 3h, etc.)</p></li>
+<li><p><strong>Price</strong> and <strong>Price-per-hour</strong></p></li>
+<li><p><strong>Category</strong> (e.g. cooking class, music, surfing, etc.)</p></li>
+<li><p><strong>Reviews</strong> (rating, number of reviews)</p></li>
+<li><p><strong>Number of bookings</strong> (last 7 days, last 30 days)</p></li>
+<li><p><strong>Occupancy of past and future instances</strong> (e.g. 60%)</p></li>
+<li><p><strong>Maximum number of seats</strong> (e.g. max 5 people can attend)</p></li>
+<li><p><strong>Click-through rate</strong></p></li>
+</ul>
+</div>
+<div class="section" id="training">
+<h3>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
+<p>Given the training data, labels, and features, Airbnb used the Gradient Boosted Decision Tree (GBDT) model. At this point, they treated the problem as binary classification with a log-loss loss function.</p>
+</div>
+<div class="section" id="offline-evaluation">
+<h3>Offline evaluation<a class="headerlink" href="#offline-evaluation" title="Permalink to this headline">¶</a></h3>
+<p><em>AUC and NDCG</em>: They re-ranked the Experiences based on model scores (probabilities of booking) and tested where the booked Experience would rank among all Experiences the user clicked (the higher the better).</p>
+<p><em>Partial dependency plot</em>: In addition, to get a sense of what a trained model learned, they plotted partial dependency plots for several most important Experience features.</p>
+<ul class="simple">
+<li><p>Experiences with more bookings per 1k viewers will rank higher</p></li>
+<li><p>Experiences with higher average review rating will rank higher</p></li>
+<li><p>Experiences with lower prices will rank higher</p></li>
+</ul>
+<p><center><img src='_images/L149938_2.png'></center></p>
+</div>
+<div class="section" id="online-evaluation">
+<h3>Online evaluation<a class="headerlink" href="#online-evaluation" title="Permalink to this headline">¶</a></h3>
+<p>Since offline testing often has too many assumptions, e.g. in Airbnb’s case it was limited to re-ranking what users clicked and not the entire inventory, they conducted an online experiment, i.e. A/B test, as the next step. They compared the Stage 1 ML model to the rule-based random ranking in terms of the number of bookings. The results were very encouraging as they were able to improve bookings by +13% with the Stage 1 ML ranking model.</p>
+</div>
+<div class="section" id="mlops">
+<h3>MLOps<a class="headerlink" href="#mlops" title="Permalink to this headline">¶</a></h3>
+<p>The entire ranking pipeline, including training and scoring, was implemented offline and ran daily in Airflow. The output was just a complete ordering of all Experiences, i.e. an ordered list, which was uploaded to production machines and used every time a search was conducted to rank a subset of Experiences that satisfied the search criteria.</p>
+<!---------------------------->
+</div>
+</div>
+<div class="section" id="stage-2-personalization">
+<h2>Stage 2: Personalization<a class="headerlink" href="#stage-2-personalization" title="Permalink to this headline">¶</a></h2>
+<p>Duration: 10</p>
+<p>The stage 1 model was limited to using only Experience Features, and as a result, the ranking of Experiences was the same for all users. In addition, all query parameters (number of guests, dates, location, etc.) served only as filters for retrieval (e.g. fetch Paris Experiences available next week for 2 guests), and the ranking of Experiences did not change based on those inputs.</p>
+<p>Two randomly chosen Experiences are likely to be very different, e.g. a Cooking Class vs. a Surf Lesson. At the same time, guests may have different interests and ideas of what they want to do on their trip, and it is our goal to capture that interest fast and serve the right content higher in search results. So, the next step was to add the Personalization capability to the ML ranking model.</p>
+<div class="section" id="features-based-on-airbnb-s-home-booking-data">
+<h3>Features based on Airbnb’s home booking data<a class="headerlink" href="#features-based-on-airbnb-s-home-booking-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Booked Home location</p></li>
+<li><p>Trip dates</p></li>
+<li><p>Trip length</p></li>
+<li><p>Number of guests</p></li>
+<li><p>Trip price (Below/Above Market)</p></li>
+<li><p>Type of trip: Family, Business</p></li>
+<li><p>First trip or returning to location</p></li>
+<li><p>Domestic / International trip</p></li>
+<li><p>Lead days</p></li>
+</ul>
+<p>Let’s understand and validate the intuition behind 2 engineered features: Distance between Booked Home and Experience, and Experience available during Booked Trip.</p>
+<p><strong>Distance between Booked Home and Experience.</strong> Knowing Booked Home location (latitude and longitude) as well as Experience meeting location, we can compute their distance in miles. Data shows that users like convenience, i.e. large fraction of booked Airbnb Experiences are near booked Airbnb Home.</p>
+<p><strong>Experience available during Booked Trip.</strong> Given Home check-in and check-out dates, we have an idea on which dates the guest is looking to book Experiences and can mark Experiences as available or not during those dates.</p>
+<p>These two features (in addition to others) were used when training the new ML ranking model. Below we show their partial dependency plots.</p>
+<p><center><img src='_images/L149938_3.png'></center></p>
+<p>The plots confirmed that features behavior matches what we intuitively expected the model will learn, i.e. Experiences that are closer to Booked Home will rank higher (have higher scores), and Experiences that are available for Booked Trip dates will rank higher (which is very convenient because even in dateless search we can leverage trip dates).</p>
+</div>
+<div class="section" id="features-based-on-clickstream-data">
+<h3>Features based on clickstream data<a class="headerlink" href="#features-based-on-clickstream-data" title="Permalink to this headline">¶</a></h3>
+<p>Given the user’s short-term search history, we can infer useful information that can help us personalize future searches:</p>
+<ul>
+<li><p><strong>Infer user interest in certain categories:</strong> For example, if the user is mostly clicking on <em>Music</em> Experiences we can infer that the user’s interest is in <em>Music.</em></p></li>
+<li><p><strong>Infer the user’s time-of-day availability:</strong> For example, if the user is mostly clicking on <em>Evening</em> Experiences we can infer that the user is available at that time of day.</p></li>
+<li><p><strong>Category Intensity:</strong> Weighted sum of user clicks on Experiences that have that particular category, where the sum is over the last 15 days (d_0 to d_now) and A is the number of actions (in this case clicks) on certain category on day d.</p></li>
+<li><p><strong>Category Recency:</strong> Number of days that passed since the user last clicked on an Experience in that category.</p>
+<p>Let’s validate the intuition for the 2 engineered features - intensity and recency:</p>
+  <p><center><img src='_images/L149938_4.png'></center></p>
+<p>Airbnb built the same types of features (intensity &amp; recency) for several different user actions, including wishlisting and booking a certain category.</p>
+</li>
+<li><p><strong>Time of Day Personalization:</strong> Different Experiences are held at different times of day (e.g. early morning, evening, etc.). Similar to how we track clicks on different categories, we can also track clicks on different times of day and compute Time of Day Fit between the user’s time-of-day percentages and the Experience’s time of day, as described below:</p>
+  <p><center><img src='_images/L149938_5.png'></center></p>
+<p>As it can be observed, the model learned to use this feature in a way that ranks Experiences held at time of day that the user prefers higher.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="preprocessing">
+<h3>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Generated the training data that contains those features by reconstructing the past based on search logs.</p></li>
+<li><p>Computed the personalization features only if the user interacted with more than one Experience and category (to avoid cases where the user clicked only one Experience / category, e.g. Surfing, and ended up booking that category).</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Training<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>As search traffic contains searches by both logged-in and logged-out users, Airbnb found it more appropriate to train two models, one with personalization features for logged-in users and one without personalization features that will serve log-out traffic. The main reason was that the logged-in model trained with personalization features relies too much on the presence of those features, and as such is not appropriate for usage on logged-out traffic.</p>
+</div>
+<div class="section" id="id2">
+<h3>Online evaluation<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Results showed that Personalization matters as they were able to improve bookings by +7.9% compared to the Stage 1 model.</p>
+</div>
+<div class="section" id="id3">
+<h3>MLOps<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>They created a look-up table keyed off of user id that contained personalized ranking of all Experiences for that user, and use key 0 for ranking for logged-out users.</p></li>
+<li><p>This required daily offline computation of all these rankings in Airflow by computing the latest features and scoring the two models to produce rankings. Because of the high cost involved with pre-computing personalized rankings for all users (O(NM), where N is the number of users and M is the number of Experiences), they limited N to only 1 million most active users.</p></li>
+<li><p>The personalization features at this point were computed only daily, which means that they have up to one day latency (also a factor that can be greatly improved with more investment in infrastructure).</p></li>
+</ul>
+<p>Stage 2 implementation was a temporary solution used to validate personalization gains before investing more resources in building an Online Scoring Infrastructure in Stage 3, which was needed as both N and M are expected to grow much more.</p>
+<!---------------------------->
+</div>
+</div>
+<div class="section" id="stage-3-move-to-online-scoring">
+<h2>Stage 3: Move to Online Scoring<a class="headerlink" href="#stage-3-move-to-online-scoring" title="Permalink to this headline">¶</a></h2>
+<p>Duration: 10</p>
+<p>After Airbnb demonstrated significant booking gains from iterating on their ML ranking model and after inventory and training data grew to the extent where training a more complex model is possible, they were ready to invest more engineering resources to build an Online Scoring Infrastructure and target more booking gains.</p>
+<div class="section" id="id4">
+<h3>Features<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Moving to Online Scoring unlocks a whole new set of features that can be used: Query Feature</p>
+<p><center><img src='_images/L149938_6.png'></center></p>
+<p>This means that we would be able to use the entered location, number of guests, and dates to engineer more features. For example,</p>
+<ul class="simple">
+<li><p>we can use the entered location, such as city, neighborhood, or place of interest, to compute Distance between Experience and Entered Location. This feature helps us rank those Experiences closer to entered location higher.</p></li>
+<li><p>we can use the entered number of guests (singles, couple, large group) to calculate how it relates to the number of guests in an average booking of Experience that needs to be ranked. This feature helps us rank better fit Experiences higher.</p></li>
+</ul>
+<p>In the online setting, Airbnb was also able to leverage the user’s browser language setting to do language personalization on the fly. Below is an example of Stage 3 ML model ranking Experiences offered in Russian higher when browser language is Russian.</p>
+<p><center><img src='_images/L149938_7.png'></center></p>
+<p>Finally, in the online setting we also know the Country which the user is searching from. We can use the country information to personalize the Experience ranking based on Categories preferred by users from those countries. Airbnb used this information to engineer several personalization features at the Origin — Destination level.</p>
+</div>
+<div class="section" id="id5">
+<h3>Training<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>To train the model with <em>Query Features</em> Airbnb first added them to their historical training data. The inventory at that moment was 16,000 Experiences and they had more than 2 million labeled examples to be used in training with a total of 90 ranking features. As mentioned before, they trained two GBDT models:</p>
+<ul class="simple">
+<li><p><strong>Model for logged-in users</strong>*,* which **uses <em>Experience Features</em>, <em>Query Features,</em> and <em>User (Personalization) Features</em></p></li>
+<li><p><strong>Model for logged-out traffic</strong>, which **uses <em>Experience &amp; Query Features,</em> trained using data (clicks &amp; bookings) of logged-in users but not considering <em>Personalization Features</em></p></li>
+</ul>
+<p>The advantage of having an online scoring infrastructure is that we can use logged-in model for far more uses than before, because there is no need to pre-compute personalized rankings as we did in Stage 2. Airbnb used the logged-in model whenever personalization signals were available for a particular user id, else the model fall back to using logged-out model.</p>
+</div>
+<div class="section" id="id6">
+<h3>Online evaluation<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Airbnb conducted an A/B test to compare the Stage 3 models to Stage 2 models. Once again, they were able to grow the bookings, this time by +5.1%.</p>
+</div>
+<div class="section" id="implementation">
+<h3>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h3>
+<p>To implement online scoring of thousands of listings in real time, Airbnb have built their own ML infra in the context of their search service. There are mainly three parts of the infrastructure, 1) getting model input from various places in real time, 2) model deployment to production, and 3) model scoring.</p>
+<p>The model requires three types of signals to conduct scoring: Experience Features, Query Features, and User Features. Different signals were stored differently depending on their size, update frequency, etc. Specifically, due to their large size (hundreds of millions of user keys), the User Features were stored in an online key-value store and search server boxes can look them up when a user does the search. The Experience Features are on the other hand not that large (tens of thousands of Experiences), and as such can be stored in memory of the search server boxes and read directly from there. Finally, the Query Features are not stored at all, and they are just read as they come in from the front end.</p>
+<p>Experience and User Features are both updated daily as the Airflow pipeline feature generation job finishes. Airbnb is also working on transitioning some of the features to the online world, by using a key-value store that has both read and write capabilities which would allow them to update the features instantly as more data comes in (e.g. new experience reviews, new user clicks, etc.).</p>
+<p>In the model deployment process, they transform the GBDT model file, which originally came from their training pipeline in JSON format, to an internal Java GBDT structure, and load it within the search service application when it starts.</p>
+<p>During the scoring stage, they first pull in all the features (User, Experience, and Query Features) from their respective locations and concatenate them in a vector used as input to the model. Next, depending on if User Features are empty or not they decide which model to use, i.e. logged-out or logged-in model, respectively. Finally, they return the model scores for all Experiences and rank them on the page in descending order of the scores.</p>
+<!---------------------------->
+</div>
+</div>
+<div class="section" id="stage-4-handle-business-rules">
+<h2>Stage 4: Handle Business Rules<a class="headerlink" href="#stage-4-handle-business-rules" title="Permalink to this headline">¶</a></h2>
+<p>Duration: 5</p>
+<p>Up to this point the ranking model’s objective was to grow bookings. However, a marketplace such as Airbnb Experiences may have several other secondary objectives, as we call them Business Rules, that can be achieved through machine learning.</p>
+<p>One such important Business Rule is to Promote Quality. From the beginning they believed that if guests have a really good experience they will come back and book Experiences again in the near future. For that reason, they started collecting feedback from users in terms of 1) star ratings, ranging from 1 to 5, and 2) additional structured multiple-response feedback on whether the Experience was unique, better than expected, engaging, etc.</p>
+<p>As more and more data became available to support their rebooking hypothesis, the trend became more clear. As it can be observed on the left in the figure below, guests who have had a great experience (leave a 5-star rating) are 1.5x more likely to rebook another Experience in the next 90 days compared to guests who have had a less good time (leave 4 star rating or lower).</p>
+<p><center><img src='_images/L149938_8.png'></center></p>
+<p>This motivated them to experiment with their objective function, where they changed their binary classification (+1 = booked, -1 = click &amp; not booked) to introduce weights in training data for different quality tiers (e.g. highest for very high quality bookings, lowest for very low quality bookings). The quality tiers were defined by their Quality Team via data analysis. For example:</p>
+<ul class="simple">
+<li><p><em>very high quality</em> Experience is one with &gt;50 reviews, &gt;4.95 review rating and &gt;55% guests saying the Experience was <em>unique</em> and <em>better than expected.</em></p></li>
+<li><p><em>very low quality</em> Experience **is one with **&gt;10 reviews, &lt;4.7 review rating.</p></li>
+</ul>
+<p>When testing the model trained in such a way the A/B test results (on the right in the figure above) showed that they can leverage machine learning ranking to get more of v<em>ery high quality</em> bookings and less of v<em>ery low quality bookings</em>, while keeping the overall bookings neutral.</p>
+<p>In a similar way, they successfully tackled several other secondary objectives:</p>
+<ul class="simple">
+<li><p><strong>Discovering and promoting potential <em>new</em> <em>hits</em> early</strong> using cold-start signals and promoting them in ranking (this led to <strong>+14% booking gain for <em>new hits</em></strong> and **neutral overall bookings)</p></li>
+<li><p><strong>Enforcing diversity</strong> in the <strong>top 8 results</strong> such that they can show the diverse set of categories, which is especially important for low-intent traffic (this led to <strong>+2.3% overall booking gain</strong>).</p></li>
+<li><p><strong>Optimize Search without Location for Clickability</strong> For <em>Low Intent</em> users that land on their webpage but do not search with specified location they think a different objective should be used. Their first attempt was to choose the <em>Top 18</em> from <em>all locations</em> based on their ranking model scores and then <strong>re-rank</strong> based on <strong>Click-through-rate</strong> (this led to <strong>+2.2% overall booking gain</strong> compared to scenario where they do not re-rank based on CTR).</p></li>
+</ul>
+<!---------------------------->
+</div>
+<div class="section" id="monitoring-and-explaining">
+<h2>Monitoring and Explaining<a class="headerlink" href="#monitoring-and-explaining" title="Permalink to this headline">¶</a></h2>
+<p>Duration: 10</p>
+<p>For any two-sided marketplace it is very important to be able to explain why certain items rank the way they do.</p>
+<p>In Airbnb’s case it is valuable because they can:</p>
+<ul class="simple">
+<li><p>Give hosts concrete feedback on what factors lead to improvement in the ranking and what factors lead to decline.</p></li>
+<li><p>Keep track of the general trends that the ranking algorithm is enforcing to make sure it is the behavior we want to have in our marketplace.</p></li>
+</ul>
+<p>To build out this capability they used <a class="reference external" href="https://superset.incubator.apache.org/">Apache Superset</a> and <a class="reference external" href="https://airflow.apache.org/">Airflow</a> to create two dashboards:</p>
+<ul class="simple">
+<li><p>Dashboard that tracks rankings of specific Experiences in their market over time, as well as values of feature used by the ML model.</p></li>
+<li><p>Dashboard that shows overall ranking trends for different groups of Experiences (e.g. how 5-star Experiences rank in their market).</p></li>
+</ul>
+<p>In the figure below, there is an example of an Experience whose ranking (left panel) improved from position 30 to position 1 (top ranked). To explain why, we can look at the plots that track various statistics of that Experience (right panel), which are either directly used as features in the ML model or used to derive features.</p>
+<p><center><img src='_images/L149938_9.png'></center></p>
+<p>It can clearly be observed that the ranking improved because number of reviews grew from 0 to 60, while maintaining a 5.0 review rating and &gt;60% users said the Experience was better than expected. In addition, the host lowered the price, which may also have lead to the improvement of ranking.\</p>
+<p>In the next figure, there is an example of an Experience whose ranking degraded from position 4 to position 94. Once more, the signals which the ranking model uses as input can tell the story.</p>
+<p><center><img src='_images/L149938_10.png'></center></p>
+<p>The Experience started getting bad reviews (avg. rating reduced from 4.87 to 4.82), host increased the price by $20, and overall booking numbers decreased. In addition, in that market the time of day that Experience is held at (early morning) became less and less popular (slight seasonality effect). All these factors combined lead to the ranking decline.</p>
+<p>In addition, to be able to track what kind of ranking behavior they are enforcing it was useful to look at how certain groups of Experiences rank in their markets. In the figure below, there is a snapshot of dashboard where we can track average ranking (lower is better) of different dimensions.</p>
+<p><center><img src='_images/L149938_11.png'></center></p>
+<p>For example, the left plot shows that Experiences with &gt;50 reviews rank much better than experiences with 10–30 reviews. Looking at the other two plots we can see that on average Experiences with review rating of &gt;4.9 rank the best (much better than ones with lower average rating) and that Experiences for which &gt;55% users say their experience was unique rank much better than non-unique Experiences.</p>
+<p>This type of dashboard is useful for making business decisions and modifications to the ranking algorithm to enforce better behaviors. For example, based on the figure that shows ranking trends of different price range groups (shown below) they noticed that very low price Experiences have too big of an advantage in ranking. They decided to try to reduce that advantage by removing price as one of the signals used by the ranking model.</p>
+<p><center><img src='_images/L149938_12.png'></center></p>
+<p>The result of removing the price and retraining the model was that the difference in ranking reduced (after July 1st), without hurting overall bookings. This demonstrates the usefulness of reporting and how ranking can be manipulated using machine learning to achieve desired ranking behavior.</p>
+<!---------------------------->
+</div>
+<div class="section" id="summary-of-business-impact-so-far">
+<h2>Summary of Business Impact so far<a class="headerlink" href="#summary-of-business-impact-so-far" title="Permalink to this headline">¶</a></h2>
+<p><center><img src='_images/L149938_13.png'></center></p>
+<p>The main take-away is: “Don’t wait until you have big data, you can do quite a bit with small data to help grow and improve your business.”</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Training data construction</strong> (by logging the feature values at the time of scoring instead of reconstructing them based on best guess for that day)</p></li>
+<li><p><strong>Loss function</strong> (e.g. by using pairwise loss, where they compare booked Experience with Experience that was ranked higher but not booked, a setup that is far more appropriate for ranking)</p></li>
+<li><p><strong>Training labels</strong> (e.g. by using utilities instead of binary labels, i.e. assigning different values to different user actions, such as: 0 for impression, 0.1 for click, 0.2 for click with selected date &amp; time, 1.0 for booking, 1.2 for high quality booking)</p></li>
+<li><p><strong>Adding more real-time signals</strong> (e.g. being able to personalize based on immediate user activities, i.e. clicks that happened 10 minutes ago instead of 1 day ago)</p></li>
+<li><p><strong>Explicitly asking users about types of activities they wish to do on their trip</strong> (so they can personalize based on declared interest in addition to inferred ones)</p></li>
+<li><p><strong>Tackling position bias</strong> that is present in the data they use in training</p></li>
+<li><p><strong>Optimizing for additional secondary objectives</strong>, such as helping hosts who host less often than others (e.g. 1–2 a month) and hosts who go on vacation and come back</p></li>
+<li><p><strong>Testing different models</strong> beyond GBDT</p></li>
+<li><p><strong>Finding more types of supply that work well in certain markets</strong> by leveraging predictions of the ranking model.</p></li>
+<li><p><strong>Explore/Exploit framework</strong></p></li>
+<li><p><strong>Test human-in-the-loop approach</strong> (e.g. Staff picks)</p></li>
+</ul>
+</div>
+<div class="section" id="links-and-references">
+<h2>Links and References<a class="headerlink" href="#links-and-references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://medium.com/airbnb-engineering/machine-learning-powered-search-ranking-of-airbnb-experiences-110b4b1a0789">Originally published on medium by Mihajlo Grbovic, Senior Machine Learning Scientist &#64; Airbnb.</a></p></li>
+<li><p>Airbnb Experiences Ranking Algorithm Explained - <a class="reference external" href="https://youtu.be/35HfN_C7-2c">Part I</a>, <a class="reference external" href="https://youtu.be/emxPgRbtTFg">Part II</a>, and <a class="reference external" href="https://youtu.be/Ox1BIXSdlYo">Part III</a>.</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/pdf/1911.05887.pdf">https://arxiv.org/pdf/1911.05887.pdf</a></p></li>
+<li><p><a class="reference external" href="https://digital.hbs.edu/platform-rctom/submission/airbnb-customizing-recommendations-for-every-trip/">https://digital.hbs.edu/platform-rctom/submission/airbnb-customizing-recommendations-for-every-trip/</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/airbnb-engineering/machine-learning-powered-search-ranking-of-airbnb-experiences-110b4b1a0789">Machine Learning-Powered Search Ranking of Airbnb Experiences</a> <code class="docutils literal notranslate"><span class="pre">Airbnb</span></code></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1810.09591">Applying Deep Learning To Airbnb Search</a> (<a class="reference external" href="https://arxiv.org/pdf/1810.09591.pdf">Paper</a>) <code class="docutils literal notranslate"><span class="pre">Airbnb</span></code></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2004.02621">Managing Diversity in Airbnb Search</a> (<a class="reference external" href="https://arxiv.org/pdf/2004.02621.pdf">Paper</a>) <code class="docutils literal notranslate"><span class="pre">Airbnb</span></code></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2002.05515">Improving Deep Learning for Airbnb Search</a> (<a class="reference external" href="https://arxiv.org/pdf/2002.05515.pdf">Paper</a>) <code class="docutils literal notranslate"><span class="pre">Airbnb</span></code></p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "sparsh-ai/multiobjective-optimizations",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="L106645_Etsy.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Etsy</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Sparsh A.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
